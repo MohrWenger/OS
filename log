@@ -27,19 +27,14 @@ mkdir("Welcome/To", 0775)               = 0
 brk(NULL)                               = 0x5602974b6000
 brk(0x5602974d7000)                     = 0x5602974d7000
 
+====== interesting part ======
+
 openat(AT_FDCWD, "Welcome/To/OS2018", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
-// relative path to the current working directory
 fstat(3, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
-
 write(3, "ellonet\nIf you haven't read the course guidelines yet --- do it right now!\nElla", 79) = 79
-
 close(3)                                = 0
-
 unlink("Welcome/To/OS2018")             = 0
-
 rmdir("Welcome/To/")                    = 0
-
 rmdir("Welcome/")                       = 0
-
 exit_group(0)                           = ?
 +++ exited with 0 +++
