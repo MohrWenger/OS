@@ -38,3 +38,21 @@ rmdir("Welcome/To/")                    = 0
 rmdir("Welcome/")                       = 0
 exit_group(0)                           = ?
 +++ exited with 0 +++
+
+
+====== answer ======
+
+This program opens the directory of the relative path "Welcome/To/OS2018".
+it opens it with read-write permissions only. 
+(creates a file descriptor).
+if the file doesn't exists - it creates it, and if it does exists - it overrides it. 
+It then writes to the file: 
+"<user_name>
+If you haven't read the course guidelines yet --- do it right now!
+<user_first_name>"
+
+and then closes the file descriptor, and deletes the following directories:
+"Welcome/To/"
+"Welcome/"
+
+and exits.
