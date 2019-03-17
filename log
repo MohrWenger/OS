@@ -43,7 +43,7 @@ exit_group(0)                           = ?
 ====== answer ======
 
 This program opens the directory of the relative path "Welcome/To/OS2018".
-it opens it with read-write permissions only. 
+it opens it with read-write permissions only (for all classes). 
 (creates a file descriptor).
 if the file doesn't exists - it creates it, and if it does exists - it overrides it. 
 It then writes to the file: 
