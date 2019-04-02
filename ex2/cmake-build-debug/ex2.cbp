@@ -84,16 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/Thread.h">
-			<Option target="ex2"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/main.cpp">
-			<Option target="ex2"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.cpp">
-			<Option target="ex2"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h">
+		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/demo_itimer.c">
 			<Option target="ex2"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/CMakeLists.txt">

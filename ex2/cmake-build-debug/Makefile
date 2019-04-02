@@ -123,59 +123,32 @@ ex2/fast:
 	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/build
 .PHONY : ex2/fast
 
-main.o: main.cpp.o
+demo_itimer.o: demo_itimer.c.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-uthreads.o: uthreads.cpp.o
-
-.PHONY : uthreads.o
+.PHONY : demo_itimer.o
 
 # target to build an object file
-uthreads.cpp.o:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/uthreads.cpp.o
-.PHONY : uthreads.cpp.o
+demo_itimer.c.o:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/demo_itimer.c.o
+.PHONY : demo_itimer.c.o
 
-uthreads.i: uthreads.cpp.i
+demo_itimer.i: demo_itimer.c.i
 
-.PHONY : uthreads.i
+.PHONY : demo_itimer.i
 
 # target to preprocess a source file
-uthreads.cpp.i:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/uthreads.cpp.i
-.PHONY : uthreads.cpp.i
+demo_itimer.c.i:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/demo_itimer.c.i
+.PHONY : demo_itimer.c.i
 
-uthreads.s: uthreads.cpp.s
+demo_itimer.s: demo_itimer.c.s
 
-.PHONY : uthreads.s
+.PHONY : demo_itimer.s
 
 # target to generate assembly for a file
-uthreads.cpp.s:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/uthreads.cpp.s
-.PHONY : uthreads.cpp.s
+demo_itimer.c.s:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/demo_itimer.c.s
+.PHONY : demo_itimer.c.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ex2"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... uthreads.o"
-	@echo "... uthreads.i"
-	@echo "... uthreads.s"
+	@echo "... demo_itimer.o"
+	@echo "... demo_itimer.i"
+	@echo "... demo_itimer.s"
 .PHONY : help
 
 

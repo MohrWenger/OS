@@ -11,6 +11,8 @@ stdlib.h
 -
 string
 -
+stack
+-
 
 /cs/usr/ellonet/Desktop/OS/OS/ex2/main.cpp
 uthreads.h
@@ -20,6 +22,8 @@ iostream
 Thread.h
 /cs/usr/ellonet/Desktop/OS/OS/ex2/Thread.h
 set
+-
+cstring
 -
 
 /cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h
