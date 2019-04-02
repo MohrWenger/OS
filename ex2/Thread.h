@@ -10,18 +10,19 @@ using namespace std;
 #define EX2_THREAD_H
 
 typedef void (*func)(void);
+
 enum state {
-    BLOCKED, READY, RUNNING
+    READY, RUNNING, BLOCKED
 };
 
 
 class Thread {
 
 public:
-    Thread(int quantum, int id, func f) : _quantum(quantum), _id(id), _f(f) {}
+    Thread(int quantum, int id, func f) : _quantum(quantum), _id(id), _f(f), _status(READY) {}
 
-    string get_status() {
-        return status;
+    int get_status() {
+        return _status;
     }
 
     int get_quantum() {
@@ -33,10 +34,10 @@ public:
     }
 
 private:
-    func _f;
     int _quantum;
     int _id;
-    string status;
+    func _f;
+    int _status;
 };
 
 
