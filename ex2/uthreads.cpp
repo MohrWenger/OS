@@ -1,19 +1,21 @@
-#ifndef _UTHREADS_H
-#define _UTHREADS_H
+#include <stdlib.h>
+#include <iostream>
+#include "Thread.h"
+#include <deque>
+#include <vector>
+#include <set>
 
-/*
- * User-Level Threads Library (uthreads)
- * Author: OS, os@cs.huji.ac.il
+using namespace std;
+
+vector<Thread> all_threads;
+deque<Thread *> ready_queue;
+int lib_quantum;
+set<int> available_ids;
+
+/***
+ * @return the next available id
  */
-
-#define MAX_THREAD_NUM 100 /* maximal number of threads */
-#define STACK_SIZE 4096 /* stack size per thread (in bytes) */
-
-/* External interface */
-
-
-
-
+int get_next_id();
 
 /*
  * Description: This function initializes the thread library.
@@ -23,7 +25,23 @@
  * function with non-positive quantum_usecs.
  * Return value: On success, return 0. On failure, return -1.
 */
-int uthread_init(int quantum_usecs);
+int uthread_init(int quantum_usecs) {
+    if (quantum_usecs <= 0) {
+        cerr << "Error - Illegal quantum value" << endl;
+        return -1;
+    }
+    lib_quantum = quantum_usecs;
+
+    try {
+        Thread th_0 = Thread(lib_quantum, 0, nullptr);
+        all_threads.push_back(th_0);
+    }
+    catch (exception &e) {
+        cerr << "Error - library initialization failed" << endl;
+        return -1;
+    }
+    return 0;
+}
 
 /*
  * Description: This function creates a new thread, whose entry point is the
@@ -35,7 +53,10 @@ int uthread_init(int quantum_usecs);
  * Return value: On success, return the ID of the created thread.
  * On failure, return -1.
 */
-int uthread_spawn(void (*f)(void));
+int uthread_spawn(void (*f)(void)) {
+//    Thread new_thread = new Thread(lib_quantum, 123, )
+    return 0;
+}
 
 
 /*
@@ -113,5 +134,18 @@ int uthread_get_total_quantums();
 */
 int uthread_get_quantums(int tid);
 
-#endif
 
+/////////////////////////////////// private functions ///////////
+
+
+
+int get_next_id() {
+    static int next_id = 1;
+
+    if (available_ids.empty()) {
+        int next = next_id;
+        ++next_id;
+        return next;
+    }
+    return *available_ids.begin();
+}
