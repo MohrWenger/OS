@@ -167,10 +167,9 @@ int uthread_block(int tid) {
             ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), curr));
             break;
         case (RUNNING):
-            // TODO - jump
+            // TODO - send to handle
             break;
-        default:
-            //TODO - this shit not.
+        default: // in this case - do nothing.
             break;
     }
 
@@ -178,14 +177,27 @@ int uthread_block(int tid) {
     return 0;
 }
 
-void switchThreads(void) {
+void switchThreads( state new_st) {
     int ret_val = sigsetjmp(*(curr_running -> get_env()), 1); //TODO update curr_run
     cout << "SWITCHING from: " << curr_running->get_id () << endl;
     if (ret_val == 1) {
         return;
     }
+
+    switch  (new_st)
+    {
+        case (BLOCKED):
+            curr_running -> set_status (new_st);
+        case (TERMINATED):
+            all_threads.erase (curr_running->get_id ());
+        case ( READY ):
+            //TODO - set ready queue
+
+    }
+
     Thread* next_th = get_next_thread();
     curr_running = next_th;
+    curr_running->set_status(RUNNING);
 
     siglongjmp( *(next_th->get_env()), 1);
 }

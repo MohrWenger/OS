@@ -15,7 +15,7 @@ using namespace std;
 
 typedef void (*func)(void);
 enum state {
-    READY, RUNNING, BLOCKED
+    READY, RUNNING, BLOCKED, TERMINATED
 };
 
 #ifdef __x86_64__
