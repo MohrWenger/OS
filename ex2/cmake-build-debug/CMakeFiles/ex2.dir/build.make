@@ -57,18 +57,18 @@ include CMakeFiles/ex2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ex2.dir/flags.make
 
-CMakeFiles/ex2.dir/main.cpp.o: CMakeFiles/ex2.dir/flags.make
-CMakeFiles/ex2.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex2.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex2.dir/main.cpp.o -c /cs/usr/ellonet/Desktop/OS/OS/ex2/main.cpp
+CMakeFiles/ex2.dir/testing.cpp.o: CMakeFiles/ex2.dir/flags.make
+CMakeFiles/ex2.dir/testing.cpp.o: ../testing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex2.dir/testing.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex2.dir/testing.cpp.o -c /cs/usr/ellonet/Desktop/OS/OS/ex2/testing.cpp
 
-CMakeFiles/ex2.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex2.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/Desktop/OS/OS/ex2/main.cpp > CMakeFiles/ex2.dir/main.cpp.i
+CMakeFiles/ex2.dir/testing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex2.dir/testing.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/Desktop/OS/OS/ex2/testing.cpp > CMakeFiles/ex2.dir/testing.cpp.i
 
-CMakeFiles/ex2.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex2.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/Desktop/OS/OS/ex2/main.cpp -o CMakeFiles/ex2.dir/main.cpp.s
+CMakeFiles/ex2.dir/testing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex2.dir/testing.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/Desktop/OS/OS/ex2/testing.cpp -o CMakeFiles/ex2.dir/testing.cpp.s
 
 CMakeFiles/ex2.dir/uthreads.cpp.o: CMakeFiles/ex2.dir/flags.make
 CMakeFiles/ex2.dir/uthreads.cpp.o: ../uthreads.cpp
@@ -83,19 +83,34 @@ CMakeFiles/ex2.dir/uthreads.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex2.dir/uthreads.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.cpp -o CMakeFiles/ex2.dir/uthreads.cpp.s
 
+CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o: CMakeFiles/ex2.dir/flags.make
+CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o: ../sleeping_threads_list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o -c /cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.cpp
+
+CMakeFiles/ex2.dir/sleeping_threads_list.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex2.dir/sleeping_threads_list.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.cpp > CMakeFiles/ex2.dir/sleeping_threads_list.cpp.i
+
+CMakeFiles/ex2.dir/sleeping_threads_list.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex2.dir/sleeping_threads_list.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.cpp -o CMakeFiles/ex2.dir/sleeping_threads_list.cpp.s
+
 # Object files for target ex2
 ex2_OBJECTS = \
-"CMakeFiles/ex2.dir/main.cpp.o" \
-"CMakeFiles/ex2.dir/uthreads.cpp.o"
+"CMakeFiles/ex2.dir/testing.cpp.o" \
+"CMakeFiles/ex2.dir/uthreads.cpp.o" \
+"CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o"
 
 # External object files for target ex2
 ex2_EXTERNAL_OBJECTS =
 
-ex2: CMakeFiles/ex2.dir/main.cpp.o
+ex2: CMakeFiles/ex2.dir/testing.cpp.o
 ex2: CMakeFiles/ex2.dir/uthreads.cpp.o
+ex2: CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o
 ex2: CMakeFiles/ex2.dir/build.make
 ex2: CMakeFiles/ex2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ex2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ex2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

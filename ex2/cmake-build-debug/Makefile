@@ -123,32 +123,59 @@ ex2/fast:
 	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/build
 .PHONY : ex2/fast
 
-main.o: main.cpp.o
+sleeping_threads_list.o: sleeping_threads_list.cpp.o
 
-.PHONY : main.o
+.PHONY : sleeping_threads_list.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.o
-.PHONY : main.cpp.o
+sleeping_threads_list.cpp.o:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o
+.PHONY : sleeping_threads_list.cpp.o
 
-main.i: main.cpp.i
+sleeping_threads_list.i: sleeping_threads_list.cpp.i
 
-.PHONY : main.i
+.PHONY : sleeping_threads_list.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.i
-.PHONY : main.cpp.i
+sleeping_threads_list.cpp.i:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/sleeping_threads_list.cpp.i
+.PHONY : sleeping_threads_list.cpp.i
 
-main.s: main.cpp.s
+sleeping_threads_list.s: sleeping_threads_list.cpp.s
 
-.PHONY : main.s
+.PHONY : sleeping_threads_list.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.s
-.PHONY : main.cpp.s
+sleeping_threads_list.cpp.s:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/sleeping_threads_list.cpp.s
+.PHONY : sleeping_threads_list.cpp.s
+
+testing.o: testing.cpp.o
+
+.PHONY : testing.o
+
+# target to build an object file
+testing.cpp.o:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/testing.cpp.o
+.PHONY : testing.cpp.o
+
+testing.i: testing.cpp.i
+
+.PHONY : testing.i
+
+# target to preprocess a source file
+testing.cpp.i:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/testing.cpp.i
+.PHONY : testing.cpp.i
+
+testing.s: testing.cpp.s
+
+.PHONY : testing.s
+
+# target to generate assembly for a file
+testing.cpp.s:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/testing.cpp.s
+.PHONY : testing.cpp.s
 
 uthreads.o: uthreads.cpp.o
 
@@ -186,9 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ex2"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... sleeping_threads_list.o"
+	@echo "... sleeping_threads_list.i"
+	@echo "... sleeping_threads_list.s"
+	@echo "... testing.o"
+	@echo "... testing.i"
+	@echo "... testing.s"
 	@echo "... uthreads.o"
 	@echo "... uthreads.i"
 	@echo "... uthreads.s"

@@ -9,7 +9,8 @@
 #include <algorithm>
 #include <signal.h>
 #include <setjmp.h>
-
+#include "sleeping_threads_list.h"
+#include <sys/time.h>
 
 using namespace std;
 
@@ -19,10 +20,16 @@ deque<Thread *> ready_queue;
 int lib_quantum;
 set<int> available_ids;
 Thread *curr_running;
+SleepingThreadsList *nap_manager = new SleepingThreadsList();
+struct itimerval global_timer; //this is the only one that throws signal
+
+// TODO - write the handler and bind it to the signal
+// TODO - figure out the quantum management
+
 /////////////////////////////////// private functions ///////////////////////////////////
 
 /***
- * @return the next available id
+ * @return the next available id.
  */
 int get_next_id() {
     static int next_id = 1;
@@ -44,9 +51,9 @@ Thread *get_next_thread() {
         uthread_terminate(all_threads[0].get_id());
     }
 
-    Thread* temp = ready_queue.front();
+    Thread *temp = ready_queue.front();
     ready_queue.pop_front();
-    return  temp;
+    return temp;
 }
 
 void switch_threads(state new_st) {
@@ -93,6 +100,28 @@ Thread *check_existance(int tid) {
     return &(it->second);
 }
 
+timeval calc_wake_up_timeval(int usecs_to_sleep) {
+
+    timeval now, time_to_sleep, wake_up_timeval;
+    gettimeofday(&now, nullptr);
+    time_to_sleep.tv_sec = usecs_to_sleep / 1000000;
+    time_to_sleep.tv_usec = usecs_to_sleep % 1000000;
+    timeradd(&now, &time_to_sleep, &wake_up_timeval);
+    return wake_up_timeval;
+}
+
+void timer_handler(int sig) {
+    wake_up_info *awaken = nap_manager->peek(); //get the first
+    Thread *last = check_existance(awaken->id);
+    ready_queue.push_back(last);
+    last->set_status(READY);
+    nap_manager->pop();
+    wake_up_info *to_wake = nap_manager->peek(); //get the first
+    timeval now;
+    global_timer.it_value.tv_usec =
+            to_wake->awaken_tv.tv_usec - gettimeofday(&now, nullptr);//update timer to the next thread
+}
+
 
 /////////////////////////////////// public functions ///////////////////////////////////
 /*
@@ -109,6 +138,7 @@ int uthread_init(int quantum_usecs) {
         return -1;
     }
     lib_quantum = quantum_usecs;
+
 
     try {
         auto *thread_0 = new Thread(lib_quantum, 0, nullptr, STACK_SIZE);
@@ -246,7 +276,15 @@ int uthread_resume(int tid) {
  * After the sleeping time is over, the thread should go back to the end of the READY threads list.
  * Return value: On success, return 0. On failure, return -1.
 */
-int uthread_sleep(unsigned int usec);
+int uthread_sleep(unsigned int usec) {
+    timeval wake_me = calc_wake_up_timeval(usec);
+    int currId = uthread_get_tid(); // block thread
+    nap_manager->add(currId, wake_me);
+    uthread_block(currId);
+    // TODO - initialize timer only when nap is not empty
+
+    return 0;
+}
 
 
 /*
