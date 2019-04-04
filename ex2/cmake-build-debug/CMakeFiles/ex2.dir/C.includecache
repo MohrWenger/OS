@@ -6,16 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/cs/usr/mohr/Desktop/Studies/OS/ex2/demo_jmp.c
+/cs/usr/ellonet/Desktop/OS/OS/ex2/demo_itimer.c
 stdio.h
 -
-stdlib.h
--
-setjmp.h
--
 signal.h
--
-unistd.h
 -
 sys/time.h
 -

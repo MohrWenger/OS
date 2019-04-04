@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/cs/usr/mohr/Desktop/Studies/OS/ex2/Thread.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/Thread.h
 stdlib.h
 -
 string
@@ -18,27 +18,27 @@ signal.h
 setjmp.h
 -
 
-/cs/usr/mohr/Desktop/Studies/OS/ex2/main.cpp
+/cs/usr/ellonet/Desktop/OS/OS/ex2/main.cpp
 uthreads.h
-/cs/usr/mohr/Desktop/Studies/OS/ex2/uthreads.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h
 iostream
 -
-Thread.h
-/cs/usr/mohr/Desktop/Studies/OS/ex2/Thread.h
 set
 -
 cstring
 -
+setjmp.h
+-
 
-/cs/usr/mohr/Desktop/Studies/OS/ex2/uthreads.cpp
+/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.cpp
 stdlib.h
 -
 iostream
 -
 Thread.h
-/cs/usr/mohr/Desktop/Studies/OS/ex2/Thread.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/Thread.h
 uthreads.h
-/cs/usr/mohr/Desktop/Studies/OS/ex2/uthreads.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h
 deque
 -
 map
@@ -54,5 +54,5 @@ signal.h
 setjmp.h
 -
 
-/cs/usr/mohr/Desktop/Studies/OS/ex2/uthreads.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h
 

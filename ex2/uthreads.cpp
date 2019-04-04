@@ -11,8 +11,6 @@
 #include <setjmp.h>
 
 
-
-
 using namespace std;
 
 /////////////////////////////////// global variables ///////////////////////////////////
@@ -20,7 +18,7 @@ map<int, Thread> all_threads;
 deque<Thread *> ready_queue;
 int lib_quantum;
 set<int> available_ids;
-Thread* curr_running;
+Thread *curr_running;
 /////////////////////////////////// private functions ///////////////////////////////////
 
 /***
@@ -40,52 +38,53 @@ int get_next_id() {
 }
 
 
-Thread* get_next_thread()
-{
-    if ( ready_queue.empty ())
-    {
-        return &all_threads[0]; //TODO what now?
+Thread *get_next_thread() {
+    if (ready_queue.empty()) {
+        cout << "no threads left, exiting..." << endl;
+        uthread_terminate(all_threads[0].get_id());
     }
 
-    return ready_queue.front();
+    Thread* temp = ready_queue.front();
+    ready_queue.pop_front();
+    return  temp;
 }
 
-void switch_threads ( state new_st ) {
-    int ret_val = sigsetjmp(*(curr_running -> get_env()), 1); //TODO update curr_run
-    cout << "SWITCHING from: " << curr_running->get_id () << endl;
+void switch_threads(state new_st) {
+    int ret_val = sigsetjmp(*(curr_running->get_env()), 1); //TODO update curr_run
+    cout << "SWITCHING from: " << curr_running->get_id() << endl;
     if (ret_val == 1) {
         return;
     }
 
-    switch  (new_st) {
+    switch (new_st) {
         case (BLOCKED):
-            curr_running -> set_status (new_st);
+            curr_running->set_status(new_st);
             break;
         case (TERMINATE):
-            all_threads.erase (curr_running->get_id ()); //TODO - make sure deletes thread
+            all_threads.erase(curr_running->get_id()); //TODO - make sure deletes thread
             break;
-        case ( READY ):
-            ready_queue.push_back (curr_running);
+        case (READY):
+            ready_queue.push_back(curr_running);
             break;
         default:
             break;
     }
-
-    Thread* next_th = get_next_thread();
+    Thread *next_th = get_next_thread();
     curr_running = next_th;
-    curr_running->set_status(RUNNING);
+    cout << "SWITCHING to: " << curr_running->get_id() << endl;
 
-    siglongjmp( *(next_th->get_env()), 1);
+    curr_running->set_status(RUNNING);
+    siglongjmp(*(next_th->get_env()), 1);
 }
 
-void clean_up () {
+void clean_up() {
     all_threads.clear();
     ready_queue.clear(); //TODO - make sure cleans up
 
 
 }
 
-Thread* check_existance (int tid) {
+Thread *check_existance(int tid) {
     auto it = all_threads.find(tid);
     if (it == all_threads.end()) {
         cerr << "Error - you stupid dog, you make me look bad" << endl;
@@ -93,8 +92,6 @@ Thread* check_existance (int tid) {
     }
     return &(it->second);
 }
-
-
 
 
 /////////////////////////////////// public functions ///////////////////////////////////
@@ -114,7 +111,8 @@ int uthread_init(int quantum_usecs) {
     lib_quantum = quantum_usecs;
 
     try {
-        Thread *thread_0 = new Thread(lib_quantum, 1, nullptr, STACK_SIZE);
+        auto *thread_0 = new Thread(lib_quantum, 0, nullptr, STACK_SIZE);
+        thread_0->set_status(RUNNING);
         all_threads[0] = *thread_0;
         curr_running = thread_0;
     }
@@ -135,12 +133,12 @@ int uthread_init(int quantum_usecs) {
  * Return value: On success, return the ID of the created thread.
  * On failure, return -1.
 */
-int uthread_spawn(void (*f)(void)) { // TODO - check allocation success
+int uthread_spawn(void (*f)()) { // TODO - check allocation success
 
     // check thread count
     if (all_threads.size() < MAX_THREAD_NUM) {
         int id = get_next_id();
-        Thread *new_thread = new Thread(lib_quantum, id, f, STACK_SIZE);
+        auto *new_thread = new Thread(lib_quantum, id, f, STACK_SIZE);
         // add thread to all_threads list and to ready list
         all_threads[id] = *new_thread;
         ready_queue.push_back(new_thread);
@@ -169,8 +167,8 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
         clean_up();
         exit(0);
     }
-    Thread *toKill = check_existance (tid);
-    if (!(toKill)){
+    Thread *toKill = check_existance(tid);
+    if (!(toKill)) {
         return -1;
     }
     switch (toKill->get_status()) {
@@ -178,7 +176,7 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
             ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), toKill));
             break;
         case (RUNNING):
-            switch_threads ( TERMINATE );
+            switch_threads(TERMINATE);
             break;
         default: // if blocked nothing extra to be done just erase and happens anyway
             break;
@@ -200,18 +198,19 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_block(int tid) {
-    Thread *toKill = check_existance (tid);
-    if (!(toKill)){
+    // TODO - stop from blocking 0!
+
+    Thread *toKill = check_existance(tid);
+    if (!(toKill)) {
         return -1;
     }
 
-    Thread *curr =&(all_threads[tid]);
-    switch (curr->get_status()) {
+    switch (curr_running->get_status()) {
         case (READY):
-            ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), curr));
+            ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), curr_running));
             break;
         case (RUNNING):
-            switch_threads ( BLOCKED );
+            switch_threads(BLOCKED);
             break;
         default: // in this case - do nothing.
             break;
@@ -222,7 +221,6 @@ int uthread_block(int tid) {
 }
 
 
-
 /*
  * Description: This function resumes a blocked thread with ID tid and moves
  * it to the READY state. Resuming a thread in a RUNNING or READY state
@@ -230,21 +228,22 @@ int uthread_block(int tid) {
  * ID tid exists it is considered an error.
  * Return value: On success, return 0. On failure, return -1.
 */
-int uthread_resume(int tid){
-    Thread *toKill = check_existance (tid);
-    if (!(toKill)){
+int uthread_resume(int tid) {
+    Thread *toResume = check_existance(tid);
+    if (!(toResume)) {
         return -1;
     }
-
-
-
+    toResume->set_status(READY);
+    ready_queue.push_back(toResume);
+    return 0;
+    // TODO - check
 }
 
 /*
  * Description: This function blocks the RUNNING thread for usecs micro-seconds in real time (not virtual
  * time on the cpu). It is considered an error if the main thread (tid==0) calls this function. Immediately after
  * the RUNNING thread transitions to the BLOCKED state a scheduling decision should be made.
- fter the sleeping time is over, the thread should go back to the end of the READY threads list.
+ * After the sleeping time is over, the thread should go back to the end of the READY threads list.
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_sleep(unsigned int usec);
@@ -254,8 +253,9 @@ int uthread_sleep(unsigned int usec);
  * Description: This function returns the thread ID of the calling thread.
  * Return value: The ID of the calling thread.
 */
-int uthread_get_tid(){
-    return curr_running->get_id ();
+int uthread_get_tid() {
+    cout << "current: id=" << curr_running->get_id() << ", status=" << curr_running->get_status() << endl;
+    return curr_running->get_id();
 }
 
 

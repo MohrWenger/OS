@@ -6,6 +6,8 @@
 #include <stack>
 #include <signal.h>
 #include <setjmp.h>
+#include <sys/time.h>
+
 
 using namespace std;
 
@@ -14,6 +16,7 @@ using namespace std;
 
 
 typedef void (*func)(void);
+
 enum state {
     READY, RUNNING, BLOCKED, TERMINATE
 };
@@ -63,12 +66,12 @@ public:
     Thread() = default;
 
     Thread(int quantum, int id, func f, int stack_size) : _quantum(quantum), _id(id), _status(READY) {
-        _pc = translate_address ((address_t) f);
+        _pc = translate_address((address_t) f);
         _sp = new char[stack_size];
         //set inviornment
-        (env->__jmpbuf) [JB_PC]= _pc;
-        (env->__jmpbuf) [JB_SP] = translate_address ((address_t)_sp + stack_size - sizeof ( unsigned int));
-        sigemptyset (&env -> __saved_mask);
+        (env->__jmpbuf)[JB_PC] = _pc;
+        (env->__jmpbuf)[JB_SP] = translate_address((address_t) _sp + stack_size - sizeof(unsigned int));
+        sigemptyset(&env->__saved_mask);
 
     }
 
@@ -92,16 +95,16 @@ public:
         return _quantum;
     }
 
-    void set_quantum(int q) {
-        _quantum = q;
-    }
+//    void set_timer(int msec) {
+//        _timer.it_value.tv_sec = 0;
+//        _timer.it_value.tv_usec = msec;
+//    }
 
-    void decrease_quantum() {
-        --_quantum;
-    }
+//    void reset_quantum(int q) {
+//        _quantum = q;
+//    }
 
-    sigjmp_buf* get_env ()
-    {
+    sigjmp_buf *get_env() {
         return &env;
     }
 
@@ -113,6 +116,7 @@ private:
     address_t _pc;
     char *_sp; // TODO - if accessing stack - make sure range is legal
     sigjmp_buf env;
+//    struct itimerval _timer;
 };
 
 
