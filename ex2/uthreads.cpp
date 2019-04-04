@@ -7,6 +7,10 @@
 #include <queue>
 #include <set>
 #include <algorithm>
+#include <signal.h>
+#include <setjmp.h>
+
+
 
 
 using namespace std;
@@ -16,7 +20,7 @@ map<int, Thread> all_threads;
 deque<Thread *> ready_queue;
 int lib_quantum;
 set<int> available_ids;
-
+Thread* curr_running;
 /////////////////////////////////// private functions ///////////////////////////////////
 
 /***
@@ -35,8 +39,15 @@ int get_next_id() {
     return id;
 }
 
-void switch_threads() {
-    return;
+
+Thread* get_next_thread()
+{
+    if ( ready_queue.empty ())
+    {
+        return &all_threads[0]; //TODO what now?
+    }
+
+    return ready_queue.front();
 }
 
 
@@ -59,8 +70,9 @@ int uthread_init(int quantum_usecs) {
     lib_quantum = quantum_usecs;
 
     try {
-        Thread *th_0 = new Thread(lib_quantum, 0, nullptr, STACK_SIZE);
-        all_threads[0] = *th_0;
+        Thread *thread_0 = new Thread(lib_quantum, 1, nullptr, STACK_SIZE);
+        all_threads[0] = *thread_0;
+        curr_running = thread_0;
     }
     catch (exception &e) {
         cerr << "Error - library initialization failed" << endl;
@@ -155,7 +167,7 @@ int uthread_block(int tid) {
             ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), curr));
             break;
         case (RUNNING):
-            // TODO - handle this shit
+            // TODO - jump
             break;
         default:
             //TODO - this shit not.
@@ -164,6 +176,18 @@ int uthread_block(int tid) {
 
     it->second.set_status(BLOCKED);
     return 0;
+}
+
+void switchThreads(void) {
+    int ret_val = sigsetjmp(*(curr_running -> get_env()), 1); //TODO update curr_run
+    cout << "SWITCHING from: " << curr_running->get_id () << endl;
+    if (ret_val == 1) {
+        return;
+    }
+    Thread* next_th = get_next_thread();
+    curr_running = next_th;
+
+    siglongjmp( *(next_th->get_env()), 1);
 }
 
 
@@ -180,7 +204,7 @@ int uthread_resume(int tid);
  * Description: This function blocks the RUNNING thread for usecs micro-seconds in real time (not virtual
  * time on the cpu). It is considered an error if the main thread (tid==0) calls this function. Immediately after
  * the RUNNING thread transitions to the BLOCKED state a scheduling decision should be made.
- * After the sleeping time is over, the thread should go back to the end of the READY threads list.
+ fter the sleeping time is over, the thread should go back to the end of the READY threads list.
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_sleep(unsigned int usec);

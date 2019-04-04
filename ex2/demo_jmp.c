@@ -5,6 +5,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <setjmp.h>
 #include <signal.h>
 #include <unistd.h>
@@ -100,6 +101,7 @@ void setup(void) {
 
     sp = (address_t) stack1 + STACK_SIZE - sizeof(address_t);
     pc = (address_t) f;
+//    printf ("type = %s", typeid(f).name());
     sigsetjmp(env[0], 1);
     (env[0]->__jmpbuf)[JB_SP] = translate_address(sp);
     (env[0]->__jmpbuf)[JB_PC] = translate_address(pc);

@@ -48,10 +48,10 @@ RM = /usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -E remove
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cs/usr/ellonet/Desktop/OS/OS/ex2
+CMAKE_SOURCE_DIR = /cs/usr/mohr/Desktop/Studies/OS/ex2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug
+CMAKE_BINARY_DIR = /cs/usr/mohr/Desktop/Studies/OS/ex2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/mohr/Desktop/Studies/OS/ex2/cmake-build-debug/CMakeFiles /cs/usr/mohr/Desktop/Studies/OS/ex2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/mohr/Desktop/Studies/OS/ex2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,59 @@ ex2/fast:
 	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/build
 .PHONY : ex2/fast
 
-demo_itimer.o: demo_itimer.c.o
+main.o: main.cpp.o
 
-.PHONY : demo_itimer.o
+.PHONY : main.o
 
 # target to build an object file
-demo_itimer.c.o:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/demo_itimer.c.o
-.PHONY : demo_itimer.c.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-demo_itimer.i: demo_itimer.c.i
+main.i: main.cpp.i
 
-.PHONY : demo_itimer.i
+.PHONY : main.i
 
 # target to preprocess a source file
-demo_itimer.c.i:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/demo_itimer.c.i
-.PHONY : demo_itimer.c.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-demo_itimer.s: demo_itimer.c.s
+main.s: main.cpp.s
 
-.PHONY : demo_itimer.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-demo_itimer.c.s:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/demo_itimer.c.s
-.PHONY : demo_itimer.c.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+uthreads.o: uthreads.cpp.o
+
+.PHONY : uthreads.o
+
+# target to build an object file
+uthreads.cpp.o:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/uthreads.cpp.o
+.PHONY : uthreads.cpp.o
+
+uthreads.i: uthreads.cpp.i
+
+.PHONY : uthreads.i
+
+# target to preprocess a source file
+uthreads.cpp.i:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/uthreads.cpp.i
+.PHONY : uthreads.cpp.i
+
+uthreads.s: uthreads.cpp.s
+
+.PHONY : uthreads.s
+
+# target to generate assembly for a file
+uthreads.cpp.s:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/uthreads.cpp.s
+.PHONY : uthreads.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ex2"
-	@echo "... demo_itimer.o"
-	@echo "... demo_itimer.i"
-	@echo "... demo_itimer.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... uthreads.o"
+	@echo "... uthreads.i"
+	@echo "... uthreads.s"
 .PHONY : help
 
 

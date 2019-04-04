@@ -3,5 +3,5 @@ project(ex2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-#add_executable(ex2 main.cpp uthreads.h uthreads.cpp Thread.h)
-add_executable(ex2 demo_itimer.c)
+add_executable(ex2 main.cpp uthreads.h uthreads.cpp Thread.h)
+#add_executable(ex2 uthreads.cpp demo_jmp.c)
