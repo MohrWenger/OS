@@ -2,26 +2,24 @@
 #include <iostream>
 #include "Thread.h"
 #include <set>
+#include <cstring>
+
+void la() {
+    cout << "la";
+}
+void lo() {
+    cout << "lo";
+}
+
 
 int main() {
-    std::cout << "Hello, World!" << BLOCKED << READY << std::endl;
+    uthread_init(90);
+    uthread_spawn(la);
+    uthread_spawn(lo);
+    uthread_terminate(1);
 
-    set<int> bla;
-
-    bla.insert(3);
-    bla.insert(31);
-    bla.insert(233);
-    bla.insert(0);
-    bla.insert(3);
-
-    int temp = *bla.begin();
-    std::cout << temp << std::endl;
-    bla.erase(temp);
-
-    for (auto &i : bla) {
-        std::cout << i << std::endl;
-    }
 
 
     return 0;
+
 }

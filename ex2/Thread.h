@@ -3,6 +3,7 @@
 //
 #include <stdlib.h>
 #include <string>
+#include <stack>
 
 using namespace std;
 
@@ -19,18 +20,38 @@ enum state {
 class Thread {
 
 public:
-    Thread(int quantum, int id, func f) : _quantum(quantum), _id(id), _f(f), _status(READY) {}
+    Thread() = default;
+
+    Thread(int quantum, int id, func f, int stack_size) : _quantum(quantum), _id(id), _f(f), _status(READY) {
+        thread_stack = new char[stack_size];
+    }
+
+    ~Thread() {
+        delete[] thread_stack;
+    }
+
+    int get_id() {
+        return _id;
+    }
 
     int get_status() {
         return _status;
+    }
+
+    void set_status(state s) {
+        _status = s;
     }
 
     int get_quantum() {
         return _quantum;
     }
 
-    int get_id() {
-        return _id;
+    void set_quantum(int q) {
+        _quantum = q;
+    }
+
+    void decrease_quantum() {
+        --_quantum;
     }
 
 private:
@@ -38,6 +59,7 @@ private:
     int _id;
     func _f;
     int _status;
+    char *thread_stack; // TODO - if accessing stack - make sure range is legal
 };
 
 

@@ -14,7 +14,6 @@
 
 
 
-
 /*
  * Description: This function initializes the thread library.
  * You may assume that this function is called before any other thread library
@@ -112,6 +111,8 @@ int uthread_get_total_quantums();
  * 			     On failure, return -1.
 */
 int uthread_get_quantums(int tid);
+
+
 
 #endif
 

@@ -1,22 +1,48 @@
 #include <stdlib.h>
 #include <iostream>
 #include "Thread.h"
+#include "uthreads.h"
 #include <deque>
-#include <vector>
+#include <map>
+#include <queue>
 #include <set>
+#include <algorithm>
+
 
 using namespace std;
 
-vector<Thread> all_threads;
+/////////////////////////////////// global variables ///////////////////////////////////
+map<int, Thread> all_threads;
 deque<Thread *> ready_queue;
 int lib_quantum;
 set<int> available_ids;
 
+/////////////////////////////////// private functions ///////////////////////////////////
+
 /***
  * @return the next available id
  */
-int get_next_id();
+int get_next_id() {
+    static int next_id = 1;
+    int id;
+    if (available_ids.empty()) {
+        id = next_id;
+        ++next_id;
+    } else {
+        id = *available_ids.begin();
+        available_ids.erase(id);
+    }
+    return id;
+}
 
+void switch_threads() {
+    return;
+}
+
+
+
+
+/////////////////////////////////// public functions ///////////////////////////////////
 /*
  * Description: This function initializes the thread library.
  * You may assume that this function is called before any other thread library
@@ -33,8 +59,8 @@ int uthread_init(int quantum_usecs) {
     lib_quantum = quantum_usecs;
 
     try {
-        Thread th_0 = Thread(lib_quantum, 0, nullptr);
-        all_threads.push_back(th_0);
+        Thread *th_0 = new Thread(lib_quantum, 0, nullptr, STACK_SIZE);
+        all_threads[0] = *th_0;
     }
     catch (exception &e) {
         cerr << "Error - library initialization failed" << endl;
@@ -53,9 +79,19 @@ int uthread_init(int quantum_usecs) {
  * Return value: On success, return the ID of the created thread.
  * On failure, return -1.
 */
-int uthread_spawn(void (*f)(void)) {
-//    Thread new_thread = new Thread(lib_quantum, 123, )
-    return 0;
+int uthread_spawn(void (*f)(void)) { // TODO - check allocation success
+
+    // check thread count
+    if (all_threads.size() < MAX_THREAD_NUM) {
+        int id = get_next_id();
+        Thread *new_thread = new Thread(lib_quantum, id, f, STACK_SIZE);
+        // add thread to all_threads list and to ready list
+        all_threads[id] = *new_thread;
+        ready_queue.push_back(new_thread);
+        return new_thread->get_id();
+    }
+    cerr << "Error - exceeded num of allowed threads MADAFAKA" << endl;
+    return -1;
 }
 
 
@@ -70,7 +106,32 @@ int uthread_spawn(void (*f)(void)) {
  * terminated and -1 otherwise. If a thread terminates itself or the main
  * thread is terminated, the function does not return.
 */
-int uthread_terminate(int tid);
+int uthread_terminate(int tid) {    // TODO - make sure to free the allocations using delete
+    // TODO - add to enviroment.
+    if (!tid) {
+        // in case of deleting the main thread
+        // TODO - maybe clean up before?
+        exit(0);
+    }
+    Thread *toKill = &all_threads[tid];
+    switch (toKill->get_status()) {
+        case (READY):
+            ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), toKill));
+            break;
+        case (RUNNING):
+            // TODO - stop running, send next ready to run
+            break;
+        case (BLOCKED):
+            // TODO - delete, no one cares
+            break;
+        default:
+            break;
+    }
+    // re-use the id, and delete the thread.
+    available_ids.insert(tid);
+    all_threads.erase(tid);
+    return 0;
+}
 
 
 /*
@@ -82,7 +143,28 @@ int uthread_terminate(int tid);
  * effect and is not considered an error.
  * Return value: On success, return 0. On failure, return -1.
 */
-int uthread_block(int tid);
+int uthread_block(int tid) {
+    auto it = all_threads.find(tid);
+    if (it == all_threads.end()) {
+        cerr << "Error - you stupid dog, you make me look bad" << endl;
+        return -1;
+    }
+    Thread *curr = &(it->second);
+    switch (curr->get_status()) {
+        case (READY):
+            ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), curr));
+            break;
+        case (RUNNING):
+            // TODO - handle this shit
+            break;
+        default:
+            //TODO - this shit not.
+            break;
+    }
+
+    it->second.set_status(BLOCKED);
+    return 0;
+}
 
 
 /*
@@ -135,17 +217,3 @@ int uthread_get_total_quantums();
 int uthread_get_quantums(int tid);
 
 
-/////////////////////////////////// private functions ///////////
-
-
-
-int get_next_id() {
-    static int next_id = 1;
-
-    if (available_ids.empty()) {
-        int next = next_id;
-        ++next_id;
-        return next;
-    }
-    return *available_ids.begin();
-}
