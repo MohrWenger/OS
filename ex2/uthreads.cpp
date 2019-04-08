@@ -25,9 +25,6 @@ struct itimerval global_timer; //this is the only one that throws signal
 struct sigaction sa = {nullptr};
 sigset_t blocked_signals_set;
 
-void temp_timer_handler(int sig) {
-    cout << "gotcha" << endl;
-}
 
 
 // TODO - write the handler and bind it to the signal
@@ -87,7 +84,7 @@ Thread *get_next_thread() {
 void switch_threads(state new_st) {
     block_all_signals();
     int ret_val = sigsetjmp(*(curr_running->get_env()), 1); //TODO update curr_run
-    cout << "SWITCHING from: " << curr_running->get_id() << endl;
+    int prev_id_for_print = curr_running->get_id();
     if (ret_val == 1) {
         set_timer();
         return;
@@ -110,7 +107,7 @@ void switch_threads(state new_st) {
     Thread *next_th = get_next_thread();
     curr_running = next_th;
     curr_running->set_status(RUNNING);
-    cout << "SWITCHING to: " << curr_running->get_id() << endl;
+    cout << "switching from:\t" << prev_id_for_print << "\tto:\t" << curr_running->get_id() << endl;
     set_timer();
     // jump
     unblock_all_signals();
@@ -152,26 +149,25 @@ bool check_wake(timeval &now, timeval &wakie) {
 
 void timer_handler(int sig) {
     cout << "in time handler! " << endl;
-    // get now time:
-//    timeval now{};
-//    gettimeofday(&now, nullptr);
-//    // first - we wake up all the sleeping threads.
-//    wake_up_info *first_to_wake = nap_manager->peek(); //get the first
-//
-//    while ((first_to_wake != nullptr) && (check_wake(now, first_to_wake->awaken_tv))) {
-//        Thread *Thread_to_wake = check_existance(first_to_wake->id);
-//        if (!Thread_to_wake) {
-//            throw "Error - couldnt wakeup";
-//        }
-//        ready_queue.push_back(Thread_to_wake);
-//        Thread_to_wake->set_status(READY);
-//        nap_manager->pop();
-//        first_to_wake = nap_manager->peek();
-//    }
+//     get current time:
+    timeval now{};
+    gettimeofday(&now, nullptr);
+    // first - we wake up all the sleeping threads.
+    wake_up_info *first_to_wake = nap_manager->peek(); //get the first
+
+    while ((first_to_wake != nullptr) && (check_wake(now, first_to_wake->awaken_tv))) {
+        Thread *Thread_to_wake = check_existance(first_to_wake->id);
+        if (!Thread_to_wake) {
+            throw "Error - couldnt wakeup";
+        }
+        cout << ">> MESSAGE: waking up thread No. " << Thread_to_wake->get_id() << endl;
+        ready_queue.push_back(Thread_to_wake);
+        Thread_to_wake->set_status(READY);
+        nap_manager->pop();
+        first_to_wake = nap_manager->peek();
+    }
     // call thread switch:
     switch_threads(READY);
-
-
 }
 
 
@@ -194,6 +190,7 @@ void print_ready() {
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_init(int quantum_usecs) {
+    block_all_signals();
     if (quantum_usecs <= 0) {
         cerr << "Error - Illegal quantum value" << endl;
         return -1;
@@ -215,6 +212,7 @@ int uthread_init(int quantum_usecs) {
         cerr << "Error - library initialization failed" << endl;
         return -1;
     }
+    unblock_all_signals();
     return 0;
 }
 
@@ -229,7 +227,7 @@ int uthread_init(int quantum_usecs) {
  * On failure, return -1.
 */
 int uthread_spawn(void (*f)()) { // TODO - check allocation success
-
+    block_all_signals();
     // check thread count
     if (all_threads.size() < MAX_THREAD_NUM) {
         int id = get_next_id();
@@ -237,6 +235,7 @@ int uthread_spawn(void (*f)()) { // TODO - check allocation success
         // add thread to all_threads list and to ready list
         all_threads[id] = *new_thread;
         ready_queue.push_back(new_thread);
+        unblock_all_signals();
         return new_thread->get_id();
     }
     cerr << "Error - exceeded num of allowed threads MADAFAKA" << endl;
@@ -256,6 +255,7 @@ int uthread_spawn(void (*f)()) { // TODO - check allocation success
  * thread is terminated, the function does not return.
 */
 int uthread_terminate(int tid) {    // TODO - make sure to free the allocations using delete
+    block_all_signals();
     // TODO - add to enviroment.
     if (!tid) { // in case of deleting the main thread
         // TODO - maybe clean up before?
@@ -279,6 +279,7 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
 
     available_ids.insert(tid); // re-use the id, and delete the thread.
     all_threads.erase(tid);
+    unblock_all_signals();
     return 0;
 }
 
@@ -293,6 +294,8 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_block(int tid) {
+    block_all_signals();
+    cout << ">> MESSAGE: blocking thread No. " << tid << endl;
     // TODO - stop from blocking 0!
 
     Thread *toKill = check_existance(tid);
@@ -312,6 +315,7 @@ int uthread_block(int tid) {
     }
 
     all_threads[tid].set_status(BLOCKED);
+    unblock_all_signals();
     return 0;
 }
 
@@ -324,12 +328,14 @@ int uthread_block(int tid) {
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_resume(int tid) {
+    block_all_signals();
     Thread *toResume = check_existance(tid);
     if (!(toResume)) {
         return -1;
     }
     toResume->set_status(READY);
     ready_queue.push_back(toResume);
+    unblock_all_signals();
     return 0;
     // TODO - check
 }
@@ -342,12 +348,13 @@ int uthread_resume(int tid) {
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_sleep(unsigned int usec) {
+    block_all_signals();
+    cout << ">> MESSAGE: sending thread No. " << curr_running->get_id() << " to sleep" << endl;
     timeval wake_me = calc_wake_up_timeval(usec);
     int currId = uthread_get_tid(); // block thread
     nap_manager->add(currId, wake_me);
     uthread_block(currId);
-    // TODO - initialize timer only when nap is not empty
-
+    unblock_all_signals();
     return 0;
 }
 
@@ -357,7 +364,6 @@ int uthread_sleep(unsigned int usec) {
  * Return value: The ID of the calling thread.
 */
 int uthread_get_tid() {
-    cout << "current: id=" << curr_running->get_id() << ", status=" << curr_running->get_status() << endl;
     return curr_running->get_id();
 }
 

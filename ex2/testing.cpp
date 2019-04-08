@@ -8,45 +8,33 @@ using namespace std;
 int la_id;
 int lo_id;
 int li_id;
+bool bla = true;
 
 void la() {
     la_id = uthread_get_tid();
-//    for (int i = 0; i < 100; ++i) {
-//        cout << "la" << endl;
-//    }
-    while (1) {
-        cout << "la" << endl;
-
-    }
+    while (1) {}
 }
 
 void lo() {
-    lo_id = uthread_get_tid();
-//    for (int i = 0; i < 100; ++i) {
-//        cout << "lo" << endl;
-//    }
-//    uthread_block(lo_id);
-    while (1) {
-        cout << "lo" << endl;
 
+    if (bla) {
+        bla = !bla;
+        uthread_sleep(9000000);
+        uthread_block(100);
     }
+    lo_id = uthread_get_tid();
+    while (1) {}
 }
 
 void li() {
     li_id = uthread_get_tid();
-//    for (int i = 0; i < 10; ++i) {
-//        cout << "li" << endl;
-//    }
-    
-    while (1) {
-        cout << "li" << endl;
-    }
+    while (1) {}
 }
 
 
 
 int main() {
-    uthread_init(80000);
+    uthread_init(900000);
     uthread_spawn(la);
     uthread_spawn(lo);
     uthread_spawn(li);
