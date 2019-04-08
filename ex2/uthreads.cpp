@@ -22,6 +22,12 @@ set<int> available_ids;
 Thread *curr_running;
 SleepingThreadsList *nap_manager = new SleepingThreadsList();
 struct itimerval global_timer; //this is the only one that throws signal
+struct sigaction sa = {nullptr};
+
+void temp_timer_handler(int sig) {
+    cout << "gotcha" << endl;
+}
+
 
 // TODO - write the handler and bind it to the signal
 // TODO - figure out the quantum management
@@ -76,11 +82,20 @@ void switch_threads(state new_st) {
         default:
             break;
     }
+    // start running next thread:
     Thread *next_th = get_next_thread();
     curr_running = next_th;
-    cout << "SWITCHING to: " << curr_running->get_id() << endl;
-
     curr_running->set_status(RUNNING);
+    cout << "SWITCHING to: " << curr_running->get_id() << endl;
+    // restart quantum timer:
+//    sigaction(SIGVTALRM, &sa, nullptr);
+//    if (setitimer(ITIMER_VIRTUAL, &global_timer, nullptr)) {
+//        printf("setitimer error 1.");
+//    }
+//
+//    cout << global_timer.it_value.tv_usec << endl;
+//    cout << "befor jump" << endl;
+    // jump
     siglongjmp(*(next_th->get_env()), 1);
 }
 
@@ -110,16 +125,35 @@ timeval calc_wake_up_timeval(int usecs_to_sleep) {
     return wake_up_timeval;
 }
 
+bool check_wake(timeval &now, timeval &wakie) {
+    if (now.tv_sec == wakie.tv_sec) {
+        return now.tv_usec > wakie.tv_usec;
+    }
+    return now.tv_sec > wakie.tv_sec;
+}
+
 void timer_handler(int sig) {
-    wake_up_info *awaken = nap_manager->peek(); //get the first
-    Thread *last = check_existance(awaken->id);
-    ready_queue.push_back(last);
-    last->set_status(READY);
-    nap_manager->pop();
-    wake_up_info *to_wake = nap_manager->peek(); //get the first
-    timeval now;
-    global_timer.it_value.tv_usec =
-            to_wake->awaken_tv.tv_usec - gettimeofday(&now, nullptr);//update timer to the next thread
+    cout << "in time handler! " << endl;
+    // get now time:
+    timeval now{};
+    gettimeofday(&now, nullptr);
+    // first - we wake up all the sleeping threads.
+    wake_up_info *first_to_wake = nap_manager->peek(); //get the first
+
+    while ((first_to_wake != nullptr) && (check_wake(now, first_to_wake->awaken_tv))) {
+        Thread *Thread_to_wake = check_existance(first_to_wake->id);
+        if (!Thread_to_wake) {
+            throw "Error - couldnt wakeup";
+        }
+        ready_queue.push_back(Thread_to_wake);
+        Thread_to_wake->set_status(READY);
+        nap_manager->pop();
+        first_to_wake = nap_manager->peek();
+    }
+    // call thread switch:
+    switch_threads(READY);
+
+
 }
 
 
@@ -139,12 +173,37 @@ int uthread_init(int quantum_usecs) {
     }
     lib_quantum = quantum_usecs;
 
-
     try {
         auto *thread_0 = new Thread(lib_quantum, 0, nullptr, STACK_SIZE);
         thread_0->set_status(RUNNING);
         all_threads[0] = *thread_0;
         curr_running = thread_0;
+
+//        sa.sa_handler = timer_handler;
+        sa.sa_handler = temp_timer_handler;
+        sigaction(SIGVTALRM, &sa, nullptr);
+        global_timer.it_value.tv_sec = 0;        // first time interval, seconds part
+        global_timer.it_value.tv_usec = 1;        // first time interval, microseconds part
+        // configure the timer to expire every 3 sec after that.
+        global_timer.it_interval.tv_sec = 0;    // following time intervals, seconds part
+        global_timer.it_interval.tv_usec = lib_quantum;    // following time intervals, microseconds part
+        setitimer(ITIMER_VIRTUAL, &global_timer, nullptr);
+
+        // Install timer_handler as the signal handler for SIGVTALRM.
+//        sa.sa_handler = &timer_handler;
+//        int la = sigaction(SIGVTALRM, &sa, nullptr);
+//        cout << "la is: " << la << endl;
+//        if (la < 0) {
+//            cerr << "sigaction error.";
+//        }
+//        global_timer.it_value.tv_sec = 0;
+//        global_timer.it_value.tv_usec = 1;
+//        global_timer.it_interval.tv_sec = 0;
+//        global_timer.it_interval.tv_usec = lib_quantum;
+
+//        if (setitimer(ITIMER_VIRTUAL, &global_timer, nullptr)) {
+//            printf("setitimer error 1.");
+//        }
     }
     catch (exception &e) {
         cerr << "Error - library initialization failed" << endl;

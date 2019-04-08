@@ -21,17 +21,18 @@ int main(void) {
     struct sigaction sa = {0};
     struct itimerval timer;
 
+
     // Install timer_handler as the signal handler for SIGVTALRM.
     sa.sa_handler = &timer_handler;
-    int la = sigaction(SIGVTALRM, &+, NULL);
+    int la = sigaction(SIGVTALRM, &sa, NULL);
     printf("la = %d\n", la);
     if (la < 0) {
         printf("sigaction error.");
     }
 
     // Configure the timer to expire after 1 sec... */
-    timer.it_value.tv_sec = 1;        // first time interval, seconds part
-    timer.it_value.tv_usec = 0;        // first time interval, microseconds part
+    timer.it_value.tv_sec = 0;        // first time interval, seconds part
+    timer.it_value.tv_usec = 1;        // first time interval, microseconds part
 
     // configure the timer to expire every 3 sec after that.
     timer.it_interval.tv_sec = 3;    // following time intervals, seconds part
