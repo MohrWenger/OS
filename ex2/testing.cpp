@@ -14,8 +14,10 @@ void la() {
 //    for (int i = 0; i < 100; ++i) {
 //        cout << "la" << endl;
 //    }
-    cout << "la" << endl;
-    while (1) {}
+    while (1) {
+        cout << "la" << endl;
+
+    }
 }
 
 void lo() {
@@ -24,8 +26,10 @@ void lo() {
 //        cout << "lo" << endl;
 //    }
 //    uthread_block(lo_id);
-    cout << "lo" << endl;
-    while (1) {}
+    while (1) {
+        cout << "lo" << endl;
+
+    }
 }
 
 void li() {
@@ -33,14 +37,16 @@ void li() {
 //    for (int i = 0; i < 10; ++i) {
 //        cout << "li" << endl;
 //    }
-    cout << "li" << endl;
-    while (1) {}
+    
+    while (1) {
+        cout << "li" << endl;
+    }
 }
 
 
 
 int main() {
-    uthread_init(300000);
+    uthread_init(80000);
     uthread_spawn(la);
     uthread_spawn(lo);
     uthread_spawn(li);

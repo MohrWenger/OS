@@ -68,7 +68,7 @@ public:
     Thread(int quantum, int id, func f, int stack_size) : _quantum(quantum), _id(id), _status(READY) {
         _pc = translate_address((address_t) f);
         _sp = new char[stack_size];
-        //set inviornment
+        //blocked_signals_set inviornment
         (env->__jmpbuf)[JB_PC] = _pc;
         (env->__jmpbuf)[JB_SP] = translate_address((address_t) _sp + stack_size - sizeof(unsigned int));
         sigemptyset(&env->__saved_mask);
