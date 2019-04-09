@@ -89,6 +89,9 @@ void switch_threads(state new_st) {
         case (BLOCKED):
             curr_running->set_status(new_st);
             break;
+        case (SLEEPING):
+            curr_running ->set_status(new_st);
+            break;
         case (TERMINATE):
             all_threads.erase(curr_running->get_id()); //TODO - make sure deletes thread
             break;
@@ -163,16 +166,28 @@ void timer_handler(int sig) {
         if (!Thread_to_wake) {
             throw "Error - couldnt wakeup";
         }
-        ready_queue.push_back(Thread_to_wake);
-        Thread_to_wake->set_status(READY);
-        nap_manager->pop();
-        first_to_wake = nap_manager->peek();
+        if(Thread_to_wake->get_status() == SLEEPING) {
+            ready_queue.push_back(Thread_to_wake);
+            Thread_to_wake->set_status(READY);
+        } else
+        {
+            Thread_to_wake -> set_status(BLOCKED);
+        }
+            nap_manager->pop();
+            first_to_wake = nap_manager->peek();
+
     }
     // call thread switch:
     switch_threads(READY);
 }
 
-
+//bool is_asleep ( int tid)
+//{
+//    for (auto it: nap_manager)
+//    {
+//
+//    }
+//}
 
 /////////////////////////////////// public functions ////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -311,6 +326,8 @@ int uthread_block(int tid) {
     }
 
     all_threads[tid]->set_status(BLOCKED);
+//    auto it = nap_manager.find(tid)
+//    all_threads[tid] -> set_blocked( find(nap_manager[]))
     unblock_all_signals();
     return 0;
 }
@@ -350,7 +367,10 @@ int uthread_sleep(unsigned int usec) {
     timeval wake_me = calc_wake_up_timeval(usec);
     int currId = uthread_get_tid(); // block thread
     nap_manager->add(currId, wake_me);
-    uthread_block(currId);
+//    Thread* temp = all_threads[currId];
+//    uthread_block(currId)
+    switch_threads(SLEEPING);
+
     unblock_all_signals();
     return 0;
 }

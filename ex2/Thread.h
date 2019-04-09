@@ -18,7 +18,7 @@ using namespace std;
 typedef void (*func)(void);
 
 enum state {
-    READY, RUNNING, BLOCKED, TERMINATE
+    READY, RUNNING, BLOCKED, TERMINATE, SLEEPING
 };
 
 #ifdef __x86_64__
@@ -112,11 +112,18 @@ public:
         return &env;
     }
 
+//    void set_sleep (bool stat)
+//    {
+//        _is_sleeping = stat;
+//    }
+
 private:
 
     int _times_ran;
     int _id;
     int _status;
+//    bool _is_blocked;
+//    bool _is_sleeping;
     address_t _pc;
     char *_sp; // TODO - if accessing stack - make sure range is legal
     sigjmp_buf env;
