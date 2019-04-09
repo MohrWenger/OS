@@ -123,6 +123,33 @@ ex2/fast:
 	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/build
 .PHONY : ex2/fast
 
+check.o: check.cpp.o
+
+.PHONY : check.o
+
+# target to build an object file
+check.cpp.o:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/check.cpp.o
+.PHONY : check.cpp.o
+
+check.i: check.cpp.i
+
+.PHONY : check.i
+
+# target to preprocess a source file
+check.cpp.i:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/check.cpp.i
+.PHONY : check.cpp.i
+
+check.s: check.cpp.s
+
+.PHONY : check.s
+
+# target to generate assembly for a file
+check.cpp.s:
+	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/check.cpp.s
+.PHONY : check.cpp.s
+
 sleeping_threads_list.o: sleeping_threads_list.cpp.o
 
 .PHONY : sleeping_threads_list.o
@@ -149,33 +176,6 @@ sleeping_threads_list.s: sleeping_threads_list.cpp.s
 sleeping_threads_list.cpp.s:
 	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/sleeping_threads_list.cpp.s
 .PHONY : sleeping_threads_list.cpp.s
-
-test4.o: test4.cpp.o
-
-.PHONY : test4.o
-
-# target to build an object file
-test4.cpp.o:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/test4.cpp.o
-.PHONY : test4.cpp.o
-
-test4.i: test4.cpp.i
-
-.PHONY : test4.i
-
-# target to preprocess a source file
-test4.cpp.i:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/test4.cpp.i
-.PHONY : test4.cpp.i
-
-test4.s: test4.cpp.s
-
-.PHONY : test4.s
-
-# target to generate assembly for a file
-test4.cpp.s:
-	$(MAKE) -f CMakeFiles/ex2.dir/build.make CMakeFiles/ex2.dir/test4.cpp.s
-.PHONY : test4.cpp.s
 
 uthreads.o: uthreads.cpp.o
 
@@ -213,12 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ex2"
+	@echo "... check.o"
+	@echo "... check.i"
+	@echo "... check.s"
 	@echo "... sleeping_threads_list.o"
 	@echo "... sleeping_threads_list.i"
 	@echo "... sleeping_threads_list.s"
-	@echo "... test4.o"
-	@echo "... test4.i"
-	@echo "... test4.s"
 	@echo "... uthreads.o"
 	@echo "... uthreads.i"
 	@echo "... uthreads.s"

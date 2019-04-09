@@ -87,13 +87,13 @@
 		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/Thread.h">
 			<Option target="ex2"/>
 		</Unit>
+		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/check.cpp">
+			<Option target="ex2"/>
+		</Unit>
 		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.cpp">
 			<Option target="ex2"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.h">
-			<Option target="ex2"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/test4.cpp">
 			<Option target="ex2"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.cpp">

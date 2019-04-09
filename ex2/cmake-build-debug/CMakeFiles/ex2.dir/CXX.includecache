@@ -6,24 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/cs/usr/ellonet/Desktop/OS/OS/ex2/test4.cpp
+/cs/usr/ellonet/Desktop/OS/OS/ex2/check.cpp
 stdio.h
--
-setjmp.h
--
-signal.h
--
-unistd.h
--
-sys/time.h
--
-stdlib.h
--
-deque
--
-list
--
-assert.h
 -
 uthreads.h
 /cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h

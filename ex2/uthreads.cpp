@@ -15,31 +15,20 @@
 using namespace std;
 
 /////////////////////////////////// global variables ///////////////////////////////////
+
 map<int, Thread *> all_threads;
 deque<Thread *> ready_queue;
 int lib_quantum;
 set<int> available_ids;
 Thread *curr_running;
 SleepingThreadsList *nap_manager = new SleepingThreadsList();
-struct itimerval global_timer; //this is the only one that throws signal
+struct itimerval global_timer;
 struct sigaction sa = {nullptr};
 sigset_t blocked_signals_set;
 int total_quantums;
 
 
-
-// TODO - write the handler and bind it to the signal
-// TODO - figure out the quantum management
-
 /////////////////////////////////// private functions ///////////////////////////////////
-
-
-void print_ready() {
-    cout << "ready queue:" << endl;
-    for (auto &i : all_threads) {
-        cout << i.second->get_id() << " status " << i.second->get_status() << endl;
-    }
-}
 
 
 void block_all_signals() {
@@ -55,12 +44,11 @@ void unblock_all_signals() {
 }
 
 void set_timer() {
-    global_timer.it_value.tv_sec = lib_quantum / 1000000;        // first time interval, seconds part
-    global_timer.it_value.tv_usec = lib_quantum % 1000000;        // first time interval, microseconds part
-    global_timer.it_interval.tv_sec = 0;    // following time intervals, seconds part
-    global_timer.it_interval.tv_usec = 0;    // following time intervals, microseconds part
+    global_timer.it_value.tv_sec = lib_quantum / 1000000;   // first time interval, seconds part
+    global_timer.it_value.tv_usec = lib_quantum % 1000000;  // first time interval, microseconds part
+    global_timer.it_interval.tv_sec = 0;                    // following time intervals, seconds part
+    global_timer.it_interval.tv_usec = 0;                   // following time intervals, microseconds part
     setitimer(ITIMER_VIRTUAL, &global_timer, nullptr);
-
 }
 
 int get_next_id() {
@@ -83,7 +71,6 @@ Thread *get_next_thread() {
         cout << "no threads left, exiting..." << endl;
         uthread_terminate(all_threads[0]->get_id());
     }
-
     Thread *temp = ready_queue.front();
     ready_queue.pop_front();
     unblock_all_signals();
@@ -91,10 +78,8 @@ Thread *get_next_thread() {
 }
 
 void switch_threads(state new_st) {
-//    cout << "in switch " << endl;
     block_all_signals();
     int ret_val = sigsetjmp(*(curr_running->get_env()), 1); //TODO update curr_run
-    int prev_id_for_print = curr_running->get_id();
     if (ret_val == 1) {
         set_timer();
         return;
@@ -119,7 +104,6 @@ void switch_threads(state new_st) {
     curr_running = next_th;
     curr_running->set_status(RUNNING);
     curr_running->inc_times_ran();
-//    cout << "switching from:\t" << prev_id_for_print << "\tto:\t" << curr_running->get_id() << endl;
     set_timer();
     ++total_quantums;
     // jump
@@ -137,9 +121,9 @@ void clean_up() {
 
 Thread *check_existance(int tid) {
     block_all_signals();
-    if (tid < 0 || tid > 99)
-    {
-        cout << "thread library error: the thread id is invalid (it needs to be  between 0 to 99)" << endl;
+    if (tid < 0 || tid > MAX_THREAD_NUM - 1) {
+        cout << "thread library error: the thread id is invalid (it needs to be  between 0 to " << MAX_THREAD_NUM - 1
+             << ")" << endl;
         return nullptr;
     }
     auto it = all_threads.find(tid);
@@ -152,7 +136,6 @@ Thread *check_existance(int tid) {
 }
 
 timeval calc_wake_up_timeval(int usecs_to_sleep) {
-
     timeval now, time_to_sleep, wake_up_timeval;
     gettimeofday(&now, nullptr);
     time_to_sleep.tv_sec = usecs_to_sleep / 1000000;
@@ -169,8 +152,7 @@ bool check_wake(timeval &now, timeval &wakie) {
 }
 
 void timer_handler(int sig) {
-//    cout << "in time handler! " << endl;
-//     get current time:
+//  get current time:
     timeval now{};
     gettimeofday(&now, nullptr);
     // first - we wake up all the sleeping threads.
@@ -181,7 +163,6 @@ void timer_handler(int sig) {
         if (!Thread_to_wake) {
             throw "Error - couldnt wakeup";
         }
-//        cout << ">> MESSAGE: waking up thread No. " << Thread_to_wake->get_id() << endl;
         ready_queue.push_back(Thread_to_wake);
         Thread_to_wake->set_status(READY);
         nap_manager->pop();
@@ -242,7 +223,7 @@ int uthread_init(int quantum_usecs) {
 int uthread_spawn(void (*f)()) { // TODO - check allocation success
     block_all_signals();
     // check thread count
-    if (all_threads.size() < MAX_THREAD_NUM) {
+    if (all_threads.size() < MAX_THREAD_NUM -1) {
         int id = get_next_id();
         auto *new_thread = new Thread(id, f, STACK_SIZE);
         // add thread to all_threads list and to ready list
@@ -366,7 +347,6 @@ int uthread_resume(int tid) {
 */
 int uthread_sleep(unsigned int usec) {
     block_all_signals();
-//    cout << ">> MESSAGE: sending thread No. " << curr_running->get_id() << " to sleep" << endl;
     timeval wake_me = calc_wake_up_timeval(usec);
     int currId = uthread_get_tid(); // block thread
     nap_manager->add(currId, wake_me);
@@ -382,7 +362,6 @@ int uthread_sleep(unsigned int usec) {
 */
 int uthread_get_tid() {
     int res = curr_running->get_id();
-//    cout << res << "id " << endl;
     return res;
 }
 
@@ -415,6 +394,9 @@ int uthread_get_quantums(int tid) {
     if (temp) {
         return temp->get_times_ran();
     }
-//    cout << "ERORR: no such thread...." << endl;
     return -1;
 }
+
+//TODO - MATLAB
+//TODO - check sleep
+//TODO - resume -> check if not sleeping , if awaken -> check if not blocked
