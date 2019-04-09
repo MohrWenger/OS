@@ -84,7 +84,6 @@ void switch_threads(state new_st) {
         set_timer();
         return;
     }
-
     switch (new_st) {
         case (BLOCKED):
             curr_running->set_status(new_st);
@@ -279,6 +278,8 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
             ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), toKill));
             break;
         case (RUNNING):
+            available_ids.insert(tid); // re-use the id, and delete the thread.
+            all_threads.erase(tid);
             switch_threads(TERMINATE);
             break;
         default: // if blocked nothing extra to be done just erase and happens anyway
