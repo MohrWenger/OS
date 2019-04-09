@@ -65,7 +65,7 @@ class Thread {
 public:
     Thread() = default;
 
-    Thread(int quantum, int id, func f, int stack_size) : _quantum(quantum), _id(id), _status(READY) {
+    Thread( int id, func f, int stack_size) : _times_ran(0), _id(id), _status(READY) {
         _pc = translate_address((address_t) f);
         _sp = new char[stack_size];
         //blocked_signals_set inviornment
@@ -80,6 +80,8 @@ public:
     }
 
     int get_id() {
+//        cout << " here 5"<< endl;
+//        cout << _id << endl;
         return _id;
     }
 
@@ -91,8 +93,12 @@ public:
         _status = s;
     }
 
-    int get_quantum() {
-        return _quantum;
+    void inc_times_ran()
+    {
+        ++_times_ran;
+    }
+    int get_times_ran() {
+        return _times_ran;
     }
 
 //    void set_timer(int msec) {
@@ -101,7 +107,7 @@ public:
 //    }
 
 //    void reset_quantum(int q) {
-//        _quantum = q;
+//        _times_ran = q;
 //    }
 
     sigjmp_buf *get_env() {
@@ -110,7 +116,7 @@ public:
 
 private:
 
-    int _quantum;
+    int _times_ran;
     int _id;
     int _status;
     address_t _pc;

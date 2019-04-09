@@ -19,7 +19,7 @@ void lo() {
 
     if (bla) {
         bla = !bla;
-        uthread_sleep(9000000);
+//        uthread_sleep(9000000);
         uthread_block(100);
     }
     lo_id = uthread_get_tid();
@@ -40,7 +40,8 @@ int main() {
     uthread_spawn(li);
     int a0 = uthread_get_tid();
     cout << "running now: " << a0 << endl;
-    uthread_block(a0);
+    while (1){}
+//    uthread_block(a0);
     return 0;
 
 }

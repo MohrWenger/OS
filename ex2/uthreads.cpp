@@ -24,6 +24,7 @@ SleepingThreadsList *nap_manager = new SleepingThreadsList();
 struct itimerval global_timer; //this is the only one that throws signal
 struct sigaction sa = {nullptr};
 sigset_t blocked_signals_set;
+int total_quantums = 0;
 
 
 
@@ -31,6 +32,14 @@ sigset_t blocked_signals_set;
 // TODO - figure out the quantum management
 
 /////////////////////////////////// private functions ///////////////////////////////////
+
+
+void print_ready() {
+    cout << "ready queue:" << endl;
+    for (auto &i : ready_queue) {
+        cout << i->get_id() << " status " << i->get_status() << endl;
+    }
+}
 
 
 void block_all_signals() {
@@ -48,7 +57,6 @@ void unblock_all_signals() {
 void set_timer() {
     global_timer.it_value.tv_sec = lib_quantum / 1000000;        // first time interval, seconds part
     global_timer.it_value.tv_usec = lib_quantum % 1000000;        // first time interval, microseconds part
-    // configure the timer to expire every 3 sec after that.
     global_timer.it_interval.tv_sec = 0;    // following time intervals, seconds part
     global_timer.it_interval.tv_usec = 0;    // following time intervals, microseconds part
     setitimer(ITIMER_VIRTUAL, &global_timer, nullptr);
@@ -82,7 +90,9 @@ Thread *get_next_thread() {
 }
 
 void switch_threads(state new_st) {
+    cout << "here?" << endl;
     block_all_signals();
+    ++total_quantums; //TODO - ok here because of block right?
     int ret_val = sigsetjmp(*(curr_running->get_env()), 1); //TODO update curr_run
     int prev_id_for_print = curr_running->get_id();
     if (ret_val == 1) {
@@ -104,10 +114,13 @@ void switch_threads(state new_st) {
             break;
     }
     // start running next thread:
+//    print_ready();
     Thread *next_th = get_next_thread();
     curr_running = next_th;
     curr_running->set_status(RUNNING);
-    cout << "switching from:\t" << prev_id_for_print << "\tto:\t" << curr_running->get_id() << endl;
+    curr_running -> inc_times_ran();
+//    cout << "times: "<< curr_running->get_times_ran() << endl;
+//    cout << "switching from:\t" << prev_id_for_print << "\tto:\t" << curr_running->get_id() << endl;
     set_timer();
     // jump
     unblock_all_signals();
@@ -148,7 +161,7 @@ bool check_wake(timeval &now, timeval &wakie) {
 }
 
 void timer_handler(int sig) {
-    cout << "in time handler! " << endl;
+//    cout << "in time handler! " << endl;
 //     get current time:
     timeval now{};
     gettimeofday(&now, nullptr);
@@ -171,21 +184,13 @@ void timer_handler(int sig) {
 }
 
 
-void print_ready() {
-    Thread *x = get_next_thread();
-    while (x) {
-        cout << x->get_id() << " ";
-        x = get_next_thread();
-    }
-    cout << endl;
-}
 
 /////////////////////////////////// public functions ////////////////////////////////////////////////////////////////////////////////////
 /*
  * Description: This function initializes the thread library.
  * You may assume that this function is called before any other thread library
  * function, and that it is called exactly once. The input to the function is
- * the length of a _quantum in micro-seconds. It is an error to call this
+ * the length of a _times_ran in micro-seconds. It is an error to call this
  * function with non-positive quantum_usecs.
  * Return value: On success, return 0. On failure, return -1.
 */
@@ -198,13 +203,14 @@ int uthread_init(int quantum_usecs) {
     lib_quantum = quantum_usecs;
 
     try {
-        auto *thread_0 = new Thread(lib_quantum, 0, nullptr, STACK_SIZE);
+        auto *thread_0 = new Thread( 0, nullptr, STACK_SIZE);
         thread_0->set_status(RUNNING);
+        thread_0->inc_times_ran();
         all_threads[0] = *thread_0;
         curr_running = thread_0;
+        cout << uthread_get_quantums(all_threads[0].get_id())<< endl;
 
         sa.sa_handler = timer_handler;
-//        sa.sa_handler = temp_timer_handler;
         sigaction(SIGVTALRM, &sa, nullptr);
         set_timer();
     }
@@ -231,7 +237,7 @@ int uthread_spawn(void (*f)()) { // TODO - check allocation success
     // check thread count
     if (all_threads.size() < MAX_THREAD_NUM) {
         int id = get_next_id();
-        auto *new_thread = new Thread(lib_quantum, id, f, STACK_SIZE);
+        auto *new_thread = new Thread( id, f, STACK_SIZE);
         // add thread to all_threads list and to ready list
         all_threads[id] = *new_thread;
         ready_queue.push_back(new_thread);
@@ -364,31 +370,46 @@ int uthread_sleep(unsigned int usec) {
  * Return value: The ID of the calling thread.
 */
 int uthread_get_tid() {
-    return curr_running->get_id();
+    int res = curr_running ->get_id();
+//    cout << res << "id " << endl;
+    return res;
 }
 
 
 /*
  * Description: This function returns the total number of quantums since
- * the library was initialized, including the current _quantum.
+ * the library was initialized, including the current _times_ran.
  * Right after the call to uthread_init, the value should be 1.
- * Each time a new _quantum starts, regardless of the reason, this number
+ * Each time a new _times_ran starts, regardless of the reason, this number
  * should be increased by 1.
  * Return value: The total number of quantums.
 */
-int uthread_get_total_quantums();
+int uthread_get_total_quantums()
+{
+
+}
 
 
 /*
  * Description: This function returns the number of quantums the thread with
  * ID tid was in RUNNING state. On the first time a thread runs, the function
- * should return 1. Every additional _quantum that the thread starts should
+ * should return 1. Every additional _times_ran that the thread starts should
  * increase this value by 1 (so if the thread with ID tid is in RUNNING state
- * when this function is called, include also the current _quantum). If no
+ * when this function is called, include also the current _times_ran). If no
  * thread with ID tid exists it is considered an error.
  * Return value: On success, return the number of quantums of the thread with ID tid.
  * 			     On failure, return -1.
 */
-int uthread_get_quantums(int tid);
+int uthread_get_quantums(int tid)
+{
+    Thread* temp = check_existance(tid);
+    if (temp)
+    {
+        return temp->get_times_ran();
+    }
+
+    cerr << "ERORR: no such thread...." << endl;
+    return -1;
+}
 
 

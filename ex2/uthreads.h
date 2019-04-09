@@ -18,7 +18,7 @@
  * Description: This function initializes the thread library.
  * You may assume that this function is called before any other thread library
  * function, and that it is called exactly once. The input to the function is
- * the length of a _quantum in micro-seconds. It is an error to call this
+ * the length of a _times_ran in micro-seconds. It is an error to call this
  * function with non-positive quantum_usecs.
  * Return value: On success, return 0. On failure, return -1.
 */
@@ -91,9 +91,9 @@ int uthread_get_tid();
 
 /*
  * Description: This function returns the total number of quantums since
- * the library was initialized, including the current _quantum.
+ * the library was initialized, including the current _times_ran.
  * Right after the call to uthread_init, the value should be 1.
- * Each time a new _quantum starts, regardless of the reason, this number
+ * Each time a new _times_ran starts, regardless of the reason, this number
  * should be increased by 1.
  * Return value: The total number of quantums.
 */
@@ -103,9 +103,9 @@ int uthread_get_total_quantums();
 /*
  * Description: This function returns the number of quantums the thread with
  * ID tid was in RUNNING state. On the first time a thread runs, the function
- * should return 1. Every additional _quantum that the thread starts should
+ * should return 1. Every additional _times_ran that the thread starts should
  * increase this value by 1 (so if the thread with ID tid is in RUNNING state
- * when this function is called, include also the current _quantum). If no
+ * when this function is called, include also the current _times_ran). If no
  * thread with ID tid exists it is considered an error.
  * Return value: On success, return the number of quantums of the thread with ID tid.
  * 			     On failure, return -1.
