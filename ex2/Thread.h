@@ -80,8 +80,6 @@ public:
     }
 
     int get_id() {
-//        cout << " here 5"<< endl;
-//        cout << _id << endl;
         return _id;
     }
 

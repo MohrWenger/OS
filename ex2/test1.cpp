@@ -88,12 +88,6 @@ int main(void)
     int i = 1;
     int j = 0;
 
-    cout << "i = " << 1 << ", get = " << uthread_get_quantums(uthread_get_tid()) << endl;
-    cout << "i = " << 2 << ", get = " << uthread_get_quantums(uthread_get_tid()) << endl;
-
-
-    while(1) {}
-
     while(1)
     {
         //int a = uthread_get_quantums(uthread_get_tid());
@@ -101,7 +95,6 @@ int main(void)
 
         if (i == uthread_get_quantums(uthread_get_tid()))
         {
-            cout << "here 3" << endl;
             cout << "m" << "  q:  " << i << endl;
             if (i == 3 && j == 0)
             {

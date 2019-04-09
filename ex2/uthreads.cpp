@@ -15,7 +15,7 @@
 using namespace std;
 
 /////////////////////////////////// global variables ///////////////////////////////////
-map<int, Thread> all_threads;
+map<int, Thread *> all_threads;
 deque<Thread *> ready_queue;
 int lib_quantum;
 set<int> available_ids;
@@ -24,7 +24,7 @@ SleepingThreadsList *nap_manager = new SleepingThreadsList();
 struct itimerval global_timer; //this is the only one that throws signal
 struct sigaction sa = {nullptr};
 sigset_t blocked_signals_set;
-int total_quantums = 0;
+int total_quantums;
 
 
 
@@ -36,8 +36,8 @@ int total_quantums = 0;
 
 void print_ready() {
     cout << "ready queue:" << endl;
-    for (auto &i : ready_queue) {
-        cout << i->get_id() << " status " << i->get_status() << endl;
+    for (auto &i : all_threads) {
+        cout << i.second->get_id() << " status " << i.second->get_status() << endl;
     }
 }
 
@@ -60,6 +60,7 @@ void set_timer() {
     global_timer.it_interval.tv_sec = 0;    // following time intervals, seconds part
     global_timer.it_interval.tv_usec = 0;    // following time intervals, microseconds part
     setitimer(ITIMER_VIRTUAL, &global_timer, nullptr);
+
 }
 
 int get_next_id() {
@@ -80,7 +81,7 @@ Thread *get_next_thread() {
     block_all_signals();
     if (ready_queue.empty()) {
         cout << "no threads left, exiting..." << endl;
-        uthread_terminate(all_threads[0].get_id());
+        uthread_terminate(all_threads[0]->get_id());
     }
 
     Thread *temp = ready_queue.front();
@@ -90,9 +91,8 @@ Thread *get_next_thread() {
 }
 
 void switch_threads(state new_st) {
-    cout << "here?" << endl;
+//    cout << "in switch " << endl;
     block_all_signals();
-    ++total_quantums; //TODO - ok here because of block right?
     int ret_val = sigsetjmp(*(curr_running->get_env()), 1); //TODO update curr_run
     int prev_id_for_print = curr_running->get_id();
     if (ret_val == 1) {
@@ -109,38 +109,46 @@ void switch_threads(state new_st) {
             break;
         case (READY):
             ready_queue.push_back(curr_running);
+            curr_running->set_status(READY);
             break;
         default:
             break;
     }
     // start running next thread:
-//    print_ready();
     Thread *next_th = get_next_thread();
     curr_running = next_th;
     curr_running->set_status(RUNNING);
-    curr_running -> inc_times_ran();
-//    cout << "times: "<< curr_running->get_times_ran() << endl;
+    curr_running->inc_times_ran();
 //    cout << "switching from:\t" << prev_id_for_print << "\tto:\t" << curr_running->get_id() << endl;
     set_timer();
+    ++total_quantums;
     // jump
     unblock_all_signals();
     siglongjmp(*(next_th->get_env()), 1);
 }
 
 void clean_up() {
+    for (auto &i : all_threads) {
+        delete (i.second);
+    }
     all_threads.clear();
     ready_queue.clear(); //TODO - make sure cleans up
-
-
 }
 
 Thread *check_existance(int tid) {
-    auto it = all_threads.find(tid);
-    if (it == all_threads.end()) {
-        cerr << "Error - you stupid dog, you make me look bad" << endl;
+    block_all_signals();
+    if (tid < 0 || tid > 99)
+    {
+        cout << "thread library error: the thread id is invalid (it needs to be  between 0 to 99)" << endl;
         return nullptr;
     }
-    return &(it->second);
+    auto it = all_threads.find(tid);
+    if (it == all_threads.end()) {
+        cout << "thread library error: the thread id's cell is empty in the threadsArr" << endl;
+        return nullptr;
+    }
+    unblock_all_signals();
+    return (it->second);
 }
 
 timeval calc_wake_up_timeval(int usecs_to_sleep) {
@@ -173,7 +181,7 @@ void timer_handler(int sig) {
         if (!Thread_to_wake) {
             throw "Error - couldnt wakeup";
         }
-        cout << ">> MESSAGE: waking up thread No. " << Thread_to_wake->get_id() << endl;
+//        cout << ">> MESSAGE: waking up thread No. " << Thread_to_wake->get_id() << endl;
         ready_queue.push_back(Thread_to_wake);
         Thread_to_wake->set_status(READY);
         nap_manager->pop();
@@ -197,25 +205,24 @@ void timer_handler(int sig) {
 int uthread_init(int quantum_usecs) {
     block_all_signals();
     if (quantum_usecs <= 0) {
-        cerr << "Error - Illegal quantum value" << endl;
+        cout << "Error - Illegal quantum value" << endl;
         return -1;
     }
     lib_quantum = quantum_usecs;
 
     try {
-        auto *thread_0 = new Thread( 0, nullptr, STACK_SIZE);
+        auto *thread_0 = new Thread(0, nullptr, STACK_SIZE);
         thread_0->set_status(RUNNING);
         thread_0->inc_times_ran();
-        all_threads[0] = *thread_0;
+        all_threads[0] = thread_0;
         curr_running = thread_0;
-        cout << uthread_get_quantums(all_threads[0].get_id())<< endl;
-
+        total_quantums = 1;
         sa.sa_handler = timer_handler;
         sigaction(SIGVTALRM, &sa, nullptr);
         set_timer();
     }
     catch (exception &e) {
-        cerr << "Error - library initialization failed" << endl;
+        cout << "Error - library initialization failed" << endl;
         return -1;
     }
     unblock_all_signals();
@@ -237,14 +244,14 @@ int uthread_spawn(void (*f)()) { // TODO - check allocation success
     // check thread count
     if (all_threads.size() < MAX_THREAD_NUM) {
         int id = get_next_id();
-        auto *new_thread = new Thread( id, f, STACK_SIZE);
+        auto *new_thread = new Thread(id, f, STACK_SIZE);
         // add thread to all_threads list and to ready list
-        all_threads[id] = *new_thread;
+        all_threads[id] = new_thread;
         ready_queue.push_back(new_thread);
         unblock_all_signals();
         return new_thread->get_id();
     }
-    cerr << "Error - exceeded num of allowed threads MADAFAKA" << endl;
+    cout << "Error - exceeded num of allowed threads MADAFAKA" << endl;
     return -1;
 }
 
@@ -262,12 +269,11 @@ int uthread_spawn(void (*f)()) { // TODO - check allocation success
 */
 int uthread_terminate(int tid) {    // TODO - make sure to free the allocations using delete
     block_all_signals();
-    // TODO - add to enviroment.
     if (!tid) { // in case of deleting the main thread
-        // TODO - maybe clean up before?
         clean_up();
         exit(0);
     }
+
     Thread *toKill = check_existance(tid);
     if (!(toKill)) {
         return -1;
@@ -301,17 +307,20 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
 */
 int uthread_block(int tid) {
     block_all_signals();
-    cout << ">> MESSAGE: blocking thread No. " << tid << endl;
-    // TODO - stop from blocking 0!
+
+    if (!tid) {
+        cout << "thread library error: it's illegal to block the main thread" << endl;
+        return -1;
+    }
 
     Thread *toKill = check_existance(tid);
     if (!(toKill)) {
         return -1;
     }
 
-    switch (curr_running->get_status()) {
+    switch (toKill->get_status()) {
         case (READY):
-            ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), curr_running));
+            ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), toKill));
             break;
         case (RUNNING):
             switch_threads(BLOCKED);
@@ -320,7 +329,7 @@ int uthread_block(int tid) {
             break;
     }
 
-    all_threads[tid].set_status(BLOCKED);
+    all_threads[tid]->set_status(BLOCKED);
     unblock_all_signals();
     return 0;
 }
@@ -340,7 +349,9 @@ int uthread_resume(int tid) {
         return -1;
     }
     toResume->set_status(READY);
-    ready_queue.push_back(toResume);
+    if ((find(ready_queue.begin(), ready_queue.end(), toResume) == ready_queue.end())) {
+        ready_queue.push_back(toResume);
+    }
     unblock_all_signals();
     return 0;
     // TODO - check
@@ -355,7 +366,7 @@ int uthread_resume(int tid) {
 */
 int uthread_sleep(unsigned int usec) {
     block_all_signals();
-    cout << ">> MESSAGE: sending thread No. " << curr_running->get_id() << " to sleep" << endl;
+//    cout << ">> MESSAGE: sending thread No. " << curr_running->get_id() << " to sleep" << endl;
     timeval wake_me = calc_wake_up_timeval(usec);
     int currId = uthread_get_tid(); // block thread
     nap_manager->add(currId, wake_me);
@@ -370,7 +381,7 @@ int uthread_sleep(unsigned int usec) {
  * Return value: The ID of the calling thread.
 */
 int uthread_get_tid() {
-    int res = curr_running ->get_id();
+    int res = curr_running->get_id();
 //    cout << res << "id " << endl;
     return res;
 }
@@ -384,9 +395,8 @@ int uthread_get_tid() {
  * should be increased by 1.
  * Return value: The total number of quantums.
 */
-int uthread_get_total_quantums()
-{
-
+int uthread_get_total_quantums() {
+    return total_quantums;
 }
 
 
@@ -400,16 +410,11 @@ int uthread_get_total_quantums()
  * Return value: On success, return the number of quantums of the thread with ID tid.
  * 			     On failure, return -1.
 */
-int uthread_get_quantums(int tid)
-{
-    Thread* temp = check_existance(tid);
-    if (temp)
-    {
+int uthread_get_quantums(int tid) {
+    Thread *temp = check_existance(tid);
+    if (temp) {
         return temp->get_times_ran();
     }
-
-    cerr << "ERORR: no such thread...." << endl;
+//    cout << "ERORR: no such thread...." << endl;
     return -1;
 }
-
-

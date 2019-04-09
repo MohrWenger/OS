@@ -12,22 +12,19 @@ bool bla = true;
 
 void la() {
     la_id = uthread_get_tid();
+    print_ready();
     while (1) {}
 }
 
 void lo() {
-
-    if (bla) {
-        bla = !bla;
-//        uthread_sleep(9000000);
-        uthread_block(100);
-    }
     lo_id = uthread_get_tid();
+    print_ready();
     while (1) {}
 }
 
 void li() {
     li_id = uthread_get_tid();
+    print_ready();
     while (1) {}
 }
 
@@ -38,10 +35,12 @@ int main() {
     uthread_spawn(la);
     uthread_spawn(lo);
     uthread_spawn(li);
-    int a0 = uthread_get_tid();
-    cout << "running now: " << a0 << endl;
-    while (1){}
-//    uthread_block(a0);
+//    while (1){}
+    uthread_block(0);
+//    cout << !2 << endl;
+//    cout << !-2 << endl;
+//    cout << !0 << endl;
+
     return 0;
 
 }
