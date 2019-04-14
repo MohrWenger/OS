@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cs/usr/ellonet/Desktop/OS/OS/ex2/testing.cpp
+uthreads.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h
+iostream
+-
+set
+-
+cstring
+-
+setjmp.h
+-
+
+/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h
+

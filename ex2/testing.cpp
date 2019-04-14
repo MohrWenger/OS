@@ -5,39 +5,34 @@
 #include <setjmp.h>
 
 using namespace std;
-int la_id;
-int lo_id;
-int li_id;
-bool bla = true;
 
 void la() {
-    la_id = uthread_get_tid();
-    while (1) {}
+    while (1) {
+        cout << "la" << endl;
+    }
 }
 
 void lo() {
-    lo_id = uthread_get_tid();
-    while (1) {}
+    while (1) {
+        cout << "lo" << endl;
+    }
 }
 
 void li() {
-    li_id = uthread_get_tid();
-    while (1) {}
+    while (1) {
+        cout << "li" << endl;
+    }
 }
 
 
-
 int main() {
-    uthread_init(900000);
-//    uthread_spawn(la);
-//    uthread_spawn(lo);
-//    uthread_spawn(li);
-    while (1){}
-//    uthread_block(0);
-//    cout << !2 << endl;
-//    cout << !-2 << endl;
-//    cout << !0 << endl;
-
+    uthread_init(100000);
+    uthread_spawn(la);
+    uthread_spawn(lo);
+    uthread_spawn(li);
+    while (1) {
+        cout << "main" << endl;
+    }
     return 0;
 
 }

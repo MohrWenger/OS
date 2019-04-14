@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ex2_testing.dir/uthreads.cpp.o CMakeFiles/ex2_testing.dir/sleeping_threads_list.cpp.o CMakeFiles/ex2_testing.dir/testing.cpp.o  -o ex2_testing 
