@@ -99,7 +99,7 @@ public:
         return _times_ran;
     }
 
-//    void set_timer(int msec) {
+//    void set_timer_virtual(int msec) {
 //        _timer.it_value.tv_sec = 0;
 //        _timer.it_value.tv_usec = msec;
 //    }

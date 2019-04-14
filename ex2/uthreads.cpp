@@ -22,20 +22,25 @@ int lib_quantum;
 set<int> available_ids;
 Thread *curr_running;
 SleepingThreadsList *nap_manager = new SleepingThreadsList();
-struct itimerval global_timer;
-struct sigaction sa = {nullptr};
+struct itimerval timer_virtual;
+struct itimerval timer_real;
+struct sigaction sa_virtual = {nullptr};
+struct sigaction sa_real = {nullptr};
 sigset_t blocked_signals_set;
 int total_quantums;
 
 
 /////////////////////////////////// private functions ///////////////////////////////////
 
-
-void block_all_signals() {
+void init_signail_blocker() {
     sigemptyset(&blocked_signals_set);
     sigaddset(&blocked_signals_set, SIGALRM);
     sigaddset(&blocked_signals_set, SIGVTALRM);
     sigaddset(&blocked_signals_set, SIGINT);
+}
+
+
+void block_all_signals() {
     sigprocmask(SIG_BLOCK, &blocked_signals_set, nullptr);
 }
 
@@ -43,12 +48,20 @@ void unblock_all_signals() {
     sigprocmask(SIG_UNBLOCK, &blocked_signals_set, nullptr);
 }
 
-void set_timer() {
-    global_timer.it_value.tv_sec = lib_quantum / 1000000;   // first time interval, seconds part
-    global_timer.it_value.tv_usec = lib_quantum % 1000000;  // first time interval, microseconds part
-    global_timer.it_interval.tv_sec = 0;                    // following time intervals, seconds part
-    global_timer.it_interval.tv_usec = 0;                   // following time intervals, microseconds part
-    setitimer(ITIMER_VIRTUAL, &global_timer, nullptr);
+void set_timer_virtual() {
+    timer_virtual.it_value.tv_sec = lib_quantum / 1000000;   // first time interval, seconds part
+    timer_virtual.it_value.tv_usec = lib_quantum % 1000000;  // first time interval, microseconds part
+    timer_virtual.it_interval.tv_sec = 0;                    // following time intervals, seconds part
+    timer_virtual.it_interval.tv_usec = 0;                   // following time intervals, microseconds part
+    setitimer(ITIMER_VIRTUAL, &timer_virtual, nullptr);
+}
+
+void set_timer_real(unsigned int usec) {
+    timer_real.it_value.tv_sec = usec / 1000000;   // first time interval, seconds part
+    timer_real.it_value.tv_usec = usec % 1000000;  // first time interval, microseconds part
+    timer_real.it_interval.tv_sec = 0;                    // following time intervals, seconds part
+    timer_real.it_interval.tv_usec = 0;                   // following time intervals, microseconds part
+    setitimer(ITIMER_REAL, &timer_real, nullptr);
 }
 
 int get_next_id() {
@@ -81,7 +94,6 @@ void switch_threads(state new_st) {
     block_all_signals();
     int ret_val = sigsetjmp(*(curr_running->get_env()), 1); //TODO update curr_run
     if (ret_val == 1) {
-        set_timer();
         return;
     }
     switch (new_st) {
@@ -89,7 +101,7 @@ void switch_threads(state new_st) {
             curr_running->set_status(new_st);
             break;
         case (SLEEPING):
-            curr_running ->set_status(new_st);
+            curr_running->set_status(new_st);
             break;
         case (TERMINATE):
             all_threads.erase(curr_running->get_id()); //TODO - make sure deletes thread
@@ -106,7 +118,7 @@ void switch_threads(state new_st) {
     curr_running = next_th;
     curr_running->set_status(RUNNING);
     curr_running->inc_times_ran();
-    set_timer();
+    set_timer_virtual();
     ++total_quantums;
     // jump
     unblock_all_signals();
@@ -153,40 +165,85 @@ bool check_wake(timeval &now, timeval &wakie) {
     return now.tv_sec > wakie.tv_sec;
 }
 
-void timer_handler(int sig) {
+void handler_timer_virtual(int sig) {
 //  get current time:
     timeval now{};
     gettimeofday(&now, nullptr);
     // first - we wake up all the sleeping threads.
-    wake_up_info *first_to_wake = nap_manager->peek(); //get the first
-
-    while ((first_to_wake != nullptr) && (check_wake(now, first_to_wake->awaken_tv))) {
-        Thread *Thread_to_wake = check_existance(first_to_wake->id);
-        if (!Thread_to_wake) {
-            throw "Error - couldnt wakeup";
-        }
-        if(Thread_to_wake->get_status() == SLEEPING) {
-            ready_queue.push_back(Thread_to_wake);
-            Thread_to_wake->set_status(READY);
-        } else
-        {
-            Thread_to_wake -> set_status(BLOCKED);
-        }
-            nap_manager->pop();
-            first_to_wake = nap_manager->peek();
-
-    }
+//    wake_up_info *first_to_wake = nap_manager->peek(); //get the first
+//
+//    while ((first_to_wake != nullptr) && (check_wake(now, first_to_wake->awaken_tv))) {
+//        Thread *Thread_to_wake = check_existance(first_to_wake->id);
+//        if (!Thread_to_wake) {
+//            throw "Error - couldnt wakeup";
+//        }
+//        if (Thread_to_wake->get_status() == SLEEPING) {
+//            ready_queue.push_back(Thread_to_wake);
+//            Thread_to_wake->set_status(READY);
+//        } else {
+//            Thread_to_wake->set_status(BLOCKED);
+//        }
+//        nap_manager->pop();
+//        first_to_wake = nap_manager->peek();
+//
+//    }
     // call thread switch:
     switch_threads(READY);
 }
 
-//bool is_asleep ( int tid)
-//{
-//    for (auto it: nap_manager)
-//    {
+unsigned int calc_next_wake() {
+    timeval now{};
+    gettimeofday(&now, nullptr);
+
+    auto sec = static_cast<unsigned int>((nap_manager->peek()->awaken_tv.tv_sec - now.tv_sec) * 1000000);
+    sec += nap_manager->peek()->awaken_tv.tv_usec - now.tv_usec;
+    return sec;
+}
+
+void handler_timer_real(int sig) {
+    wake_up_info *first_to_wake = nap_manager->peek(); //get the first in line
+    Thread *Thread_to_wake = check_existance(first_to_wake->id);
+    if (!Thread_to_wake) {
+        throw "Error - couldnt wakeup";
+    }
+
+    timeval now{};
+    gettimeofday(&now, nullptr);
+    while (timercmp(&first_to_wake->awaken_tv, &now, <=)) {
+        if (Thread_to_wake->get_status() == SLEEPING) {
+            ready_queue.push_back(Thread_to_wake);
+            Thread_to_wake->set_status(READY);
+        }
+//        else {                                       //TODO - this maybe irrelevant becuase if its not sleep it is blocked
+//            Thread_to_wake->set_status(BLOCKED);
+//        }
+        nap_manager->pop();
+        first_to_wake = nap_manager->peek(); //update in order to check for others that need to be awaken
+        gettimeofday(&now, nullptr);
+    }
+    set_timer_real(calc_next_wake());
+    switch_threads(READY);
+}
+
+// wake up first - to ready / blocked
+// reset timer for next_awake - now
+//    timeval now{};
+//    gettimeofday(&now, nullptr);
+
+//   ------------------------------------------------------------ {
+//        Thread *Thread_to_wake = check_existance(first_to_wake->id);
+//        if (!Thread_to_wake) {
+//            throw "Error - couldnt wakeup";
+//        }
+//    if (Thread_to_wake->get_status() == SLEEPING) {
 //
 //    }
+//    nap_manager->pop();
+//
 //}
+
+// call thread switch:
+
 
 /////////////////////////////////// public functions ////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -198,9 +255,10 @@ void timer_handler(int sig) {
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_init(int quantum_usecs) {
+    init_signail_blocker();
     block_all_signals();
     if (quantum_usecs <= 0) {
-        cout << "Error - Illegal quantum value" << endl;
+        cout << "thread library error: quantum_usecs must be positive" << endl;
         return -1;
     }
     lib_quantum = quantum_usecs;
@@ -212,9 +270,14 @@ int uthread_init(int quantum_usecs) {
         all_threads[0] = thread_0;
         curr_running = thread_0;
         total_quantums = 1;
-        sa.sa_handler = timer_handler;
-        sigaction(SIGVTALRM, &sa, nullptr);
-        set_timer();
+
+        sa_virtual.sa_handler = handler_timer_virtual; // setting virtual timer - for quantum
+        sigaction(SIGVTALRM, &sa_virtual, nullptr);
+        set_timer_virtual();
+
+        sa_real.sa_handler = handler_timer_real; // setting real timer - for sleep
+        sigaction(SIGALRM, &sa_real, nullptr);
+        set_timer_real(0);
     }
     catch (exception &e) {
         cout << "Error - library initialization failed" << endl;
@@ -237,7 +300,7 @@ int uthread_init(int quantum_usecs) {
 int uthread_spawn(void (*f)()) { // TODO - check allocation success
     block_all_signals();
     // check thread count
-    if (all_threads.size() < MAX_THREAD_NUM -1) {
+    if (all_threads.size() < MAX_THREAD_NUM) {
         int id = get_next_id();
         auto *new_thread = new Thread(id, f, STACK_SIZE);
         // add thread to all_threads list and to ready list
@@ -367,11 +430,14 @@ int uthread_sleep(unsigned int usec) {
     block_all_signals();
     timeval wake_me = calc_wake_up_timeval(usec);
     int currId = uthread_get_tid(); // block thread
+    if (!nap_manager->peek()) {
+        set_timer_real(usec);
+    } else if (timercmp(&nap_manager->peek()->awaken_tv, &wake_me, >)) { // check if new sleeper should be awaken first
+        set_timer_real(usec);
+    }
     nap_manager->add(currId, wake_me);
-//    Thread* temp = all_threads[currId];
-//    uthread_block(currId)
-    switch_threads(SLEEPING);
 
+    switch_threads(SLEEPING);
     unblock_all_signals();
     return 0;
 }
