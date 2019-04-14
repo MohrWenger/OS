@@ -124,6 +124,45 @@ ex2_test4/fast:
 .PHONY : ex2_test4/fast
 
 #=============================================================================
+# Target rules for targets named ex2_test3
+
+# Build rule for target.
+ex2_test3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex2_test3
+.PHONY : ex2_test3
+
+# fast build rule for target.
+ex2_test3/fast:
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/build
+.PHONY : ex2_test3/fast
+
+#=============================================================================
+# Target rules for targets named ex2_sleep_test1
+
+# Build rule for target.
+ex2_sleep_test1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex2_sleep_test1
+.PHONY : ex2_sleep_test1
+
+# fast build rule for target.
+ex2_sleep_test1/fast:
+	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/build
+.PHONY : ex2_sleep_test1/fast
+
+#=============================================================================
+# Target rules for targets named ex2_sleep_test2
+
+# Build rule for target.
+ex2_sleep_test2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex2_sleep_test2
+.PHONY : ex2_sleep_test2
+
+# fast build rule for target.
+ex2_sleep_test2/fast:
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/build
+.PHONY : ex2_sleep_test2/fast
+
+#=============================================================================
 # Target rules for targets named ex2_test1
 
 # Build rule for target.
@@ -148,32 +187,6 @@ ex2_test2: cmake_check_build_system
 ex2_test2/fast:
 	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/build
 .PHONY : ex2_test2/fast
-
-#=============================================================================
-# Target rules for targets named ex2_sleep_test1
-
-# Build rule for target.
-ex2_sleep_test1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex2_sleep_test1
-.PHONY : ex2_sleep_test1
-
-# fast build rule for target.
-ex2_sleep_test1/fast:
-	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/build
-.PHONY : ex2_sleep_test1/fast
-
-#=============================================================================
-# Target rules for targets named ex2_test3
-
-# Build rule for target.
-ex2_test3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex2_test3
-.PHONY : ex2_test3
-
-# fast build rule for target.
-ex2_test3/fast:
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/build
-.PHONY : ex2_test3/fast
 
 SleepTest.o: SleepTest.cpp.o
 
@@ -202,6 +215,33 @@ SleepTest.cpp.s:
 	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/SleepTest.cpp.s
 .PHONY : SleepTest.cpp.s
 
+SleepTest2.o: SleepTest2.cpp.o
+
+.PHONY : SleepTest2.o
+
+# target to build an object file
+SleepTest2.cpp.o:
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/SleepTest2.cpp.o
+.PHONY : SleepTest2.cpp.o
+
+SleepTest2.i: SleepTest2.cpp.i
+
+.PHONY : SleepTest2.i
+
+# target to preprocess a source file
+SleepTest2.cpp.i:
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/SleepTest2.cpp.i
+.PHONY : SleepTest2.cpp.i
+
+SleepTest2.s: SleepTest2.cpp.s
+
+.PHONY : SleepTest2.s
+
+# target to generate assembly for a file
+SleepTest2.cpp.s:
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/SleepTest2.cpp.s
+.PHONY : SleepTest2.cpp.s
+
 sleeping_threads_list.o: sleeping_threads_list.cpp.o
 
 .PHONY : sleeping_threads_list.o
@@ -209,10 +249,11 @@ sleeping_threads_list.o: sleeping_threads_list.cpp.o
 # target to build an object file
 sleeping_threads_list.cpp.o:
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/sleeping_threads_list.cpp.o
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/sleeping_threads_list.cpp.o
+	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/sleeping_threads_list.cpp.o
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/sleeping_threads_list.cpp.o
 	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/sleeping_threads_list.cpp.o
 	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/sleeping_threads_list.cpp.o
-	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/sleeping_threads_list.cpp.o
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/sleeping_threads_list.cpp.o
 .PHONY : sleeping_threads_list.cpp.o
 
 sleeping_threads_list.i: sleeping_threads_list.cpp.i
@@ -222,10 +263,11 @@ sleeping_threads_list.i: sleeping_threads_list.cpp.i
 # target to preprocess a source file
 sleeping_threads_list.cpp.i:
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/sleeping_threads_list.cpp.i
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/sleeping_threads_list.cpp.i
+	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/sleeping_threads_list.cpp.i
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/sleeping_threads_list.cpp.i
 	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/sleeping_threads_list.cpp.i
 	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/sleeping_threads_list.cpp.i
-	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/sleeping_threads_list.cpp.i
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/sleeping_threads_list.cpp.i
 .PHONY : sleeping_threads_list.cpp.i
 
 sleeping_threads_list.s: sleeping_threads_list.cpp.s
@@ -235,10 +277,11 @@ sleeping_threads_list.s: sleeping_threads_list.cpp.s
 # target to generate assembly for a file
 sleeping_threads_list.cpp.s:
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/sleeping_threads_list.cpp.s
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/sleeping_threads_list.cpp.s
+	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/sleeping_threads_list.cpp.s
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/sleeping_threads_list.cpp.s
 	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/sleeping_threads_list.cpp.s
 	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/sleeping_threads_list.cpp.s
-	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/sleeping_threads_list.cpp.s
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/sleeping_threads_list.cpp.s
 .PHONY : sleeping_threads_list.cpp.s
 
 test1.o: test1.cpp.o
@@ -356,10 +399,11 @@ uthreads.o: uthreads.cpp.o
 # target to build an object file
 uthreads.cpp.o:
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/uthreads.cpp.o
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/uthreads.cpp.o
+	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/uthreads.cpp.o
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/uthreads.cpp.o
 	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/uthreads.cpp.o
 	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/uthreads.cpp.o
-	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/uthreads.cpp.o
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/uthreads.cpp.o
 .PHONY : uthreads.cpp.o
 
 uthreads.i: uthreads.cpp.i
@@ -369,10 +413,11 @@ uthreads.i: uthreads.cpp.i
 # target to preprocess a source file
 uthreads.cpp.i:
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/uthreads.cpp.i
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/uthreads.cpp.i
+	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/uthreads.cpp.i
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/uthreads.cpp.i
 	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/uthreads.cpp.i
 	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/uthreads.cpp.i
-	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/uthreads.cpp.i
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/uthreads.cpp.i
 .PHONY : uthreads.cpp.i
 
 uthreads.s: uthreads.cpp.s
@@ -382,10 +427,11 @@ uthreads.s: uthreads.cpp.s
 # target to generate assembly for a file
 uthreads.cpp.s:
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/uthreads.cpp.s
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/uthreads.cpp.s
+	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/uthreads.cpp.s
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/uthreads.cpp.s
 	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/uthreads.cpp.s
 	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/uthreads.cpp.s
-	$(MAKE) -f CMakeFiles/ex2_sleep_test1.dir/build.make CMakeFiles/ex2_sleep_test1.dir/uthreads.cpp.s
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/uthreads.cpp.s
 .PHONY : uthreads.cpp.s
 
 # Help Target
@@ -396,14 +442,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... ex2_test4"
+	@echo "... rebuild_cache"
+	@echo "... ex2_test3"
+	@echo "... ex2_sleep_test1"
+	@echo "... ex2_sleep_test2"
 	@echo "... ex2_test1"
 	@echo "... ex2_test2"
-	@echo "... rebuild_cache"
-	@echo "... ex2_sleep_test1"
-	@echo "... ex2_test3"
 	@echo "... SleepTest.o"
 	@echo "... SleepTest.i"
 	@echo "... SleepTest.s"
+	@echo "... SleepTest2.o"
+	@echo "... SleepTest2.i"
+	@echo "... SleepTest2.s"
 	@echo "... sleeping_threads_list.o"
 	@echo "... sleeping_threads_list.i"
 	@echo "... sleeping_threads_list.s"

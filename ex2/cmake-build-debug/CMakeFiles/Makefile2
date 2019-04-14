@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug
 CMakeFiles/ex2_test4.dir/all:
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/depend
 	$(MAKE) -f CMakeFiles/ex2_test4.dir/build.make CMakeFiles/ex2_test4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=17,18,19,20 "Built target ex2_test4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=21,22,23,24 "Built target ex2_test4"
 .PHONY : CMakeFiles/ex2_test4.dir/all
 
 # Include target in all.
@@ -102,76 +102,39 @@ clean: CMakeFiles/ex2_test4.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex2_test1.dir
+# Target rules for target CMakeFiles/ex2_test3.dir
 
 # All Build rule for target.
-CMakeFiles/ex2_test1.dir/all:
-	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/depend
-	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8 "Built target ex2_test1"
-.PHONY : CMakeFiles/ex2_test1.dir/all
+CMakeFiles/ex2_test3.dir/all:
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/depend
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=17,18,19,20 "Built target ex2_test3"
+.PHONY : CMakeFiles/ex2_test3.dir/all
 
 # Include target in all.
-all: CMakeFiles/ex2_test1.dir/all
+all: CMakeFiles/ex2_test3.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ex2_test1.dir/rule: cmake_check_build_system
+CMakeFiles/ex2_test3.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex2_test1.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex2_test3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex2_test1.dir/rule
+.PHONY : CMakeFiles/ex2_test3.dir/rule
 
 # Convenience name for target.
-ex2_test1: CMakeFiles/ex2_test1.dir/rule
+ex2_test3: CMakeFiles/ex2_test3.dir/rule
 
-.PHONY : ex2_test1
-
-# clean rule for target.
-CMakeFiles/ex2_test1.dir/clean:
-	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/clean
-.PHONY : CMakeFiles/ex2_test1.dir/clean
+.PHONY : ex2_test3
 
 # clean rule for target.
-clean: CMakeFiles/ex2_test1.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/ex2_test2.dir
-
-# All Build rule for target.
-CMakeFiles/ex2_test2.dir/all:
-	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/depend
-	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12 "Built target ex2_test2"
-.PHONY : CMakeFiles/ex2_test2.dir/all
-
-# Include target in all.
-all: CMakeFiles/ex2_test2.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/ex2_test2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex2_test2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex2_test2.dir/rule
-
-# Convenience name for target.
-ex2_test2: CMakeFiles/ex2_test2.dir/rule
-
-.PHONY : ex2_test2
+CMakeFiles/ex2_test3.dir/clean:
+	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/clean
+.PHONY : CMakeFiles/ex2_test3.dir/clean
 
 # clean rule for target.
-CMakeFiles/ex2_test2.dir/clean:
-	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/clean
-.PHONY : CMakeFiles/ex2_test2.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/ex2_test2.dir/clean
+clean: CMakeFiles/ex2_test3.dir/clean
 
 .PHONY : clean
 
@@ -213,39 +176,113 @@ clean: CMakeFiles/ex2_sleep_test1.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex2_test3.dir
+# Target rules for target CMakeFiles/ex2_sleep_test2.dir
 
 # All Build rule for target.
-CMakeFiles/ex2_test3.dir/all:
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/depend
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=13,14,15,16 "Built target ex2_test3"
-.PHONY : CMakeFiles/ex2_test3.dir/all
+CMakeFiles/ex2_sleep_test2.dir/all:
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/depend
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8 "Built target ex2_sleep_test2"
+.PHONY : CMakeFiles/ex2_sleep_test2.dir/all
 
 # Include target in all.
-all: CMakeFiles/ex2_test3.dir/all
+all: CMakeFiles/ex2_sleep_test2.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ex2_test3.dir/rule: cmake_check_build_system
+CMakeFiles/ex2_sleep_test2.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex2_test3.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex2_sleep_test2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex2_test3.dir/rule
+.PHONY : CMakeFiles/ex2_sleep_test2.dir/rule
 
 # Convenience name for target.
-ex2_test3: CMakeFiles/ex2_test3.dir/rule
+ex2_sleep_test2: CMakeFiles/ex2_sleep_test2.dir/rule
 
-.PHONY : ex2_test3
-
-# clean rule for target.
-CMakeFiles/ex2_test3.dir/clean:
-	$(MAKE) -f CMakeFiles/ex2_test3.dir/build.make CMakeFiles/ex2_test3.dir/clean
-.PHONY : CMakeFiles/ex2_test3.dir/clean
+.PHONY : ex2_sleep_test2
 
 # clean rule for target.
-clean: CMakeFiles/ex2_test3.dir/clean
+CMakeFiles/ex2_sleep_test2.dir/clean:
+	$(MAKE) -f CMakeFiles/ex2_sleep_test2.dir/build.make CMakeFiles/ex2_sleep_test2.dir/clean
+.PHONY : CMakeFiles/ex2_sleep_test2.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex2_sleep_test2.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex2_test1.dir
+
+# All Build rule for target.
+CMakeFiles/ex2_test1.dir/all:
+	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/depend
+	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12 "Built target ex2_test1"
+.PHONY : CMakeFiles/ex2_test1.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex2_test1.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex2_test1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex2_test1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex2_test1.dir/rule
+
+# Convenience name for target.
+ex2_test1: CMakeFiles/ex2_test1.dir/rule
+
+.PHONY : ex2_test1
+
+# clean rule for target.
+CMakeFiles/ex2_test1.dir/clean:
+	$(MAKE) -f CMakeFiles/ex2_test1.dir/build.make CMakeFiles/ex2_test1.dir/clean
+.PHONY : CMakeFiles/ex2_test1.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex2_test1.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex2_test2.dir
+
+# All Build rule for target.
+CMakeFiles/ex2_test2.dir/all:
+	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/depend
+	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles --progress-num=13,14,15,16 "Built target ex2_test2"
+.PHONY : CMakeFiles/ex2_test2.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex2_test2.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex2_test2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex2_test2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex2_test2.dir/rule
+
+# Convenience name for target.
+ex2_test2: CMakeFiles/ex2_test2.dir/rule
+
+.PHONY : ex2_test2
+
+# clean rule for target.
+CMakeFiles/ex2_test2.dir/clean:
+	$(MAKE) -f CMakeFiles/ex2_test2.dir/build.make CMakeFiles/ex2_test2.dir/clean
+.PHONY : CMakeFiles/ex2_test2.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex2_test2.dir/clean
 
 .PHONY : clean
 

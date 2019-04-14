@@ -142,6 +142,8 @@ Thread *check_existance(int tid) {
     }
     auto it = all_threads.find(tid);
     if (it == all_threads.end()) {
+        cout << "---> couldnt find: " << tid << endl;
+        cout << "thread library error: the thread id's cell is empty in the threadsArr" << endl;
         return nullptr;
     }
     unblock_all_signals();
@@ -157,6 +159,12 @@ timeval calc_wake_up_timeval(int usecs_to_sleep) {
     return wake_up_timeval;
 }
 
+//bool check_wake(timeval &now, timeval &wakie) {
+//    if (now.tv_sec == wakie.tv_sec) {
+//        return now.tv_usec > wakie.tv_usec;
+//    }
+//    return now.tv_sec > wakie.tv_sec;
+//}
 
 void handler_timer_virtual(int sig) {
 //  get current time:
@@ -181,6 +189,7 @@ unsigned int calc_next_wake() {
 void handler_timer_real(int sig) {
     block_all_signals();
     wake_up_info *first_to_wake = nap_manager->peek(); //get the first in line
+    cerr << "here for " << first_to_wake->id << endl;
     Thread *Thread_to_wake = check_existance(first_to_wake->id);
     if (!Thread_to_wake) {
         throw "Error - couldnt wakeup";
@@ -193,11 +202,9 @@ void handler_timer_real(int sig) {
 //        set_timer_real(0);
     } else {
         while (first_to_wake && timercmp(&first_to_wake->awaken_tv, &now, <=)) {
-            if (check_existance(first_to_wake->id)->get_id() == BLOCKED) {
-                nap_manager->pop();
-                first_to_wake = nap_manager->peek();
-            }
-            else if (Thread_to_wake->get_status() == SLEEPING) {
+            cout << "time for g to wake up! " << endl;
+            cout << check_existance(2)->get_id() << endl;
+            if (Thread_to_wake->get_status() == SLEEPING) {
                 ready_queue.push_back(Thread_to_wake);
                 Thread_to_wake->set_status(READY);
 
@@ -205,6 +212,10 @@ void handler_timer_real(int sig) {
                 all_threads.erase(Thread_to_wake->get_id());      //didn't erase yet
             }
 
+//        else {                                       //TODO - this maybe irrelevant becuase if its not sleep it is blocked
+//            Thread_to_wake->set_status(BLOCKED);
+//        }
+            cerr << "---> moved from queue : " << Thread_to_wake->get_id() << endl;
             nap_manager->pop();
             first_to_wake = nap_manager->peek(); //update in order to check for others that need to be awaken
             while (first_to_wake && check_existance(first_to_wake->id)->get_status() == TERMINATE) {
@@ -219,6 +230,25 @@ void handler_timer_real(int sig) {
     }
     unblock_all_signals();
 }
+
+// wake up first - to ready / blocked
+// reset timer for next_awake - now
+//    timeval now{};
+//    gettimeofday(&now, nullptr);
+
+//   ------------------------------------------------------------ {
+//        Thread *Thread_to_wake = check_existance(first_to_wake->id);
+//        if (!Thread_to_wake) {
+//            throw "Error - couldnt wakeup";
+//        }
+//    if (Thread_to_wake->get_status() == SLEEPING) {
+//
+//    }
+//    nap_manager->pop();
+//
+//}
+
+// call thread switch:
 
 
 /////////////////////////////////// public functions ////////////////////////////////////////////////////////////////////////////////////
@@ -322,6 +352,7 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
             switch_threads(TERMINATE);
             break;
         case (SLEEPING):
+//            cout << "terminate while asleep "<< tid;
             available_ids.insert(tid); // re-use the id, and delete the thread.
             if (!nap_manager->peek()) {
                 cout << "empty nappie" << endl;
@@ -332,6 +363,7 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
             } else {
                 toKill->set_status(TERMINATE);
             }
+//            all_threads.erase(tid);
         default: // if blocked nothing extra to be done just erase and happens anyway
             break;
     }
@@ -377,6 +409,8 @@ int uthread_block(int tid) {
     }
 
     all_threads[tid]->set_status(BLOCKED);
+//    auto it = nap_manager.find(tid)
+//    all_threads[tid] -> set_blocked( find(nap_manager[]))
     unblock_all_signals();
     return 0;
 }
@@ -419,11 +453,6 @@ int uthread_resume(int tid) {
 */
 int uthread_sleep(unsigned int usec) {
     block_all_signals();
-    if (usec == 0) {
-        switch_threads(SLEEPING);
-        unblock_all_signals();
-        return 0;
-    }
     timeval wake_me = calc_wake_up_timeval(usec);
     int currId = uthread_get_tid(); // block thread
     if (!nap_manager->peek()) {
@@ -432,6 +461,7 @@ int uthread_sleep(unsigned int usec) {
         set_timer_real(usec);
     }
     nap_manager->add(currId, wake_me);
+//    cout << nap_manager
 
     switch_threads(SLEEPING);
     unblock_all_signals();
