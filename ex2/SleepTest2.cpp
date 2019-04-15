@@ -87,6 +87,7 @@ int main() {
     uthread_spawn(g);
     uthread_spawn(z);
     for (;;) {
+//                std:: cout << uthread_get_tid() << std:: endl;
         if (gotit4) {
             if (uthread_get_total_quantums() == 24) {}
             std::cout << "in main id: " << uthread_get_tid() << " " << uthread_get_quantums

@@ -176,8 +176,11 @@ unsigned int calc_next_wake() {
     block_all_signals();
     timeval now{};
     gettimeofday(&now, nullptr);
+    if (!nap_manager->peek())
+    {
+        return 0;
+    }
     auto sec = static_cast<unsigned int>((nap_manager->peek()->awaken_tv.tv_sec - now.tv_sec) * 1000000);
-//    cout << "hereeee" << endl;
     sec += nap_manager->peek()->awaken_tv.tv_usec - now.tv_usec;
     unblock_all_signals();
     return sec;
@@ -185,38 +188,50 @@ unsigned int calc_next_wake() {
 
 void handler_timer_real(int sig) {
     block_all_signals();
+//    cout << " ---> hereeee in timer in time 1" << endl;
+    if (!nap_manager -> peek()) {
+        cerr << "DONT GO HERE" << endl;
+    }
     wake_up_info *first_to_wake = nap_manager->peek(); //get the first in line
-    Thread *Thread_to_wake = check_existance(first_to_wake->id);
-    if (!Thread_to_wake) {
+//    cout << " ---> hereeee in timer in time 1.5" << endl;
+    Thread *thread_to_wake = check_existance(first_to_wake->id);
+    if (!thread_to_wake) {
         throw "Error - couldnt wakeup";
     }
     timeval now{};
     gettimeofday(&now, nullptr);
-    if (!nap_manager) {
-        cerr << "DONT GO HERE" << endl;
-    } else {
-        while (first_to_wake && timercmp(&first_to_wake->awaken_tv, &now, <=)) {
-            if (check_existance(first_to_wake->id)->get_id() == BLOCKED) {
-                nap_manager->pop();
-            } else if (Thread_to_wake->get_status() == SLEEPING) {
-                ready_queue.push_back(Thread_to_wake);
-                Thread_to_wake->set_status(READY);
+//    else {
+        while (first_to_wake && timercmp(&first_to_wake->awaken_tv, &now, <=))
+        {
+//            if (check_existance(first_to_wake->id)->get_id() == BLOCKED) {
+////                nap_manager->pop();
+//                cout << "-------> WTF #6574 status "<<check_existance(first_to_wake->id)->get_status() << endl;
+//            }
+             if (thread_to_wake->get_status() == SLEEPING) {
+                ready_queue.push_back(thread_to_wake);
+                thread_to_wake->set_status(READY);
 
-            } else if (Thread_to_wake->get_status() == TERMINATE) {
-                all_threads.erase(Thread_to_wake->get_id());      //didn't erase yet
+            } else if (thread_to_wake->get_status() == TERMINATE) {
+                all_threads.erase(thread_to_wake->get_id());      //didn't erase yet
             }
-            nap_manager->pop();
+//            if (first_to_wake->id == nap_manager->peek()->id) {
+//                cout << " poping " << nap_manager->peek()->id << " of status " << check_existance(nap_manager->peek()->id)->get_status() << endl;
+//                cout << "  waking up " << first_to_wake->id << " of status " << check_existance(first_to_wake->id)->get_status() << endl;
+                nap_manager->pop();
+//            }
             first_to_wake = nap_manager->peek(); //update in order to check for others that need to be awaken
             while (first_to_wake && check_existance(first_to_wake->id)->get_status() == TERMINATE) {
+//                all_threads.erase(thread_to_wake->get_id());      //didn't erase yet
                 nap_manager->pop();
                 first_to_wake = nap_manager->peek();
             }
+            if (first_to_wake) {
+            thread_to_wake = check_existance(first_to_wake->id);
+            }
             gettimeofday(&now, nullptr);
         }
-        if (nap_manager->peek()) {
-            set_timer_real(calc_next_wake());
-        }
-    }
+
+    set_timer_real(calc_next_wake());
     unblock_all_signals();
 }
 
@@ -309,6 +324,7 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
     }
 
     Thread *toKill = check_existance(tid);
+//                cout << tid <<" is terimnating with a smile and a status " << toKill->get_status() << endl;
     if (!(toKill)) {
         return -1;
     }
@@ -327,8 +343,12 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
                 nap_manager->pop();
                 if (nap_manager->peek()) {
                     set_timer_real(calc_next_wake());
+                } else{
+                    set_timer_real(0);
                 }
             } else {
+//            cout << tid << " is here now "<< endl;
+//                set_timer_real(0);
                 toKill->set_status(TERMINATE);
             }
         default: // if blocked nothing extra to be done just erase and happens anyway
@@ -370,8 +390,11 @@ int uthread_block(int tid) {
             ready_queue.erase(find(ready_queue.begin(), ready_queue.end(), toKill));
             break;
         case (RUNNING):
+            unblock_all_signals();
             switch_threads(BLOCKED);
             break;
+        case (SLEEPING):
+            toKill->set_status(BLOCKED);
         default: // in this case - do nothing.
             break;
     }
@@ -432,11 +455,12 @@ int uthread_sleep(unsigned int usec) {
                timercmp(&nap_manager->peek()->awaken_tv, &wake_me, >)) { // check if new sleeper should be awaken first
         set_timer_real(usec);
     }
-    nap_manager->add(currId, wake_me);
-    unblock_all_signals();
     if (usec) {
+        nap_manager->add(currId, wake_me);
+        unblock_all_signals();
         switch_threads(SLEEPING);
     }
+    unblock_all_signals();
     return 0;
 }
 

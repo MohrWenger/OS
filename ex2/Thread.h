@@ -65,7 +65,7 @@ class Thread {
 public:
     Thread() = default;
 
-    Thread( int id, func f, int stack_size) : _times_ran(0), _id(id), _status(READY) {
+    Thread( int id, func f, int stack_size) : _times_ran(0), _id(id), _status(READY) ,_is_sleeping(false){
         _pc = translate_address((address_t) f);
         _sp = new char[stack_size];
         //blocked_signals_set inviornment
@@ -112,18 +112,21 @@ public:
         return &env;
     }
 
-//    void set_sleep (bool stat)
-//    {
-//        _is_sleeping = stat;
-//    }
+    void set_sleep (bool stat)
+    {
+        _is_sleeping = stat;
+    }
 
+    bool get_sleeping(){
+        return _is_sleeping;
+    }
 private:
 
     int _times_ran;
     int _id;
     int _status;
 //    bool _is_blocked;
-//    bool _is_sleeping;
+    bool _is_sleeping;
     address_t _pc;
     char *_sp; // TODO - if accessing stack - make sure range is legal
     sigjmp_buf env;
