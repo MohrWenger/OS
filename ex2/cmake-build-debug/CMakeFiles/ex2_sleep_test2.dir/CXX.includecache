@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/cs/usr/ellonet/Desktop/OS/OS/ex2/SleepTest2.cpp
+uthreads.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.h
+stdio.h
+-
+iostream
+-
+
 /cs/usr/ellonet/Desktop/OS/OS/ex2/Thread.h
 stdlib.h
 -
@@ -19,6 +27,12 @@ setjmp.h
 -
 sys/time.h
 -
+
+/cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.cpp
+algorithm
+-
+sleeping_threads_list.h
+/cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.h
 
 /cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.h
 deque

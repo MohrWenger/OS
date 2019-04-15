@@ -23,7 +23,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bef2265e-a628-49e6-9372-219c33dc2782" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
@@ -55,9 +54,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ex2_test2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ex2_test2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ex2_test3" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ex2_test3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ex2_test4" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ex2_test4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleeping_threads_list.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sleeping_threads_list.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleeping_threads_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/sleeping_threads_list.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uthreads.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/uthreads.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -170,8 +166,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uthreads.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+            <state relative-caret-position="1242">
+              <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -365,7 +361,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ex2_sleep_test1">
+  <component name="RunManager" selected="Application.ex2_sleep_test2">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -456,7 +452,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112416000" />
+    <option name="totallyTimeSpent" value="112696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="26" width="1928" height="1033" extended-state="6" />
@@ -779,8 +775,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/uthreads.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        <state relative-caret-position="1242">
+          <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
         </state>
       </provider>
     </entry>
