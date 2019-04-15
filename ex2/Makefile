@@ -1,19 +1,22 @@
+CC=g++
 CXX=g++
 RANLIB=ranlib
 
-LIBSRC=uthreads.cpp
+LIBSRC=uthreads.cpp sleeping_threads_list.cpp
+LIBHEAD=Thread.h sleeping_threads_list.h
 LIBOBJ=$(LIBSRC:.cpp=.o)
 
 INCS=-I.
+CFLAGS = -Wall -std=c++11 -g $(INCS)
 CXXFLAGS = -Wall -std=c++11 -g $(INCS)
 
-UTHRLIB = libuthreads.a
-TARGETS = $(UTHRLIB)
+THREADLIB = libuthreads.a
+TARGETS = $(THREADLIB)
 
 TAR=tar
 TARFLAGS=-cvf
 TARNAME=ex2.tar
-TARSRCS=$(LIBSRC) Makefile README
+TARSRCS=$(LIBSRC) $(LIBHEAD) Makefile README
 
 all: $(TARGETS)
 
@@ -22,11 +25,10 @@ $(TARGETS): $(LIBOBJ)
 	$(RANLIB) $@
 
 clean:
-	$(RM) $(TARGETS) $(UTHRLIB) $(OBJ) $(LIBOBJ) *~ *core
+	$(RM) $(TARGETS) $(OSMLIB) $(OBJ) $(LIBOBJ) *~ *core
 
 depend:
-	makedepend -- $(CXXFLAGS) -- $(SRC) $(LIBSRC)
+	makedepend -- $(CFLAGS) -- $(SRC) $(LIBSRC)
 
 tar:
 	$(TAR) $(TARFLAGS) $(TARNAME) $(TARSRCS)
-

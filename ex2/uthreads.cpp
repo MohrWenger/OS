@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Thread.h"
 #include "uthreads.h"
+#include "sleeping_threads_list.h"
 #include <deque>
 #include <map>
 #include <queue>
@@ -10,7 +11,6 @@
 #include <algorithm>
 #include <signal.h>
 #include <setjmp.h>
-#include "sleeping_threads_list.h"
 #include <sys/time.h>
 
 using namespace std;
@@ -364,7 +364,7 @@ int uthread_spawn(void (*f)()) { // TODO - check allocation success
  * terminated and -1 otherwise. If a thread terminates itself or the main
  * thread is terminated, the function does not return.
 */
-int uthread_terminate(int tid) {    // TODO - make sure to free the allocations using delete
+int uthread_terminate(int tid) {
     block_all_signals();
     if (!tid) { // in case of deleting the main thread
         clean_up();

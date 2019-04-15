@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cs/usr/ellonet/Desktop/OS/OS/ex2/SleepTest.cpp" "/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2.dir/SleepTest.cpp.o"
   "/cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.cpp" "/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2.dir/sleeping_threads_list.cpp.o"
   "/cs/usr/ellonet/Desktop/OS/OS/ex2/uthreads.cpp" "/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2.dir/uthreads.cpp.o"
   )

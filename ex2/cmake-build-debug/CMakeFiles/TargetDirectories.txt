@@ -1,9 +1,3 @@
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2_test4.dir
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2_test2.dir
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2_testing.dir
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2_test1.dir
 /cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2_test3.dir
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2_sleep_test1.dir
-/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2_sleep_test2.dir
+/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cs/usr/ellonet/Desktop/OS/OS/ex2/cmake-build-debug/CMakeFiles/ex2.dir
