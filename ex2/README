@@ -1,0 +1,73 @@
+mohr, ellonet
+Student mohr wnenger (204802748), Student ella duvdevan (ID2)
+EX: 2
+
+FILES:
+uthreads.cpp - This is the library that controls the threads. It is responsible for keeping the threads,
+creating new threads, and also contains a scheduler of RRS type that keeps the order of the threads and sets
+them between the RUNNING, READY, BLOCKED and SLEEP states.
+
+uthreads.h - This is the header file for the library I described above.
+
+Thread.h - This is the class for the threads , it keeps a pointer to the threads function along with it's id
+and it's enviornment.
+
+sleeping_threads_list.cpp - This is a structre that keeps the sleeping threads in a cronological order of
+when they should wake up.
+
+sleeping_threads_list.h - This is the header file of the library above.
+
+
+ANSWERS:
+
+Q1:
+User level threads can be used to break a preccess that does a massive calculation
+into threads so that each thread is responssible for a simple caculation while the main
+will use all the results. User level threads don't involve the OS, meanning they don't get to kernel mode.
+This makes them useful only in cases that don't involve the OS, such as the above.On the other hand,
+switching between is more efficient than kernel level thread, also it has significanlty less overhead
+than kernel level threads. For those reasons we would rather use user level therads somtimes when we know
+that the program doesn't use the kernel.
+Also blocking a user-level thread blocks the whole preccess which could be a disadvantage we would
+like to consider depending on how our program works.
+
+Q2:
+Advantages:
+- Each tab is independent, therefore there is no one main tab that if we close it the rest couldn't run.
+- Proccesses are more protected from one another then different threads of the same procces therefore if
+a problem accurs in one the rest won't get harm.
+
+Disatvanteges:
+- Keeping the context of different proccesses use significantly more memmory.
+- It is faster to create and terminate a kernel thread than a procces.
+
+Q3:
+Interrupts and signals that are involved during the command execution:
+- When typing a signal is sent from the keybord , this is an external interrupt, also known as hardware interrupt.
+This tells the OS to handle the situsation wich in this case results with showing the relevant letter on the shell.
+
+- When pressing 'Enter' also a signal is sent from the keybord (again, a hardware interrupt) this time the signal
+causes the shell to pass the control back to the shell.
+
+- When the shall proccesses 'kill pid' an interupt is sent to the OS, this time it is a software interrupt, this time
+the interrupt requests to send a signal - SIGKILL to the procces with the input pid. We should notice this procces
+can't be masked.
+
+- Then the OS sends a SIGKILL interrupt as we mentioned above.
+
+- The procces has been terminated ( but Moris Kahan promissed he would try again)
+
+Q4:
+Real time is the time we as people use - hours, minutes, etc. In ex2 we used a real time timer to keep track of
+the sleeping threads.
+Virtual time is time that is measured by pre - defined intervals that are dependent of the duration of the procces.
+In ex2 we used virtutal timers which we set to a time of a given 'quantum' to calculate the running time of a procces
+when it wasn't blocked , terminated or moved to sleep.
+
+
+Here are answers to theoreical questions
+if there were such questions in the exercise.
+
+Q2:
+Here are answers to theoreical questions
+if there were such questions in the exercise.

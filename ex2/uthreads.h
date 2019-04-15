@@ -112,7 +112,6 @@ int uthread_get_total_quantums();
 */
 int uthread_get_quantums(int tid);
 
-void print_ready();
 
 #endif
 

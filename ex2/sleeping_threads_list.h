@@ -41,6 +41,11 @@ public:
     */
     wake_up_info* peek();
 
+    /*
+     * Description: This method returns the information about the thread (id and time it needs to wake up)
+    * at the top of this list without removing it from the list.
+    * If the list is empty, it returns null.
+    */
     void delete_sleeper(int thread_id);
 
 };

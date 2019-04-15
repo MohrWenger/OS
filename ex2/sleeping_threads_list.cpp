@@ -51,7 +51,9 @@ wake_up_info *SleepingThreadsList::peek() {
     return &sleeping_threads.at(0);
 }
 
-
+/*
+ * Description: This method deletes the thread with the givan thread id from the list of sleeping threads.
+*/
 void SleepingThreadsList::delete_sleeper(int thread_id) {
     auto it_s = sleeping_threads.begin();
     auto it_e = sleeping_threads.end();
@@ -63,26 +65,3 @@ void SleepingThreadsList::delete_sleeper(int thread_id) {
     }
 
 }
-
-/*
-void SleepingThreadsList::add(int thread_id, timeval wakeup_tv) {
-
-    wake_up_info new_thread;
-    new_thread.id = thread_id;
-    new_thread.awaken_tv = wakeup_tv;
-
-    if(sleeping_threads.empty()){
-        sleeping_threads.push_front(new_thread);
-    }
-    else {
-        for (deque<wake_up_info>::iterator it = sleeping_threads.begin(); it != sleeping_threads.end(); ++it){
-            if(timercmp(&it->awaken_tv, &wakeup_tv, >=)){
-                sleeping_threads.insert(it, new_thread);
-                return;
-            }
-        }
-        sleeping_threads.push_back(new_thread);
-    }
-}
-
-*/

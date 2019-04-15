@@ -1,4 +1,4 @@
-// --------------------------------------- includes --------------------------------------- //
+// ********************************************* includes ********************************************* //
 #include <stdlib.h>
 #include <iostream>
 #include "Thread.h"
@@ -15,7 +15,7 @@
 
 using namespace std;
 
-// --------------------------------------- global variables --------------------------------------- //
+// ********************************************* global variables ********************************************* //
 // -------------------------- containters -------------------------- //
 /** A map container - holding all the existing threads **/
 map<int, Thread *> all_threads;
@@ -48,7 +48,7 @@ struct sigaction sa_real = {nullptr};
 
 
 
-// --------------------------------------- library private functions --------------------------------------- //
+// ******************************************* library private functions ******************************************* //
 
 /**
  * This function initializes the signal set with the signals to be blocked.
@@ -61,16 +61,22 @@ void init_signal_blocker() {
 }
 
 /**
- * This function blocks all the signals from the global
+ * This function actively blocks all the signals from the global set
  */
 void block_all_signals() {
     sigprocmask(SIG_BLOCK, &blocked_signals_set, nullptr);
 }
 
+/**
+ * This function unblocks all the signals from the global set
+ */
 void unblock_all_signals() {
     sigprocmask(SIG_UNBLOCK, &blocked_signals_set, nullptr);
 }
 
+/**
+ * This function sets the virtual-time timer for the duration of the library quantum time.
+ */
 void set_timer_virtual() {
     timer_virtual.it_value.tv_sec = lib_quantum / 1000000;   // first time interval, seconds part
     timer_virtual.it_value.tv_usec = lib_quantum % 1000000;  // first time interval, microseconds part
@@ -81,6 +87,9 @@ void set_timer_virtual() {
     }
 }
 
+/**
+ * This function sets the real-time timer to set of at the awakening time of the earliest sleeping thread.
+ */
 void set_timer_real(unsigned int usec) {
     timer_real.it_value.tv_sec = usec / 1000000;   // first time interval, seconds part
     timer_real.it_value.tv_usec = usec % 1000000;  // first time interval, microseconds part
@@ -91,6 +100,10 @@ void set_timer_real(unsigned int usec) {
     }
 }
 
+/**
+ * This function returns the smallest available thread id, while re-using the terminated thread's id.
+ * @return thread id.
+ */
 int get_next_id() {
     static int next_id = 1;
     int id;
@@ -104,11 +117,14 @@ int get_next_id() {
     return id;
 }
 
-
+/**
+ * This function returns the first thread in the ready queue.
+ * @return the next thread to run.
+ */
 Thread *get_next_thread() {
     block_all_signals();
     if (ready_queue.empty()) {
-        cout << "no threads left, exiting..." << endl;
+        cout << "No threads left, exiting..." << endl;
         uthread_terminate(all_threads[0]->get_id());
     }
     Thread *temp = ready_queue.front();
@@ -117,18 +133,24 @@ Thread *get_next_thread() {
     return temp;
 }
 
-void switch_threads(state new_st) {
+/**
+ * This function handles the thread switching - recording and restoring the context of each thread for the
+ * next time the thread switched from will start running.
+ * @param new_status - the new status for the thread which stops running after the switch.
+ */
+void switch_threads(state new_status) {
     block_all_signals();
+    // saving the environment of the current running thread.
     int ret_val = sigsetjmp(*(curr_running->get_env()), 1); //TODO update curr_run
-    if (ret_val == 1) {
+    if (ret_val == 1) { // in case the sigsetjmp restored the current thread.
         return;
     }
-    switch (new_st) {
+    switch (new_status) {
         case (BLOCKED):
-            curr_running->set_status(new_st);
+            curr_running->set_status(new_status);
             break;
         case (SLEEPING):
-            curr_running->set_status(new_st);
+            curr_running->set_status(new_status);
             break;
         case (TERMINATE):
             all_threads.erase(curr_running->get_id()); //TODO - make sure deletes thread
@@ -140,26 +162,36 @@ void switch_threads(state new_st) {
         default:
             break;
     }
-    // start running next thread:
+    // preparing the next thread to run
     Thread *next_th = get_next_thread();
     curr_running = next_th;
     curr_running->set_status(RUNNING);
     curr_running->inc_times_ran();
     set_timer_virtual();
     ++total_quantums;
-    // jump
+    // make the jump to the saved context of the next thread.
     unblock_all_signals();
     siglongjmp(*(next_th->get_env()), 1);
 }
 
+/**
+ * This function handles the save deleting of the data structures.
+ * Called when terminating the main thread (id = 0).
+ */
 void clean_up() {
     for (auto &i : all_threads) {
         delete (i.second);
     }
     all_threads.clear();
-    ready_queue.clear(); //TODO - make sure cleans up
+    ready_queue.clear();
 }
 
+/**
+ * This function checks if the given tid is taken by an active thread. if so - it returns a pointer to
+ * this thread, if not - it returns a null pointer.
+ * @param tid - the id to be checked
+ * @return - thread pointer if exists, null pointer otherwise.
+ */
 Thread *check_existance(int tid) {
     block_all_signals();
     if (tid < 0 || tid > MAX_THREAD_NUM) {
@@ -176,6 +208,11 @@ Thread *check_existance(int tid) {
     return (it->second);
 }
 
+/**
+ * This function calculates when a thread sent to sleep should wake up, acording to the given seconds it should sleep.
+ * @param usecs_to_sleep - the time the thread is sent to sleep for - in usecs.
+ * @return - a timeval representing the time this thread should be awaken.
+ */
 timeval calc_wake_up_timeval(int usecs_to_sleep) {
     timeval now, time_to_sleep, wake_up_timeval;
     gettimeofday(&now, nullptr);
@@ -185,7 +222,10 @@ timeval calc_wake_up_timeval(int usecs_to_sleep) {
     return wake_up_timeval;
 }
 
-
+/**
+ * A handler for the SIGVTALRM thrown by the virtual-time timer - each time a thread finishes its quantum.
+ * @param sig - SIGVTALRM value.
+ */
 void handler_timer_virtual(int sig) {
     block_all_signals();
     timeval now{};
@@ -194,6 +234,10 @@ void handler_timer_virtual(int sig) {
     switch_threads(READY);
 }
 
+/**
+ * This function calculates the time left for the earliest sleeping thread.
+ * @return - the new value to send to the real-time timer.
+ */
 unsigned int calc_next_wake() {
     block_all_signals();
     timeval now{};
@@ -207,11 +251,13 @@ unsigned int calc_next_wake() {
     return sec;
 }
 
+/**
+ * A handler for the SIGVTALRM thrown by the real-time timer - each time a sleeping thread is awaken.
+ * @param sig - SIGVTALRM value.
+ */
 void handler_timer_real(int sig) {
     block_all_signals();
-    if (!nap_manager->peek()) {
-        cerr << "DONT GO HERE" << endl;
-    }
+    // get the thread to be awakened:
     wake_up_info *first_to_wake = nap_manager->peek(); //get the first in line
     Thread *thread_to_wake = check_existance(first_to_wake->id);
     if (!thread_to_wake) {
@@ -219,8 +265,8 @@ void handler_timer_real(int sig) {
     }
     timeval now{};
     gettimeofday(&now, nullptr);
+    // awaken all the threads finished their sleeping time.
     while (first_to_wake && timercmp(&first_to_wake->awaken_tv, &now, <=)) {
-
         if (thread_to_wake->get_status() == SLEEPING) {
             ready_queue.push_back(thread_to_wake);
             thread_to_wake->set_status(READY);
@@ -232,13 +278,13 @@ void handler_timer_real(int sig) {
         }
         gettimeofday(&now, nullptr);
     }
-
+    // setting the timer with the time of the next thread still sleeping.
     set_timer_real(calc_next_wake());
     unblock_all_signals();
 }
 
 
-/////////////////////////////////// public functions ////////////////////////////////////////////////////////////////////////////////////
+// ********************************************* public functions ********************************************* //
 /*
  * Description: This function initializes the thread library.
  * You may assume that this function is called before any other thread library
@@ -302,7 +348,7 @@ int uthread_spawn(void (*f)()) { // TODO - check allocation success
         unblock_all_signals();
         return new_thread->get_id();
     }
-    cout << "Error - exceeded num of allowed threads MADAFAKA" << endl;
+    cout << "Error - exceeded num of allowed threads" << endl;
     return -1;
 }
 
