@@ -20,10 +20,6 @@ setjmp.h
 sys/time.h
 -
 
-/cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.cpp
-sleeping_threads_list.h
-/cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.h
-
 /cs/usr/ellonet/Desktop/OS/OS/ex2/sleeping_threads_list.h
 deque
 -

@@ -1,3 +1,4 @@
+// --------------------------------------- includes --------------------------------------- //
 #include <stdlib.h>
 #include <iostream>
 #include "Thread.h"
@@ -14,32 +15,54 @@
 
 using namespace std;
 
-/////////////////////////////////// global variables ///////////////////////////////////
-
+// --------------------------------------- global variables --------------------------------------- //
+// -------------------------- containters -------------------------- //
+/** A map container - holding all the existing threads **/
 map<int, Thread *> all_threads;
+/** A deque container - holding all the threads in ready state **/
 deque<Thread *> ready_queue;
-int lib_quantum;
+/** A set container - holding all the available thread ids **/
 set<int> available_ids;
-Thread *curr_running;
+/** A SleepingThreadsList object- holding all the currently sleeping threads **/
 SleepingThreadsList *nap_manager = new SleepingThreadsList();
-struct itimerval timer_virtual;
-struct itimerval timer_real;
-struct sigaction sa_virtual = {nullptr};
-struct sigaction sa_real = {nullptr};
+/** A signal set containter - holding all the signals to be blocked and unblocked **/
 sigset_t blocked_signals_set;
+
+// -------------------------- library vars -------------------------- //
+/** The library quantum value - representing the virtual time in which each thread can run for **/
+int lib_quantum;
+/** A pointer to the thread which is currently running **/
+Thread *curr_running;
+/** The library total quantum counter **/
 int total_quantums;
 
+// -------------------------- library timers -------------------------- //
+/** A virtual-time timer for sleeping thread management **/
+struct itimerval timer_virtual;
+/** A real-time timer for running thread management **/
+struct itimerval timer_real;
+/** A sigaction bind for the virtual-time timer **/
+struct sigaction sa_virtual = {nullptr};
+/** A sigaction bind for the real-time timer **/
+struct sigaction sa_real = {nullptr};
 
-/////////////////////////////////// private functions ///////////////////////////////////
 
-void init_signail_blocker() {
+
+// --------------------------------------- library private functions --------------------------------------- //
+
+/**
+ * This function initializes the signal set with the signals to be blocked.
+ */
+void init_signal_blocker() {
     sigemptyset(&blocked_signals_set);
     sigaddset(&blocked_signals_set, SIGALRM);
     sigaddset(&blocked_signals_set, SIGVTALRM);
     sigaddset(&blocked_signals_set, SIGINT);
 }
 
-
+/**
+ * This function blocks all the signals from the global
+ */
 void block_all_signals() {
     sigprocmask(SIG_BLOCK, &blocked_signals_set, nullptr);
 }
@@ -139,13 +162,14 @@ void clean_up() {
 
 Thread *check_existance(int tid) {
     block_all_signals();
-    if (tid < 0 || tid > MAX_THREAD_NUM - 1) {
+    if (tid < 0 || tid > MAX_THREAD_NUM) {
         cout << "thread library error: the thread id is invalid (it needs to be  between 0 to " << MAX_THREAD_NUM - 1
              << ")" << endl;
         return nullptr;
     }
     auto it = all_threads.find(tid);
     if (it == all_threads.end()) {
+        cout << "thread library error: the thread id's cell is empty in the threadsArr" << endl;
         return nullptr;
     }
     unblock_all_signals();
@@ -163,12 +187,10 @@ timeval calc_wake_up_timeval(int usecs_to_sleep) {
 
 
 void handler_timer_virtual(int sig) {
-//  get current time:
     block_all_signals();
     timeval now{};
     gettimeofday(&now, nullptr);
     unblock_all_signals();
-    // call thread switch:
     switch_threads(READY);
 }
 
@@ -176,8 +198,7 @@ unsigned int calc_next_wake() {
     block_all_signals();
     timeval now{};
     gettimeofday(&now, nullptr);
-    if (!nap_manager->peek())
-    {
+    if (!nap_manager->peek()) {
         return 0;
     }
     auto sec = static_cast<unsigned int>((nap_manager->peek()->awaken_tv.tv_sec - now.tv_sec) * 1000000);
@@ -188,48 +209,29 @@ unsigned int calc_next_wake() {
 
 void handler_timer_real(int sig) {
     block_all_signals();
-//    cout << " ---> hereeee in timer in time 1" << endl;
-    if (!nap_manager -> peek()) {
+    if (!nap_manager->peek()) {
         cerr << "DONT GO HERE" << endl;
     }
     wake_up_info *first_to_wake = nap_manager->peek(); //get the first in line
-//    cout << " ---> hereeee in timer in time 1.5" << endl;
     Thread *thread_to_wake = check_existance(first_to_wake->id);
     if (!thread_to_wake) {
         throw "Error - couldnt wakeup";
     }
     timeval now{};
     gettimeofday(&now, nullptr);
-//    else {
-        while (first_to_wake && timercmp(&first_to_wake->awaken_tv, &now, <=))
-        {
-//            if (check_existance(first_to_wake->id)->get_id() == BLOCKED) {
-////                nap_manager->pop();
-//                cout << "-------> WTF #6574 status "<<check_existance(first_to_wake->id)->get_status() << endl;
-//            }
-             if (thread_to_wake->get_status() == SLEEPING) {
-                ready_queue.push_back(thread_to_wake);
-                thread_to_wake->set_status(READY);
+    while (first_to_wake && timercmp(&first_to_wake->awaken_tv, &now, <=)) {
 
-            } else if (thread_to_wake->get_status() == TERMINATE) {
-                all_threads.erase(thread_to_wake->get_id());      //didn't erase yet
-            }
-//            if (first_to_wake->id == nap_manager->peek()->id) {
-//                cout << " poping " << nap_manager->peek()->id << " of status " << check_existance(nap_manager->peek()->id)->get_status() << endl;
-//                cout << "  waking up " << first_to_wake->id << " of status " << check_existance(first_to_wake->id)->get_status() << endl;
-                nap_manager->pop();
-//            }
-            first_to_wake = nap_manager->peek(); //update in order to check for others that need to be awaken
-            while (first_to_wake && check_existance(first_to_wake->id)->get_status() == TERMINATE) {
-//                all_threads.erase(thread_to_wake->get_id());      //didn't erase yet
-                nap_manager->pop();
-                first_to_wake = nap_manager->peek();
-            }
-            if (first_to_wake) {
-            thread_to_wake = check_existance(first_to_wake->id);
-            }
-            gettimeofday(&now, nullptr);
+        if (thread_to_wake->get_status() == SLEEPING) {
+            ready_queue.push_back(thread_to_wake);
+            thread_to_wake->set_status(READY);
         }
+        nap_manager->pop();
+        first_to_wake = nap_manager->peek(); //update in order to check for others that need to be awaken
+        if (first_to_wake) {
+            thread_to_wake = check_existance(first_to_wake->id);
+        }
+        gettimeofday(&now, nullptr);
+    }
 
     set_timer_real(calc_next_wake());
     unblock_all_signals();
@@ -246,7 +248,7 @@ void handler_timer_real(int sig) {
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_init(int quantum_usecs) {
-    init_signail_blocker();
+    init_signal_blocker();
     block_all_signals();
     if (quantum_usecs <= 0) {
         cout << "thread library error: quantum_usecs must be positive" << endl;
@@ -324,7 +326,6 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
     }
 
     Thread *toKill = check_existance(tid);
-//                cout << tid <<" is terimnating with a smile and a status " << toKill->get_status() << endl;
     if (!(toKill)) {
         return -1;
     }
@@ -339,25 +340,14 @@ int uthread_terminate(int tid) {    // TODO - make sure to free the allocations 
             break;
         case (SLEEPING):
             available_ids.insert(tid); // re-use the id, and delete the thread.
-            if (nap_manager->peek()->id == tid) {
-                nap_manager->pop();
-                if (nap_manager->peek()) {
-                    set_timer_real(calc_next_wake());
-                } else{
-                    set_timer_real(0);
-                }
-            } else {
-//            cout << tid << " is here now "<< endl;
-//                set_timer_real(0);
-                toKill->set_status(TERMINATE);
-            }
+            nap_manager->delete_sleeper(tid);
+            set_timer_real(calc_next_wake());
         default: // if blocked nothing extra to be done just erase and happens anyway
             break;
     }
 
     available_ids.insert(tid); // re-use the id, and delete the thread.
     all_threads.erase(tid);
-//                cout << "terminated " << tid<< endl;
     unblock_all_signals();
     return 0;
 }
@@ -419,7 +409,7 @@ int uthread_resume(int tid) {
         return -1;
     }
 
-    if (toResume->get_status() == SLEEPING) //if is sleeping still neds to wait for its turn
+    if (toResume->get_status() == SLEEPING) //if is sleeping still needs to wait for its turn
     {
         return 0;
     }
@@ -430,7 +420,6 @@ int uthread_resume(int tid) {
     }
     unblock_all_signals();
     return 0;
-    // TODO - check
 }
 
 /*
@@ -441,10 +430,6 @@ int uthread_resume(int tid) {
  * Return value: On success, return 0. On failure, return -1.
 */
 int uthread_sleep(unsigned int usec) {
-//    if (usec == 0) {
-//        switch_threads(READY);
-//        return 0;
-//    }
     block_all_signals();
     timeval wake_me = calc_wake_up_timeval(usec);
     int currId = uthread_get_tid(); // block thread

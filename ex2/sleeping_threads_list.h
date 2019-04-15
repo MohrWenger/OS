@@ -41,6 +41,8 @@ public:
     */
     wake_up_info* peek();
 
+    void delete_sleeper(int thread_id);
+
 };
 
 #endif

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "sleeping_threads_list.h"
 
 SleepingThreadsList::SleepingThreadsList() {
@@ -13,22 +14,21 @@ SleepingThreadsList::SleepingThreadsList() {
 */
 void SleepingThreadsList::add(int thread_id, timeval wakeup_tv) {
 
-	wake_up_info new_thread;
-	new_thread.id = thread_id;
-	new_thread.awaken_tv = wakeup_tv;
+    wake_up_info new_thread;
+    new_thread.id = thread_id;
+    new_thread.awaken_tv = wakeup_tv;
 
-	if(sleeping_threads.empty()){
-		sleeping_threads.push_front(new_thread);
-	} 
-	else {
-		for (deque<wake_up_info>::iterator it = sleeping_threads.begin(); it != sleeping_threads.end(); ++it){
-			if(timercmp(&it->awaken_tv, &wakeup_tv, >=)){
-				sleeping_threads.insert(it, new_thread);
-				return;
-			}
-		}
-		sleeping_threads.push_back(new_thread);
-	}
+    if (sleeping_threads.empty()) {
+        sleeping_threads.push_front(new_thread);
+    } else {
+        for (deque<wake_up_info>::iterator it = sleeping_threads.begin(); it != sleeping_threads.end(); ++it) {
+            if (timercmp(&it->awaken_tv, &wakeup_tv, >=)) {
+                sleeping_threads.insert(it, new_thread);
+                return;
+            }
+        }
+        sleeping_threads.push_back(new_thread);
+    }
 }
 
 /*
@@ -36,8 +36,8 @@ void SleepingThreadsList::add(int thread_id, timeval wakeup_tv) {
  * If the list is empty, it does nothing.
 */
 void SleepingThreadsList::pop() {
-	if(!sleeping_threads.empty())
-		sleeping_threads.pop_front();
+    if (!sleeping_threads.empty())
+        sleeping_threads.pop_front();
 }
 
 /*
@@ -45,8 +45,44 @@ void SleepingThreadsList::pop() {
  * at the top of this list without removing it from the list.
  * If the list is empty, it returns null.
 */
-wake_up_info* SleepingThreadsList::peek(){
-	if (sleeping_threads.empty())
-		return nullptr;
-	return &sleeping_threads.at(0);
+wake_up_info *SleepingThreadsList::peek() {
+    if (sleeping_threads.empty())
+        return nullptr;
+    return &sleeping_threads.at(0);
 }
+
+
+void SleepingThreadsList::delete_sleeper(int thread_id) {
+    auto it_s = sleeping_threads.begin();
+    auto it_e = sleeping_threads.end();
+    for (auto it = it_s; it != it_e; ++it) {
+        if (it->id == thread_id) {
+            sleeping_threads.erase(it);
+            return;
+        }
+    }
+
+}
+
+/*
+void SleepingThreadsList::add(int thread_id, timeval wakeup_tv) {
+
+    wake_up_info new_thread;
+    new_thread.id = thread_id;
+    new_thread.awaken_tv = wakeup_tv;
+
+    if(sleeping_threads.empty()){
+        sleeping_threads.push_front(new_thread);
+    }
+    else {
+        for (deque<wake_up_info>::iterator it = sleeping_threads.begin(); it != sleeping_threads.end(); ++it){
+            if(timercmp(&it->awaken_tv, &wakeup_tv, >=)){
+                sleeping_threads.insert(it, new_thread);
+                return;
+            }
+        }
+        sleeping_threads.push_back(new_thread);
+    }
+}
+
+*/
