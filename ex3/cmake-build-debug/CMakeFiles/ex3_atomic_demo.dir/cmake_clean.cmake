@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ex3_atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.obj"
+  "CMakeFiles/ex3_atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.o"
   "ex3_atomic_demo.pdb"
-  "ex3_atomic_demo.exe"
-  "ex3_atomic_demo.exe.manifest"
-  "libex3_atomic_demo.dll.a"
+  "ex3_atomic_demo"
 )
 
 # Per-language clean rules from dependency scanning.

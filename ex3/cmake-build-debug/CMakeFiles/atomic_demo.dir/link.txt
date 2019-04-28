@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.o  -o atomic_demo 

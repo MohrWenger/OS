@@ -1,4 +1,5 @@
-D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/ex3.dir
-D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/ex3_atomic_demo.dir
-D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/client_testing.dir
+/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/atomic_demo.dir
+/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/ex3.dir
+/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/edit_cache.dir

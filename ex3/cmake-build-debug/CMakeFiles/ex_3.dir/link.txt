@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/ex_3.dir/MapReduceFramework.cpp.o CMakeFiles/ex_3.dir/SampleClient.cpp.o  -o ex_3 

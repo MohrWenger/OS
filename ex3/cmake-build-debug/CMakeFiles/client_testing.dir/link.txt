@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o  -o client_testing 

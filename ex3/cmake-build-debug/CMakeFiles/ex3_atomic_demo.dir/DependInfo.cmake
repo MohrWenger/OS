@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/ClionProjects/OS/ex3/demos/atomicdemo/atomicdemo.cpp" "D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/ex3_atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.obj"
+  "/cs/usr/ellonet/SCHOOL/OS/ex3/demos/atomicdemo/atomicdemo.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/ex3_atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

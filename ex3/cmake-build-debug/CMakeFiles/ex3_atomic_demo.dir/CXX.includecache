@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/ClionProjects/OS/ex3/demos/atomicdemo/atomicdemo.cpp
+/cs/usr/ellonet/SCHOOL/OS/ex3/demos/atomicdemo/atomicdemo.cpp
 pthread.h
 -
 cstdio

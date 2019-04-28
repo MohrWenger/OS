@@ -1,3 +1,1 @@
-"D:\ClionProjects\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\ex3_atomic_demo.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\ex3_atomic_demo.dir/objects.a @CMakeFiles\ex3_atomic_demo.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\ex3_atomic_demo.dir/objects.a -Wl,--no-whole-archive  -o ex3_atomic_demo.exe -Wl,--out-implib,libex3_atomic_demo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ex3_atomic_demo.dir\linklibs.rsp
+/usr/bin/c++  -pthread -g   CMakeFiles/ex3_atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.o  -o ex3_atomic_demo 
