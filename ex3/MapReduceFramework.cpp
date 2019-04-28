@@ -63,9 +63,11 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
                             const InputVec &inputVec, OutputVec &outputVec,
                             int multiThreadLevel) {
 
+    // initializing variables
     std::atomic<int> atomic_index(0);
     threadContext jobContext = {&atomic_index, &client, &inputVec, &outputVec};
     workingThreads = new pthread_t[multiThreadLevel];
+    // activating client's map
     mapInput(multiThreadLevel, jobContext);
     return nullptr;
 }

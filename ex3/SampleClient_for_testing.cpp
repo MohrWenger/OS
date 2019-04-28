@@ -85,6 +85,8 @@ int main(int argc, char** argv)
     JobState last_state={UNDEFINED_STAGE,0};
     cout << "starting" << endl;
 	JobHandle job = startMapReduceJob(client, inputVec, outputVec, 4);
+//	JobHandle job = startMapReduceJob(client, inputVec, outputVec, 1);
+
 //	getJobState(job, &state);
 //
 //	while (state.stage != REDUCE_STAGE || state.percentage != 100.0)
