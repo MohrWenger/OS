@@ -126,6 +126,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/ClionProjects/OS/ex3/MapReduceFramework.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="D:/ClionProjects/OS/ex3/MapReduceFramework.h">
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="D:/ClionProjects/OS/ex3/demos/atomicdemo/atomicdemo.cpp">
 			<Option target="ex3_atomic_demo"/>
 		</Unit>

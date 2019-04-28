@@ -135,6 +135,33 @@ ex3_atomic_demo/fast:
 	$(MAKE) -f CMakeFiles\ex3_atomic_demo.dir\build.make CMakeFiles/ex3_atomic_demo.dir/build
 .PHONY : ex3_atomic_demo/fast
 
+MapReduceFramework.obj: MapReduceFramework.cpp.obj
+
+.PHONY : MapReduceFramework.obj
+
+# target to build an object file
+MapReduceFramework.cpp.obj:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.obj
+.PHONY : MapReduceFramework.cpp.obj
+
+MapReduceFramework.i: MapReduceFramework.cpp.i
+
+.PHONY : MapReduceFramework.i
+
+# target to preprocess a source file
+MapReduceFramework.cpp.i:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.i
+.PHONY : MapReduceFramework.cpp.i
+
+MapReduceFramework.s: MapReduceFramework.cpp.s
+
+.PHONY : MapReduceFramework.s
+
+# target to generate assembly for a file
+MapReduceFramework.cpp.s:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.s
+.PHONY : MapReduceFramework.cpp.s
+
 demos/atomicdemo/atomicdemo.obj: demos/atomicdemo/atomicdemo.cpp.obj
 
 .PHONY : demos/atomicdemo/atomicdemo.obj
@@ -199,6 +226,9 @@ help:
 	@echo ... ex3_atomic_demo
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... MapReduceFramework.obj
+	@echo ... MapReduceFramework.i
+	@echo ... MapReduceFramework.s
 	@echo ... demos/atomicdemo/atomicdemo.obj
 	@echo ... demos/atomicdemo/atomicdemo.i
 	@echo ... demos/atomicdemo/atomicdemo.s
