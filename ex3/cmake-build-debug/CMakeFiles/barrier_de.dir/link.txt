@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/barrier_de.dir/demos/atomicdemo/atomicdemo.cpp.o  -o barrier_de 

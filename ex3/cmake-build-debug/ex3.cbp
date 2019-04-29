@@ -27,47 +27,11 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="client_testing">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/client_testing" prefix_auto="0" extension_auto="0"/>
+			<Target title="edit_cache">
 				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="client_testing/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/client_testing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -119,6 +83,98 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="client_testing">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/client_testing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="client_testing/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/client_testing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="barrier_demo">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/barrier_demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 barrier_demo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="barrier_demo/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/barrier_demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 barrier_demo/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="ex3">
 				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/ex3" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
@@ -165,17 +221,15 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 		</Build>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.cpp">
+			<Option target="client_testing"/>
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.h">
+			<Option target="client_testing"/>
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h">
 			<Option target="client_testing"/>
 			<Option target="ex3"/>
@@ -196,6 +250,15 @@
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/atomicdemo/atomicdemo.cpp">
 			<Option target="atomic_demo"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/Barrier1.cpp">
+			<Option target="barrier_demo"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/Barrier1.h">
+			<Option target="barrier_demo"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/barrierdemo.cpp">
+			<Option target="barrier_demo"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

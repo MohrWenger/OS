@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named client_testing
-
-# Build rule for target.
-client_testing: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 client_testing
-.PHONY : client_testing
-
-# fast build rule for target.
-client_testing/fast:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/build
-.PHONY : client_testing/fast
-
-#=============================================================================
 # Target rules for targets named atomic_demo
 
 # Build rule for target.
@@ -137,6 +124,32 @@ atomic_demo/fast:
 .PHONY : atomic_demo/fast
 
 #=============================================================================
+# Target rules for targets named client_testing
+
+# Build rule for target.
+client_testing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client_testing
+.PHONY : client_testing
+
+# fast build rule for target.
+client_testing/fast:
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/build
+.PHONY : client_testing/fast
+
+#=============================================================================
+# Target rules for targets named barrier_demo
+
+# Build rule for target.
+barrier_demo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 barrier_demo
+.PHONY : barrier_demo
+
+# fast build rule for target.
+barrier_demo/fast:
+	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/build
+.PHONY : barrier_demo/fast
+
+#=============================================================================
 # Target rules for targets named ex3
 
 # Build rule for target.
@@ -148,6 +161,36 @@ ex3: cmake_check_build_system
 ex3/fast:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
 .PHONY : ex3/fast
+
+Barrier.o: Barrier.cpp.o
+
+.PHONY : Barrier.o
+
+# target to build an object file
+Barrier.cpp.o:
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.o
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.o
+.PHONY : Barrier.cpp.o
+
+Barrier.i: Barrier.cpp.i
+
+.PHONY : Barrier.i
+
+# target to preprocess a source file
+Barrier.cpp.i:
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.i
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.i
+.PHONY : Barrier.cpp.i
+
+Barrier.s: Barrier.cpp.s
+
+.PHONY : Barrier.s
+
+# target to generate assembly for a file
+Barrier.cpp.s:
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.s
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.s
+.PHONY : Barrier.cpp.s
 
 MapReduceFramework.o: MapReduceFramework.cpp.o
 
@@ -260,6 +303,60 @@ demos/atomicdemo/atomicdemo.cpp.s:
 	$(MAKE) -f CMakeFiles/atomic_demo.dir/build.make CMakeFiles/atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.s
 .PHONY : demos/atomicdemo/atomicdemo.cpp.s
 
+demos/barrierdemo/Barrier1.o: demos/barrierdemo/Barrier1.cpp.o
+
+.PHONY : demos/barrierdemo/Barrier1.o
+
+# target to build an object file
+demos/barrierdemo/Barrier1.cpp.o:
+	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/demos/barrierdemo/Barrier1.cpp.o
+.PHONY : demos/barrierdemo/Barrier1.cpp.o
+
+demos/barrierdemo/Barrier1.i: demos/barrierdemo/Barrier1.cpp.i
+
+.PHONY : demos/barrierdemo/Barrier1.i
+
+# target to preprocess a source file
+demos/barrierdemo/Barrier1.cpp.i:
+	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/demos/barrierdemo/Barrier1.cpp.i
+.PHONY : demos/barrierdemo/Barrier1.cpp.i
+
+demos/barrierdemo/Barrier1.s: demos/barrierdemo/Barrier1.cpp.s
+
+.PHONY : demos/barrierdemo/Barrier1.s
+
+# target to generate assembly for a file
+demos/barrierdemo/Barrier1.cpp.s:
+	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/demos/barrierdemo/Barrier1.cpp.s
+.PHONY : demos/barrierdemo/Barrier1.cpp.s
+
+demos/barrierdemo/barrierdemo.o: demos/barrierdemo/barrierdemo.cpp.o
+
+.PHONY : demos/barrierdemo/barrierdemo.o
+
+# target to build an object file
+demos/barrierdemo/barrierdemo.cpp.o:
+	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/demos/barrierdemo/barrierdemo.cpp.o
+.PHONY : demos/barrierdemo/barrierdemo.cpp.o
+
+demos/barrierdemo/barrierdemo.i: demos/barrierdemo/barrierdemo.cpp.i
+
+.PHONY : demos/barrierdemo/barrierdemo.i
+
+# target to preprocess a source file
+demos/barrierdemo/barrierdemo.cpp.i:
+	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/demos/barrierdemo/barrierdemo.cpp.i
+.PHONY : demos/barrierdemo/barrierdemo.cpp.i
+
+demos/barrierdemo/barrierdemo.s: demos/barrierdemo/barrierdemo.cpp.s
+
+.PHONY : demos/barrierdemo/barrierdemo.s
+
+# target to generate assembly for a file
+demos/barrierdemo/barrierdemo.cpp.s:
+	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/demos/barrierdemo/barrierdemo.cpp.s
+.PHONY : demos/barrierdemo/barrierdemo.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,10 +364,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... client_testing"
-	@echo "... atomic_demo"
-	@echo "... ex3"
 	@echo "... edit_cache"
+	@echo "... atomic_demo"
+	@echo "... client_testing"
+	@echo "... barrier_demo"
+	@echo "... ex3"
+	@echo "... Barrier.o"
+	@echo "... Barrier.i"
+	@echo "... Barrier.s"
 	@echo "... MapReduceFramework.o"
 	@echo "... MapReduceFramework.i"
 	@echo "... MapReduceFramework.s"
@@ -283,6 +384,12 @@ help:
 	@echo "... demos/atomicdemo/atomicdemo.o"
 	@echo "... demos/atomicdemo/atomicdemo.i"
 	@echo "... demos/atomicdemo/atomicdemo.s"
+	@echo "... demos/barrierdemo/Barrier1.o"
+	@echo "... demos/barrierdemo/Barrier1.i"
+	@echo "... demos/barrierdemo/Barrier1.s"
+	@echo "... demos/barrierdemo/barrierdemo.o"
+	@echo "... demos/barrierdemo/barrierdemo.i"
+	@echo "... demos/barrierdemo/barrierdemo.s"
 .PHONY : help
 
 

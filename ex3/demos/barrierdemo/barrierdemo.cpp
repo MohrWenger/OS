@@ -1,6 +1,7 @@
-#include "Barrier.h"
+#include "Barrier1.h"
 #include <pthread.h>
 #include <cstdio>
+#include <iostream>
 
 #define MT_LEVEL 5
 
@@ -45,6 +46,7 @@ int main(int argc, char** argv)
 	for (int i = 0; i < MT_LEVEL; ++i) {
 		pthread_join(threads[i], NULL);
 	}
+	printf("after all joins");
 
 	return 0;
 }

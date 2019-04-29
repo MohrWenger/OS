@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o"
   "CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o"
+  "CMakeFiles/client_testing.dir/Barrier.cpp.o"
   "client_testing.pdb"
   "client_testing"
 )

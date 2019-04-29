@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/barrier_demo.dir/demos/barrierdemo/barrierdemo.cpp.o CMakeFiles/barrier_demo.dir/demos/barrierdemo/Barrier1.cpp.o  -o barrier_demo 

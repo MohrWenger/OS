@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/Barrier.h
+pthread.h
+-
+
+/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/barrierdemo.cpp
+Barrier.h
+/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/Barrier.h
+pthread.h
+-
+cstdio
+-
+iostream
+-
+
