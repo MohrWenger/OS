@@ -21,22 +21,10 @@ atomic
 -
 iostream
 -
+thread
+-
 
 /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h
 MapReduceClient.h
 /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h
-
-/cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient_for_testing.cpp
-MapReduceFramework.h
-/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h
-cstdio
--
-string
--
-array
--
-unistd.h
--
-iostream
--
 
