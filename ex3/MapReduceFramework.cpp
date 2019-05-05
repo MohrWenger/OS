@@ -6,6 +6,7 @@
 #include <thread>
 #include <algorithm>
 #include <deque>
+#include <semaphore.h>
 
 using namespace std;
 
@@ -25,30 +26,28 @@ struct threadContext {
     OutputVec *outputVec;
     Barrier *bar;
     atomic<bool> *dealer;
+    sem_t *semaphore;
     vector<IntermediateVec *> phase2vec;
     pthread_mutex_t lock;
-    deque<IntermediateVec > shuffledPairs;
+    deque<IntermediateVec> shuffledPairs;
 
 } typedef threadContext;
+
 ///////////////////// private functions /////////////////////
 
-bool compareKeys(IntermediatePair &p1, IntermediatePair &p2)
-{
-    return  (p1 < p2 ); //they only implemented <
+bool compareKeys(IntermediatePair &p1, IntermediatePair &p2) {
+    return (*(p1.first) < *(p2.first)); //they only implemented <
 
 }
 
-IntermediatePair* getMax ( vector<IntermediateVec *> vecs) //get maximum to compare
+IntermediatePair *getMax(vector<IntermediateVec *> vecs) //get maximum to compare
 {
-    IntermediatePair* max = nullptr;
-    for (int i = 0; i < vecs.size() ; ++i )
-    {
+    IntermediatePair *max = nullptr;
+    for (int i = 0; i < vecs.size(); ++i) {
         if (!max && !(vecs.at(i)->empty())) // if there isn't a value ther yet then put one.
         {
             max = &vecs.at(i)->back();
-        }
-
-        else if (!(vecs.at(i)->empty())) {
+        } else if (!(vecs.at(i)->empty())) {
             if (*(max->first) < *(vecs.at(i)->back().first)) {
                 max = &vecs.at(i)->back();
             }
@@ -57,76 +56,25 @@ IntermediatePair* getMax ( vector<IntermediateVec *> vecs) //get maximum to comp
     return max;
 }
 
-void shuffle (threadContext* context) {
+void shuffle(threadContext * context) {
     IntermediatePair *max = getMax(context->phase2vec);
     IntermediateVec tempVec;
     while (max) // while it doesn't return a nullptr because there exists a max
     {
-        cout << "starting loop " << endl;
         for (auto &i : context->phase2vec) {
             while (!(i->empty()) && !(*(i->back().first) < *max->first)) {
                 tempVec.push_back(i->back());
                 cout << "size i : " << i->size() << endl;
                 i->pop_back();
-
-                cout << "size i : " << i->size() << endl;
             }
         }
         context->shuffledPairs.push_back(tempVec);
-        cout << "added" << endl;
+        // todo - notify all.
         cout << "len is : " << tempVec.size() << endl;
         tempVec.clear();
         max = getMax(context->phase2vec);
-//        cout << "max = "<< max->first << endl;
     }
 }
-
-//void shuffle(void *arg) {
-//    auto context = (threadContext *) arg;
-//    IntermediateVec tempVec;
-//    cout << "len of vec = " << context->phase2vec.size() << endl;
-//    int allSums = 0;
-//    for (int k = 0; k < context->phase2vec.size(); ++k)
-//    {
-//        allSums += context->phase2vec.at(k)->size();
-//    }
-//
-//    cout << allSums << endl;
-//
-//    while(allSums > 0) {
-//        for (auto &i : context->phase2vec) {
-//            if (i->empty()) {
-//                continue;
-//            } else {
-//                auto curr = i->back();
-//                if (tempVec.empty() || compareKeys(tempVec.back(), curr)){
-//                    if (tempVec.empty())
-//                    {
-//                        cout << "-->empty" << endl;
-//                    }
-//
-//                    if (!tempVec.empty() )
-//                    {
-//                        cout << tempVec.back().first << endl;
-//                        if(tempVec.back().first == curr.first) {
-//                            cout << "eqqqqqqqqqqqqqqqqq <-----" << endl;
-//                            continue;
-//                        }
-//                    }
-//
-//                    cout << "heree" << endl;
-//                    tempVec.push_back(curr);
-//                    i->pop_back();
-//                    --allSums;
-//                    continue;
-//                }
-//            }
-//            context->shuffledPairs.push_back(tempVec);
-//            cout << "added" << endl;
-//            tempVec.clear();
-//        }
-//    }
-//}
 
 
 void *threadWrapper(void *arg) {
@@ -158,12 +106,6 @@ void *threadWrapper(void *arg) {
         shuffle(context);
         cout << "len of shuffled: " << context->shuffledPairs.size() << endl;
     }
-
-
-
-
-
-
 
 
     return nullptr;
@@ -202,7 +144,8 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
     std::atomic<int> atomic_index(0);
     std::atomic<bool> atomic_dealer(true);
     auto *barrier = new Barrier(multiThreadLevel);
-    threadContext jobContext = {&atomic_index, &client, &inputVec, &outputVec, barrier, &atomic_dealer};
+    auto semaphore = new sem_t;
+    threadContext jobContext = {&atomic_index, &client, &inputVec, &outputVec, barrier, &atomic_dealer, semaphore};
     workingThreads = new pthread_t[multiThreadLevel];
     // init mutex
     if (pthread_mutex_init(&jobContext.lock, nullptr) != 0) {
