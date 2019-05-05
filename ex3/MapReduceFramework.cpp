@@ -12,7 +12,7 @@ using namespace std;
 ///////////////////// Global variables /////////////////////
 
 
-pthread_t *workingThreads;
+pthread_t *workingThreads;//TODO - map
 
 //struct barrier {
 //    atomic<int> *passed_threads;
@@ -32,45 +32,55 @@ struct threadContext {
 } typedef threadContext;
 ///////////////////// private functions /////////////////////
 
-bool equalKeys (IntermediatePair& p1, IntermediatePair& p2)
+bool compareKeys(IntermediatePair &p1, IntermediatePair &p2)
 {
-    cout <<p1.first <<"  and  "<< p2.first << (p1<p2) << endl;
-    if  (p1 < p2 || p2 < p1) //they only implemented <
+    return  (p1 < p2 ); //they only implemented <
+
+}
+
+IntermediatePair* getMax ( vector<IntermediateVec *> vecs) //get maximum to compare
+{
+    IntermediatePair* max = nullptr;
+    for (int i = 0; i < vecs.size() ; ++i )
     {
-        return false;
+        if (!max && !(vecs.at(i)->empty())) // if there isn't a value ther yet then put one.
+        {
+            max = &vecs.at(i)->back();
+        }
+
+        else if (!(vecs.at(i)->empty())) {
+            if (*(max->first) < *(vecs.at(i)->back().first)) {
+                max = &vecs.at(i)->back();
+            }
+        }
     }
-    return true;
+    return max;
 }
 
-IntermediatePair getMax ( vector<IntermediateVec *> vecs) //get maximum to compare
-{
-    IntermediatePair max;
-//    if (vecs.at(0)->empty())
-//    {
-//        max = nullptr;
-//    }
-//    IntermediatePair max = vecs.at(0)->back();
-//    for (int i = 0; i < vecs.size() ; ++i )
-//    {
-//        if (! (vecs.at(i)->empty())) {
-//            if (max < vecs.at(i)->back()) {
-//                max = vecs.at(i)->back();
-//            }
-//        }
-//    }
-//    return max;
+void shuffle (threadContext* context) {
+    IntermediatePair *max = getMax(context->phase2vec);
+    IntermediateVec tempVec;
+    while (max) // while it doesn't return a nullptr because there exists a max
+    {
+        cout << "starting loop " << endl;
+        for (auto &i : context->phase2vec) {
+            while (!(i->empty()) && !(*(i->back().first) < *max->first)) {
+                tempVec.push_back(i->back());
+                cout << "size i : " << i->size() << endl;
+                i->pop_back();
+
+                cout << "size i : " << i->size() << endl;
+            }
+        }
+        context->shuffledPairs.push_back(tempVec);
+        cout << "added" << endl;
+        cout << "len is : " << tempVec.size() << endl;
+        tempVec.clear();
+        max = getMax(context->phase2vec);
+//        cout << "max = "<< max->first << endl;
+    }
 }
 
-void shuffle (threadContext& context)
-{
-    IntermediatePair maxim = getMax(context.phase2vec);
-    while (maxim) // while it doesn't return a nullptr becuse there exists a max
-    for (auto &i : context.phase2vec) {
-//            if (i->empty()) {
-//                continue;
-//            } else {
-
-}
 //void shuffle(void *arg) {
 //    auto context = (threadContext *) arg;
 //    IntermediateVec tempVec;
@@ -89,7 +99,7 @@ void shuffle (threadContext& context)
 //                continue;
 //            } else {
 //                auto curr = i->back();
-//                if (tempVec.empty() || equalKeys(tempVec.back(), curr)){
+//                if (tempVec.empty() || compareKeys(tempVec.back(), curr)){
 //                    if (tempVec.empty())
 //                    {
 //                        cout << "-->empty" << endl;
@@ -126,14 +136,18 @@ void *threadWrapper(void *arg) {
     auto map_results = new(IntermediateVec);
 
     while (old < len) {
-        pthread_mutex_lock(&context->lock); // critical
+        pthread_mutex_lock(&context->lock); // critical TODO - ella down mutex?
+
         context->global_client->map(context->inputVec->at(old).first, context->inputVec->at(old).second,
                                     map_results);
         old = (*(context->atomic_index))++;
+
         pthread_mutex_unlock(&context->lock); // out of critical
 
     }
-    sort(map_results->begin(), map_results->end());
+
+
+    sort(map_results->begin(), map_results->end(), compareKeys); // TODO - ella check my comperator
     context->phase2vec.push_back(map_results);
     // barrier - wait until all threads finish maping.
     context->bar->barrier();
