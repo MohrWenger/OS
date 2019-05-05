@@ -40,7 +40,7 @@ public:
 class CounterClient : public MapReduceClient {
 public:
     void map(const K1 *key, const V1 *value, void *context) const {
-//        cout << "in client's map" << endl;
+        cout << "in client's map" << endl;
         std::array<int, 256> counts;
         counts.fill(0);
         for (const char &c : static_cast<const VString *>(value)->content) {
@@ -60,6 +60,7 @@ public:
 
     virtual void reduce(const IntermediateVec *pairs,
                         void *context) const {
+        cout << "in client reduce with: ";
         const char c = static_cast<const KChar *>(pairs->at(0).first)->c;
         int count = 0;
         for (const IntermediatePair &pair: *pairs) {
@@ -67,6 +68,7 @@ public:
             delete pair.first;
             delete pair.second;
         }
+        cout << "c = " << (char) c << endl;
         KChar *k3 = new KChar(c);
         VCount *v3 = new VCount(count);
         usleep(150000);
