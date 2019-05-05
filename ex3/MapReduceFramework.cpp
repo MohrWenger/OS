@@ -29,8 +29,8 @@ struct threadContext {
     sem_t *semaphore;
     atomic<int> *new_dealer;
     vector<IntermediateVec *> phase2vec;
-    pthread_mutex_t lock_1;
-    pthread_mutex_t lock_2;
+    pthread_mutex_t lock_shuffledPairs;
+    pthread_mutex_t lock_outputVec;
     deque<IntermediateVec> shuffledPairs;
 
 } typedef threadContext;
@@ -70,13 +70,13 @@ void shuffle(threadContext * context) {
                 i->pop_back();
             }
         }
-        if (pthread_mutex_lock(&context->lock_1) != 0) {
+        if (pthread_mutex_lock(&context->lock_shuffledPairs) != 0) {
             fprintf(stderr, "In Shuffle: error on pthread_mutex_lock");
             exit(1);
         }
         context->shuffledPairs.push_back(tempVec);
         sem_post(context->semaphore);
-        if (pthread_mutex_unlock(&context->lock_1) != 0) {
+        if (pthread_mutex_unlock(&context->lock_shuffledPairs) != 0) {
             fprintf(stderr, "In Shuffle: error on pthread_mutex_unlock");
             exit(1);
         }
@@ -112,7 +112,7 @@ void *threadWrapper(void *arg) {
 //        shuffle(context);
 //        cout << "len of shuffled: " << context->shuffledPairs.size() << endl;
 //    }
-    if (!((*(context->new_dealer))++)) {
+    if (!((*(context->new_dealer))++)) {    // TODO - explain to mor
         shuffle(context);
     }
 
@@ -121,19 +121,22 @@ void *threadWrapper(void *arg) {
         sem_wait(context->semaphore);
 
 /////// calling client's reduce with API: (const IntermediateVec* pairs, void* context)
-        if (pthread_mutex_lock(&context->lock_1) != 0) {
+        if (pthread_mutex_lock(&context->lock_shuffledPairs) != 0) {
             fprintf(stderr, "In threadWrapper: error on pthread_mutex_lock");
             exit(1);
         }
         // todo - handle
-        context->global_client->reduce(&context->shuffledPairs.back(), context);
-        context->shuffledPairs.pop_back();
-        if (pthread_mutex_unlock(&context->lock_1) != 0) {
+        if (!context->shuffledPairs.empty()) {
+            context->global_client->reduce(&context->shuffledPairs.back(), context);
+            context->shuffledPairs.pop_back();
+        } else {
+            sem_post(context->semaphore);
+        }
+        if (pthread_mutex_unlock(&context->lock_shuffledPairs) != 0) {
             fprintf(stderr, "In threadWrapper: error on pthread_mutex_lock");
             exit(1);
         }
     }
-//
     return nullptr;
 }
 
@@ -143,9 +146,11 @@ void MapReduce(int threadAmount, threadContext &context) {
     for (unsigned long i = 0; i < threadAmount; ++i) {
         pthread_create(workingThreads + i, nullptr, threadWrapper, &context);
     }
+    // TODO - move to wait for join!!
     for (unsigned long i = 0; i < threadAmount; ++i) {
         pthread_join(*(workingThreads + i), nullptr);
     }
+    cout << "\nBehold! I have finished reducing\nElla: I'm so clever!!" << endl;
 }
 
 
@@ -160,16 +165,18 @@ void emit3(K3 *key, V3 *value, void *context) {
     auto local_context = (threadContext *) context;
     OutputPair toAdd = std::make_pair(key, value);
 
-    if (pthread_mutex_lock(&local_context->lock_2) != 0) {
+    if (pthread_mutex_lock(&local_context->lock_outputVec) != 0) {
         fprintf(stderr, "In emit3: error on pthread_mutex_lock");
         exit(1);
     }
     local_context->outputVec->push_back(toAdd);
-    if (pthread_mutex_unlock(&local_context->lock_2) != 0) {
+    if (pthread_mutex_unlock(&local_context->lock_outputVec) != 0) {
         fprintf(stderr, "In emit3: error on pthread_mutex_unlock");
         exit(1);
     }
 }
+
+
 
 JobHandle startMapReduceJob(const MapReduceClient &client,
                             const InputVec &inputVec, OutputVec &outputVec,
@@ -186,32 +193,31 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
                                 &atomic_index2};
     workingThreads = new pthread_t[multiThreadLevel];
     // init mutex
-    if (pthread_mutex_init(&jobContext.lock_1, nullptr) != 0) {
+    if (pthread_mutex_init(&jobContext.lock_shuffledPairs, nullptr) != 0) {
         cout << "Error initializing mutex" << endl;
         return nullptr;
     }
-    if (pthread_mutex_init(&jobContext.lock_2, nullptr) != 0) {
+    if (pthread_mutex_init(&jobContext.lock_outputVec, nullptr) != 0) {
         cout << "Error initializing mutex" << endl;
         return nullptr;
     }
-    // activating client's map
+    // calling main function
     MapReduce(multiThreadLevel, jobContext);
     return nullptr;
 }
 
 void waitForJob(JobHandle job) {
-
+    // TODO - put the join here
 }
 
 void getJobState(JobHandle job, JobState *state) {
-
+    // TODO - count status of work -
+    // for map 100% = size of inputVec
+    //         1% = each time we called client map
+    // for reduce 100% = len of shuffled pairs
+    //            x% = x len of subvector
 }
 
 void closeJobHandle(JobHandle job) {
-    // TODO - delete workingThreads
-
+    // TODO - delete every thing
 }
-
-
-// protect pushing into shuffles
-// protect pushing to output
