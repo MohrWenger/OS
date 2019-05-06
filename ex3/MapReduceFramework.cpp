@@ -72,16 +72,16 @@ void shuffle(threadContext * context) {
             }
         }
         // TODO - realize that this protection is not needed cuz only one thread goes here
-//        if (pthread_mutex_lock(&context->lock_shuffledPairs) != 0) {
-//            fprintf(stderr, "In Shuffle: error on pthread_mutex_lock");
-//            exit(1);
-//        }
+        if (pthread_mutex_lock(&context->lock_shuffledPairs) != 0) {
+            fprintf(stderr, "In Shuffle: error on pthread_mutex_lock");
+            exit(1);
+        }
         context->shuffledPairs.push_back(tempVec);
         sem_post(context->semaphore);
-//        if (pthread_mutex_unlock(&context->lock_shuffledPairs) != 0) {
-//            fprintf(stderr, "In Shuffle: error on pthread_mutex_unlock");
-//            exit(1);
-//        }
+        if (pthread_mutex_unlock(&context->lock_shuffledPairs) != 0) {
+            fprintf(stderr, "In Shuffle: error on pthread_mutex_unlock");
+            exit(1);
+        }
 
         tempVec.clear();
         max = getMax(context->phase2vec);
