@@ -73,6 +73,52 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="tarantino">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/tarantino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tarantino"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tarantino/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/tarantino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tarantino/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
 				<Option type="4"/>
@@ -316,12 +362,14 @@
 		</Build>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.cpp">
 			<Option target="ex3"/>
+			<Option target="tarantino"/>
 			<Option target="reut_test"/>
 			<Option target="edited_client_testing"/>
 			<Option target="client_testing"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.h">
 			<Option target="ex3"/>
+			<Option target="tarantino"/>
 			<Option target="reut_test"/>
 			<Option target="edited_client_testing"/>
 			<Option target="client_testing"/>
@@ -331,18 +379,21 @@
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h">
 			<Option target="ex3"/>
+			<Option target="tarantino"/>
 			<Option target="reut_test"/>
 			<Option target="edited_client_testing"/>
 			<Option target="client_testing"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.cpp">
 			<Option target="ex3"/>
+			<Option target="tarantino"/>
 			<Option target="reut_test"/>
 			<Option target="edited_client_testing"/>
 			<Option target="client_testing"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h">
 			<Option target="ex3"/>
+			<Option target="tarantino"/>
 			<Option target="reut_test"/>
 			<Option target="edited_client_testing"/>
 			<Option target="client_testing"/>
@@ -353,6 +404,12 @@
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient_for_testing.cpp">
 			<Option target="edited_client_testing"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/WordFrequencies.cpp">
+			<Option target="tarantino"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/WordFrequenciesClient.hpp">
+			<Option target="tarantino"/>
 		</Unit>
 		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/atomicdemo/atomicdemo.cpp">
 			<Option target="atomic_demo"/>

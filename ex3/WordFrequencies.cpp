@@ -15,7 +15,7 @@ using std::ofstream;
 using std::vector;
 
 // TODO: Play with this path to match your directories
-const string SCRIPTS_DIR = "../tests/Tarantino/scripts/";
+const string SCRIPTS_DIR = "/cs/usr/ellonet/SCHOOL/OS/ex3/scripts/";
 const int REPORT_FREQ_MS = 500;
 
 class ScriptJob

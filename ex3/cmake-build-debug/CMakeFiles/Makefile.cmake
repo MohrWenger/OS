@@ -47,6 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ex3.dir/DependInfo.cmake"
+  "CMakeFiles/tarantino.dir/DependInfo.cmake"
   "CMakeFiles/reut_test.dir/DependInfo.cmake"
   "CMakeFiles/edited_client_testing.dir/DependInfo.cmake"
   "CMakeFiles/atomic_demo.dir/DependInfo.cmake"

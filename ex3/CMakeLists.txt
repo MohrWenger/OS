@@ -9,6 +9,7 @@ add_executable(client_testing MapReduceFramework.h MapReduceFramework.cpp MapRed
 add_executable(atomic_demo demos/atomicdemo/atomicdemo.cpp)
 add_executable(barrier_demo demos/barrierdemo/barrierdemo.cpp demos/barrierdemo/Barrier1.cpp demos/barrierdemo/Barrier1.h)
 add_executable(reut_test Count.cpp MapReduceFramework.h MapReduceFramework.cpp MapReduceClient.h Barrier.h Barrier.cpp MapReduceClient.h)
+add_executable(tarantino WordFrequenciesClient.hpp WordFrequencies.cpp MapReduceFramework.h MapReduceFramework.cpp MapReduceClient.h Barrier.h Barrier.cpp MapReduceClient.h)
 
 
 add_executable(ex3 MapReduceFramework.h MapReduceFramework.cpp MapReduceClient.h SampleClient.cpp Barrier.h Barrier.cpp)

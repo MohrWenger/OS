@@ -102,6 +102,43 @@ clean: CMakeFiles/ex3.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/tarantino.dir
+
+# All Build rule for target.
+CMakeFiles/tarantino.dir/all:
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/depend
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles --progress-num=22,23,24,25 "Built target tarantino"
+.PHONY : CMakeFiles/tarantino.dir/all
+
+# Include target in all.
+all: CMakeFiles/tarantino.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tarantino.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tarantino.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/tarantino.dir/rule
+
+# Convenience name for target.
+tarantino: CMakeFiles/tarantino.dir/rule
+
+.PHONY : tarantino
+
+# clean rule for target.
+CMakeFiles/tarantino.dir/clean:
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/clean
+.PHONY : CMakeFiles/tarantino.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/tarantino.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/reut_test.dir
 
 # All Build rule for target.

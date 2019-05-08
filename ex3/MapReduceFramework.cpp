@@ -33,15 +33,21 @@ struct ThreadContext {
     pthread_mutex_t lock_shuffledPairs{};
     pthread_mutex_t lock_outputVec{};
     deque<IntermediateVec> shuffledPairs;
+    bool wasJoined;
 
     ThreadContext(pthread_t *workingTh, const MapReduceClient *client,
                   const InputVec *input, OutputVec *output, Barrier *bar, sem_t *sem, int num) :
             workingThreads(workingTh), atomic_index(0), global_client(client), inputVec(input), outputVec(output),
             barrier(bar), semaphore(sem), dealer(0), thNum(num), jobStage(MAP_STAGE), mapCounter(0),
-            reduceCounter(0), mapTotal(0), reduceTotal(0) {};
+            reduceCounter(0), mapTotal(0), reduceTotal(0),wasJoined(0){};
 
     ~ThreadContext() {
         free(workingThreads);
+        for (auto vec2: phase2vec)
+        {
+            delete(vec2);
+        }
+
         //TODO - add more
     }
 
@@ -215,8 +221,12 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
 
 void waitForJob(JobHandle job) {
     auto jobContex = (ThreadContext *) job;
+//    bool joined = false;
     for (unsigned long i = 0; i < jobContex->thNum; ++i) {
-        pthread_join(*(jobContex->workingThreads + i), nullptr);
+        if (jobContex->wasJoined == false) {
+            pthread_join(*(jobContex->workingThreads + i), nullptr);
+            jobContex->wasJoined = true;
+        }
     }
 }
 
@@ -239,5 +249,7 @@ void getJobState(JobHandle job, JobState *state) {
 
 void closeJobHandle(JobHandle job) {
     waitForJob(job);
+    auto jobContext = (ThreadContext *) job;
+    jobContext->~ThreadContext();
     // TODO - delete everything kill them all!
 }

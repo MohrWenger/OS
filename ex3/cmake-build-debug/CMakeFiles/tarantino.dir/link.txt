@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/tarantino.dir/WordFrequencies.cpp.o CMakeFiles/tarantino.dir/MapReduceFramework.cpp.o CMakeFiles/tarantino.dir/Barrier.cpp.o  -o tarantino 

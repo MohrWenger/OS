@@ -1,5 +1,6 @@
 /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/edit_cache.dir
 /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/ex3.dir
+/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/tarantino.dir
 /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/reut_test.dir
 /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/edited_client_testing.dir

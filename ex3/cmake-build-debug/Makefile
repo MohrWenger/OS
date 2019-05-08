@@ -124,6 +124,19 @@ ex3/fast:
 .PHONY : ex3/fast
 
 #=============================================================================
+# Target rules for targets named tarantino
+
+# Build rule for target.
+tarantino: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tarantino
+.PHONY : tarantino
+
+# fast build rule for target.
+tarantino/fast:
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/build
+.PHONY : tarantino/fast
+
+#=============================================================================
 # Target rules for targets named reut_test
 
 # Build rule for target.
@@ -195,6 +208,7 @@ Barrier.o: Barrier.cpp.o
 # target to build an object file
 Barrier.cpp.o:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.o
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/Barrier.cpp.o
 	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Barrier.cpp.o
 	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/Barrier.cpp.o
 	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.o
@@ -207,6 +221,7 @@ Barrier.i: Barrier.cpp.i
 # target to preprocess a source file
 Barrier.cpp.i:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.i
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/Barrier.cpp.i
 	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Barrier.cpp.i
 	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/Barrier.cpp.i
 	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.i
@@ -219,6 +234,7 @@ Barrier.s: Barrier.cpp.s
 # target to generate assembly for a file
 Barrier.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.s
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/Barrier.cpp.s
 	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Barrier.cpp.s
 	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/Barrier.cpp.s
 	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.s
@@ -258,6 +274,7 @@ MapReduceFramework.o: MapReduceFramework.cpp.o
 # target to build an object file
 MapReduceFramework.cpp.o:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.o
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/MapReduceFramework.cpp.o
 	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/MapReduceFramework.cpp.o
 	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.o
 	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o
@@ -270,6 +287,7 @@ MapReduceFramework.i: MapReduceFramework.cpp.i
 # target to preprocess a source file
 MapReduceFramework.cpp.i:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.i
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/MapReduceFramework.cpp.i
 	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/MapReduceFramework.cpp.i
 	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.i
 	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.i
@@ -282,6 +300,7 @@ MapReduceFramework.s: MapReduceFramework.cpp.s
 # target to generate assembly for a file
 MapReduceFramework.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.s
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/MapReduceFramework.cpp.s
 	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/MapReduceFramework.cpp.s
 	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.s
 	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.s
@@ -343,6 +362,33 @@ SampleClient_for_testing.s: SampleClient_for_testing.cpp.s
 SampleClient_for_testing.cpp.s:
 	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/SampleClient_for_testing.cpp.s
 .PHONY : SampleClient_for_testing.cpp.s
+
+WordFrequencies.o: WordFrequencies.cpp.o
+
+.PHONY : WordFrequencies.o
+
+# target to build an object file
+WordFrequencies.cpp.o:
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/WordFrequencies.cpp.o
+.PHONY : WordFrequencies.cpp.o
+
+WordFrequencies.i: WordFrequencies.cpp.i
+
+.PHONY : WordFrequencies.i
+
+# target to preprocess a source file
+WordFrequencies.cpp.i:
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/WordFrequencies.cpp.i
+.PHONY : WordFrequencies.cpp.i
+
+WordFrequencies.s: WordFrequencies.cpp.s
+
+.PHONY : WordFrequencies.s
+
+# target to generate assembly for a file
+WordFrequencies.cpp.s:
+	$(MAKE) -f CMakeFiles/tarantino.dir/build.make CMakeFiles/tarantino.dir/WordFrequencies.cpp.s
+.PHONY : WordFrequencies.cpp.s
 
 demos/atomicdemo/atomicdemo.o: demos/atomicdemo/atomicdemo.cpp.o
 
@@ -433,6 +479,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... ex3"
+	@echo "... tarantino"
 	@echo "... rebuild_cache"
 	@echo "... reut_test"
 	@echo "... edited_client_testing"
@@ -454,6 +501,9 @@ help:
 	@echo "... SampleClient_for_testing.o"
 	@echo "... SampleClient_for_testing.i"
 	@echo "... SampleClient_for_testing.s"
+	@echo "... WordFrequencies.o"
+	@echo "... WordFrequencies.i"
+	@echo "... WordFrequencies.s"
 	@echo "... demos/atomicdemo/atomicdemo.o"
 	@echo "... demos/atomicdemo/atomicdemo.i"
 	@echo "... demos/atomicdemo/atomicdemo.s"
