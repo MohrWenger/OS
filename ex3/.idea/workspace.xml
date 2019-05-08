@@ -19,6 +19,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3194448c-adef-4936-8072-bc2f5fb1c01a" name="Default Changelist" comment="start ex3">
       <change beforePath="$PROJECT_DIR$/MapReduceFramework.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MapReduceFramework.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pulp_Fiction_test_results" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservoir_Dogs_test_results" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SampleClient_for_testing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SampleClient_for_testing.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
@@ -27,6 +29,9 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/tarantino.dir/MapReduceFramework.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ex3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ex3.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scriptsInglourious_Basterds_test_results" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scriptsPulp_Fiction_test_results" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scriptsReservoir_Dogs_test_results" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,7 +113,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="15369" />
+          <entry key="cpp" value="15618" />
           <entry key="h" value="3" />
           <entry key="hpp" value="2" />
           <entry key="mm" value="105" />
@@ -118,13 +123,14 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="184" />
-          <entry key="Doxygen file" value="14" />
-          <entry key="ObjectiveC" value="15465" />
+          <entry key="Doxygen file" value="16" />
+          <entry key="ObjectiveC" value="15712" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Makefile" value="1" />
+          <entry key="Makefile(4)" value="1" />
           <entry key="client_testing (disassembly)" value="2" />
           <entry key="cpp" value="16" />
           <entry key="h" value="13" />
@@ -132,28 +138,20 @@
           <entry key="iostream" value="1" />
           <entry key="reut_test (disassembly)" value="2" />
           <entry key="tarantino (disassembly)" value="8" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Disassembly" value="12" />
           <entry key="ObjectiveC" value="31" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -180,8 +178,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="262" column="25" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
+            <state relative-caret-position="977">
+              <caret line="270" column="5" lean-forward="true" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <element signature="e#1518#2023#0" />
@@ -253,7 +251,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>len of</find>
       <find>post</find>
       <find>len of shuffled</find>
       <find>++</find>
@@ -283,6 +280,7 @@
       <find>~</find>
       <find>new</find>
       <find>SCRIPTS_DIR</find>
+      <find>uns</find>
     </findStrings>
     <replaceStrings>
       <replace>lock_shuffledPairs</replace>
@@ -438,12 +436,12 @@
       <workItem from="1557045190372" duration="4422000" />
       <workItem from="1557060853799" duration="9434000" />
       <workItem from="1557082647953" duration="1071000" />
-      <workItem from="1557303103109" duration="21714000" />
+      <workItem from="1557303103109" duration="22785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84282000" />
+    <option name="totallyTimeSpent" value="85353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="26" width="1928" height="1033" extended-state="6" />
@@ -748,10 +746,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Downloads/Makefile(4)">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="262" column="25" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
+        <state relative-caret-position="977">
+          <caret line="270" column="5" lean-forward="true" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <element signature="e#1518#2023#0" />

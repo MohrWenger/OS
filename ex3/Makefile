@@ -1,33 +1,36 @@
-CC=g++
-CXX=g++
+CC=gcc
+CXX=gcc
 LD=g++
+RANLIB=ranlib
 
-EXESRC=SampleClient.cpp
-EXEOBJ=$(EXESRC:.cpp=.o)
+LIBSRC= MapReduceFramework.cpp Barrier.cpp
+LIBOBJ=$(LIBSRC:.cpp=.o)
+
 
 INCS=-I.
-CFLAGS = -Wall -std=c++11 -pthread -g $(INCS)
-CXXFLAGS = -Wall -std=c++11 -pthread -g $(INCS)
+CFLAGS = -Wall -std=c++11 -lpthread -g $(INCS)
+CXXFLAGS = -Wall -std=c++11 -lpthread -g $(INCS)
 LDFLAGS = -L. -lMapReduceFramework
 
-EXE = SampleClient
-TARGETS = $(EXE)
+MAPREDUCELIB = libMapReduceFramework.a
+TARGETS = $(MAPREDUCELIB)
 
 TAR=tar
 TARFLAGS=-cvf
-TARNAME=sampleclient.tar
-TARSRCS=$(EXESRC) Makefile
+TARNAME=ex3.tar
+TARSRCS=$(LIBSRC) Makefile README
 
 all: $(TARGETS)
 
-$(TARGETS): $(EXEOBJ)
-	$(LD) $(CXXFLAGS) $(EXEOBJ) libMapReduceFramework.a -o $(EXE)
+$(TARGETS): $(LIBOBJ)
+	$(AR) $(ARFLAGS) $@ $^
+	$(RANLIB) $@
 
 clean:
-	$(RM) $(TARGETS) $(EXE) $(OBJ) $(EXEOBJ) *~ *core
+	$(RM) $(TARGETS) $(MAPREDUCELIB) $(OBJ) $(LIBOBJ) *~ *core
 
 depend:
 	makedepend -- $(CFLAGS) -- $(SRC) $(LIBSRC)
 
 tar:
-	$(TAR) $(TARFLAGS) $(TARNAME) $(TARSRCS)
+	$(TAR) $(TARFLAGS) $(TARNAME) $(TARSRCS) Barrier.h

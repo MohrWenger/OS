@@ -251,7 +251,7 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
     auto workingThreads = new pthread_t[multiThreadLevel];
     auto jobContext = new ThreadContext(workingThreads, &client, &inputVec, &outputVec, semaphore, multiThreadLevel);
     init_mutexes(jobContext); // init mutexes
-    for (unsigned long i = 0; i < multiThreadLevel; ++i) { // creating threads
+    for (int i = 0; i < multiThreadLevel; ++i) { // creating threads
         pthread_create(jobContext->workingThreads + i, nullptr, threadWrapper, jobContext);
     }
 
@@ -260,11 +260,11 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
 
 /**
  * joins the threads to make sure they all finish
- * @param job the job con
+ * @param job the job context of the threads we want to connect
  */
 void waitForJob(JobHandle job) {
     auto jobContex = (ThreadContext *) job;
-    for (unsigned long i = 0; i < jobContex->thNum; ++i) {
+    for (int i = 0; i < jobContex->thNum; ++i) {
         if (!jobContex->wasJoined) {
             pthread_join(*(jobContex->workingThreads + i), nullptr);
         }
@@ -272,23 +272,26 @@ void waitForJob(JobHandle job) {
     jobContex->wasJoined = true;
 }
 
+/**
+ * return the job state and percentage
+ * @param job the job handle of the job we want to get the state of
+ * @param state the state of the relevant job
+ */
 void getJobState(JobHandle job, JobState *state) {
-    // TODO - count status of work -
     auto jobContext = (ThreadContext *) job;
     auto allMapJobs = jobContext->inputVec->size();
     auto allReduceJobs = (float) jobContext->reduceTotal;
     auto currMap = (float) jobContext->mapCounter;
     auto currRed = (float) jobContext->reduceCounter;
 
-
     state->stage = jobContext->jobStage;
     state->percentage = ((currMap + currRed) / (allMapJobs + allReduceJobs)) * 100;
-    // for map 100% = size of inputVec
-    //         1% = each time we called client map
-    // for reduce 100% = len of shuffled pairs
-    //            x% = x len of subvector
 }
 
+/**
+ * closes and frees the heap
+ * @param job the job of the current state
+ */
 void closeJobHandle(JobHandle job) {
     waitForJob(job);
     auto jobContext = (ThreadContext *) job;
