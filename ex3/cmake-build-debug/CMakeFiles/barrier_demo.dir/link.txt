@@ -1,1 +1,3 @@
-/usr/bin/c++  -pthread -g   CMakeFiles/barrier_demo.dir/demos/barrierdemo/barrierdemo.cpp.o CMakeFiles/barrier_demo.dir/demos/barrierdemo/Barrier1.cpp.o  -o barrier_demo 
+"D:\ClionProjects\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\barrier_demo.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\barrier_demo.dir/objects.a @CMakeFiles\barrier_demo.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -pthread -g   -Wl,--whole-archive CMakeFiles\barrier_demo.dir/objects.a -Wl,--no-whole-archive  -o barrier_demo.exe -Wl,--out-implib,libbarrier_demo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\barrier_demo.dir\linklibs.rsp

@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tarantino.dir/WordFrequencies.cpp.o"
-  "CMakeFiles/tarantino.dir/MapReduceFramework.cpp.o"
-  "CMakeFiles/tarantino.dir/Barrier.cpp.o"
+  "CMakeFiles/tarantino.dir/WordFrequencies.cpp.obj"
+  "CMakeFiles/tarantino.dir/MapReduceFramework.cpp.obj"
+  "CMakeFiles/tarantino.dir/Barrier.cpp.obj"
   "tarantino.pdb"
-  "tarantino"
+  "tarantino.exe"
+  "tarantino.exe.manifest"
+  "libtarantino.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -g   CMakeFiles/reut.dir/demos/barrierdemo/barrierdemo.cpp.o CMakeFiles/reut.dir/demos/barrierdemo/Barrier1.cpp.o  -o reut 

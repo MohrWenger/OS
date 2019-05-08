@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.o"
+  "CMakeFiles/atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.obj"
   "atomic_demo.pdb"
-  "atomic_demo"
+  "atomic_demo.exe"
+  "atomic_demo.exe.manifest"
+  "libatomic_demo.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

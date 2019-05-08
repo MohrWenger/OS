@@ -8,422 +8,408 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex3">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/ex3" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex3/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/ex3" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tarantino">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/tarantino" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tarantino"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tarantino/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/tarantino" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tarantino/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="reut_test">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/reut_test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 reut_test"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="reut_test/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/reut_test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 reut_test/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edited_client_testing">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/edited_client_testing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/edited_client_testing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edited_client_testing"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edited_client_testing"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edited_client_testing/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/edited_client_testing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/edited_client_testing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edited_client_testing/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edited_client_testing/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="atomic_demo">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/atomic_demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+			<Target title="ex3">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/ex3.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 atomic_demo"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="atomic_demo/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/atomic_demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+			<Target title="ex3/fast">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/ex3.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 atomic_demo/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="client_testing">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/client_testing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/client_testing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="client_testing/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/client_testing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/client_testing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 client_testing/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="barrier_demo">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/barrier_demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/barrier_demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 barrier_demo"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 barrier_demo"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="barrier_demo/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/barrier_demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug"/>
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/barrier_demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 barrier_demo/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 barrier_demo/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic_demo">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/atomic_demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 atomic_demo"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic_demo/fast">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/atomic_demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 atomic_demo/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reut_test">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/reut_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 reut_test"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reut_test/fast">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/reut_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 reut_test/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tarantino">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/tarantino.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tarantino"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tarantino/fast">
+				<Option output="D:/ClionProjects/OS/ex3/cmake-build-debug/tarantino.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tarantino/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/ClionProjects/OS/ex3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/ClionProjects/OS/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.cpp">
-			<Option target="ex3"/>
-			<Option target="tarantino"/>
-			<Option target="reut_test"/>
+		<Unit filename="D:/ClionProjects/OS/ex3/Barrier.cpp">
 			<Option target="edited_client_testing"/>
-			<Option target="client_testing"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.h">
-			<Option target="ex3"/>
-			<Option target="tarantino"/>
-			<Option target="reut_test"/>
-			<Option target="edited_client_testing"/>
-			<Option target="client_testing"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/Count.cpp">
-			<Option target="reut_test"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h">
-			<Option target="ex3"/>
-			<Option target="tarantino"/>
-			<Option target="reut_test"/>
-			<Option target="edited_client_testing"/>
-			<Option target="client_testing"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.cpp">
-			<Option target="ex3"/>
-			<Option target="tarantino"/>
-			<Option target="reut_test"/>
-			<Option target="edited_client_testing"/>
-			<Option target="client_testing"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h">
-			<Option target="ex3"/>
-			<Option target="tarantino"/>
-			<Option target="reut_test"/>
-			<Option target="edited_client_testing"/>
-			<Option target="client_testing"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient.cpp">
 			<Option target="ex3"/>
 			<Option target="client_testing"/>
+			<Option target="reut_test"/>
+			<Option target="tarantino"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient_for_testing.cpp">
+		<Unit filename="D:/ClionProjects/OS/ex3/Barrier.h">
+			<Option target="edited_client_testing"/>
+			<Option target="ex3"/>
+			<Option target="client_testing"/>
+			<Option target="reut_test"/>
+			<Option target="tarantino"/>
+		</Unit>
+		<Unit filename="D:/ClionProjects/OS/ex3/Count.cpp">
+			<Option target="reut_test"/>
+		</Unit>
+		<Unit filename="D:/ClionProjects/OS/ex3/MapReduceClient.h">
+			<Option target="edited_client_testing"/>
+			<Option target="ex3"/>
+			<Option target="client_testing"/>
+			<Option target="reut_test"/>
+			<Option target="tarantino"/>
+		</Unit>
+		<Unit filename="D:/ClionProjects/OS/ex3/MapReduceFramework.cpp">
+			<Option target="edited_client_testing"/>
+			<Option target="ex3"/>
+			<Option target="client_testing"/>
+			<Option target="reut_test"/>
+			<Option target="tarantino"/>
+		</Unit>
+		<Unit filename="D:/ClionProjects/OS/ex3/MapReduceFramework.h">
+			<Option target="edited_client_testing"/>
+			<Option target="ex3"/>
+			<Option target="client_testing"/>
+			<Option target="reut_test"/>
+			<Option target="tarantino"/>
+		</Unit>
+		<Unit filename="D:/ClionProjects/OS/ex3/SampleClient.cpp">
+			<Option target="ex3"/>
+			<Option target="client_testing"/>
+		</Unit>
+		<Unit filename="D:/ClionProjects/OS/ex3/SampleClient_for_testing.cpp">
 			<Option target="edited_client_testing"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/WordFrequencies.cpp">
+		<Unit filename="D:/ClionProjects/OS/ex3/WordFrequencies.cpp">
 			<Option target="tarantino"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/WordFrequenciesClient.hpp">
+		<Unit filename="D:/ClionProjects/OS/ex3/WordFrequenciesClient.hpp">
 			<Option target="tarantino"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/atomicdemo/atomicdemo.cpp">
+		<Unit filename="D:/ClionProjects/OS/ex3/demos/atomicdemo/atomicdemo.cpp">
 			<Option target="atomic_demo"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/Barrier1.cpp">
+		<Unit filename="D:/ClionProjects/OS/ex3/demos/barrierdemo/Barrier1.cpp">
 			<Option target="barrier_demo"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/Barrier1.h">
+		<Unit filename="D:/ClionProjects/OS/ex3/demos/barrierdemo/Barrier1.h">
 			<Option target="barrier_demo"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/barrierdemo.cpp">
+		<Unit filename="D:/ClionProjects/OS/ex3/demos/barrierdemo/barrierdemo.cpp">
 			<Option target="barrier_demo"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex3/CMakeLists.txt">
+		<Unit filename="D:/ClionProjects/OS/ex3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

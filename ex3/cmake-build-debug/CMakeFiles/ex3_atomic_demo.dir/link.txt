@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -g   CMakeFiles/ex3_atomic_demo.dir/demos/atomicdemo/atomicdemo.cpp.o  -o ex3_atomic_demo 

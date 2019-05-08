@@ -1,0 +1,15 @@
+mohr, ellonet
+Student mohr wnenger (204802748), Student ella duvdevan (ID2)
+
+EX: 3
+
+FILES:
+Barrier.cpp - This class implements a Barrier object - used to make sure all threads arrive at a desired
+              code location.
+
+MapReduceFramework.cpp - This file implements a MapReduce multi-threading library.
+                         MapReduce is used to parallelise tasks of a specific structure, which are defined
+                         by two functions: map and reduce.
+
+REMARKS:
+None

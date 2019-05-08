@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/reut_test.dir/Barrier.cpp.o"
-  "/cs/usr/ellonet/SCHOOL/OS/ex3/Count.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/reut_test.dir/Count.cpp.o"
-  "/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/reut_test.dir/MapReduceFramework.cpp.o"
+  "D:/ClionProjects/OS/ex3/Barrier.cpp" "D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/reut_test.dir/Barrier.cpp.obj"
+  "D:/ClionProjects/OS/ex3/Count.cpp" "D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/reut_test.dir/Count.cpp.obj"
+  "D:/ClionProjects/OS/ex3/MapReduceFramework.cpp" "D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/reut_test.dir/MapReduceFramework.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

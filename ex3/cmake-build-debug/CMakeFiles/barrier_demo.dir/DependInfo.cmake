@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/Barrier1.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/barrier_demo.dir/demos/barrierdemo/Barrier1.cpp.o"
-  "/cs/usr/ellonet/SCHOOL/OS/ex3/demos/barrierdemo/barrierdemo.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles/barrier_demo.dir/demos/barrierdemo/barrierdemo.cpp.o"
+  "D:/ClionProjects/OS/ex3/demos/barrierdemo/Barrier1.cpp" "D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/barrier_demo.dir/demos/barrierdemo/Barrier1.cpp.obj"
+  "D:/ClionProjects/OS/ex3/demos/barrierdemo/barrierdemo.cpp" "D:/ClionProjects/OS/ex3/cmake-build-debug/CMakeFiles/barrier_demo.dir/demos/barrierdemo/barrierdemo.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

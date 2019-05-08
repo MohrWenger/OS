@@ -1,1 +1,3 @@
-/usr/bin/c++  -pthread -g   CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.o CMakeFiles/edited_client_testing.dir/SampleClient_for_testing.cpp.o CMakeFiles/edited_client_testing.dir/Barrier.cpp.o  -o edited_client_testing 
+"D:\ClionProjects\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\edited_client_testing.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\edited_client_testing.dir/objects.a @CMakeFiles\edited_client_testing.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -pthread -g   -Wl,--whole-archive CMakeFiles\edited_client_testing.dir/objects.a -Wl,--no-whole-archive  -o edited_client_testing.exe -Wl,--out-implib,libedited_client_testing.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\edited_client_testing.dir\linklibs.rsp

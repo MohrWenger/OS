@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o"
-  "CMakeFiles/client_testing.dir/SampleClient.cpp.o"
-  "CMakeFiles/client_testing.dir/Barrier.cpp.o"
+  "CMakeFiles/client_testing.dir/MapReduceFramework.cpp.obj"
+  "CMakeFiles/client_testing.dir/SampleClient.cpp.obj"
+  "CMakeFiles/client_testing.dir/Barrier.cpp.obj"
   "client_testing.pdb"
-  "client_testing"
+  "client_testing.exe"
+  "client_testing.exe.manifest"
+  "libclient_testing.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

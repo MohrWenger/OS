@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/reut_test.dir/Count.cpp.o"
-  "CMakeFiles/reut_test.dir/MapReduceFramework.cpp.o"
-  "CMakeFiles/reut_test.dir/Barrier.cpp.o"
+  "CMakeFiles/reut_test.dir/Count.cpp.obj"
+  "CMakeFiles/reut_test.dir/MapReduceFramework.cpp.obj"
+  "CMakeFiles/reut_test.dir/Barrier.cpp.obj"
   "reut_test.pdb"
-  "reut_test"
+  "reut_test.exe"
+  "reut_test.exe.manifest"
+  "libreut_test.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
