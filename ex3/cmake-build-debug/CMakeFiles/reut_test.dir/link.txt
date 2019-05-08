@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/reut_test.dir/Count.cpp.o CMakeFiles/reut_test.dir/MapReduceFramework.cpp.o CMakeFiles/reut_test.dir/Barrier.cpp.o  -o reut_test 

@@ -1,0 +1,4 @@
+copy this as arg:
+
+"Dog" "Cat" "Fish" "Sheep" "/path/1Dog1Cat" "/path/1Fish1Sheep" "/path/3Fish3Sheep" 
+"/path/5Fish3Dog4Sheep3Cat" "/path/8Dog2Cat1Fish"

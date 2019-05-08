@@ -2,9 +2,11 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="ex3" targetName="barrier_demo" />
-      <config projectName="ex3" targetName="atomic_demo" />
       <config projectName="ex3" targetName="ex3" />
+      <config projectName="ex3" targetName="edited_client_testing" />
+      <config projectName="ex3" targetName="barrier_demo" />
+      <config projectName="ex3" targetName="reut_test" />
+      <config projectName="ex3" targetName="atomic_demo" />
       <config projectName="ex3" targetName="client_testing" />
     </generated>
   </component>
@@ -16,10 +18,25 @@
   <component name="ChangeListManager">
     <list default="true" id="3194448c-adef-4936-8072-bc2f5fb1c01a" name="Default Changelist" comment="start ex3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MapReduceFramework.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MapReduceFramework.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SampleClient_for_testing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SampleClient_for_testing.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ex3.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ex3.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/client_testing" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/client_testing" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ex3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ex3.cbp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,31 +118,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="12274" />
+          <entry key="cpp" value="13516" />
           <entry key="h" value="3" />
           <entry key="mm" value="105" />
-          <entry key="txt" value="125" />
+          <entry key="txt" value="170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CMakeLists.txt" value="125" />
+          <entry key="CMakeLists.txt" value="170" />
           <entry key="Doxygen file" value="1" />
-          <entry key="ObjectiveC" value="12381" />
+          <entry key="ObjectiveC" value="13623" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Makefile" value="1" />
           <entry key="client_testing (disassembly)" value="2" />
-          <entry key="cpp" value="11" />
-          <entry key="h" value="10" />
+          <entry key="cpp" value="14" />
+          <entry key="h" value="11" />
+          <entry key="reut_test (disassembly)" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Disassembly" value="2" />
-          <entry key="ObjectiveC" value="21" />
+          <entry key="Disassembly" value="4" />
+          <entry key="ObjectiveC" value="25" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -136,17 +154,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+            <state relative-caret-position="180">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-72">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="396">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -154,18 +172,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="185" selection-start-line="174" selection-end-line="185" />
+            <state relative-caret-position="177">
+              <caret line="110" selection-start-line="110" selection-end-line="110" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#1058#1563#0" />
-                <element signature="e#1565#2664#0" />
-                <element signature="e#4651#4892#0" />
-                <element signature="e#4894#5411#0" />
-                <element signature="e#7108#7174#0" />
+                <element signature="e#1518#2023#0" />
+                <element signature="e#4989#5230#0" />
+                <element signature="e#5752#6273#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/8/bits/stl_vector.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="998" selection-start-line="998" selection-end-line="998" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Count.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+              <folding>
+                <element signature="e#74#102#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,8 +211,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MapReduceFramework.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="90">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -205,15 +242,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>: 0</find>
-      <find>new</find>
-      <find>sort</find>
-      <find>initi</find>
-      <find>ini</find>
-      <find>initia</find>
-      <find>barr</find>
-      <find>size</find>
-      <find>pthread_mutex_lock</find>
       <find>auto context</find>
       <find>shuff</find>
       <find>_lock</find>
@@ -232,9 +260,18 @@
       <find>jobContext1</find>
       <find>starting</find>
       <find>waitForJob</find>
-      <find>JobHandle</find>
       <find>jobContext</find>
       <find>dealer</find>
+      <find>client-</find>
+      <find>red</find>
+      <find>client-&gt;red</find>
+      <find>getJobState</find>
+      <find>behold</find>
+      <find>here</find>
+      <find>JobHandle</find>
+      <find>start</find>
+      <find>phase2</find>
+      <find>recieved</find>
     </findStrings>
     <replaceStrings>
       <replace>lock_shuffledPairs</replace>
@@ -253,8 +290,10 @@
         <option value="$PROJECT_DIR$/SampleClient.cpp" />
         <option value="$PROJECT_DIR$/demos/barrierdemo/barrierdemo.cpp" />
         <option value="$PROJECT_DIR$/Barrier.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/SampleClient_for_testing.cpp" />
+        <option value="$PROJECT_DIR$/../test/Count.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Count.cpp" />
         <option value="$PROJECT_DIR$/MapReduceFramework.cpp" />
       </list>
     </option>
@@ -285,17 +324,6 @@
             <path>
               <item name="ex3" type="b2602c69:ProjectViewProjectNode" />
               <item name="ex3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ex3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ex3" type="462c0819:PsiDirectoryNode" />
-              <item name="demos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ex3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ex3" type="462c0819:PsiDirectoryNode" />
-              <item name="demos" type="462c0819:PsiDirectoryNode" />
-              <item name="atomicdemo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -349,7 +377,17 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="edited_client_testing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ex3" TARGET_NAME="edited_client_testing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ex3" RUN_TARGET_NAME="edited_client_testing">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ex3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ex3" TARGET_NAME="ex3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ex3" RUN_TARGET_NAME="ex3">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="reut_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;Dog&quot; &quot;Cat&quot; &quot;Fish&quot; &quot;Sheep&quot; &quot;1Dog1Cat&quot; &quot;1Fish1Sheep&quot; &quot;3Fish3Sheep&quot;  &quot;5Fish3Dog4Sheep3Cat&quot; &quot;8Dog2Cat1Fish&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ex3" TARGET_NAME="reut_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ex3" RUN_TARGET_NAME="reut_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -359,7 +397,9 @@
       <item itemvalue="Application.atomic_demo" />
       <item itemvalue="Application.barrier_demo" />
       <item itemvalue="Application.client_testing" />
+      <item itemvalue="Application.edited_client_testing" />
       <item itemvalue="Application.ex3" />
+      <item itemvalue="Application.reut_test" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -379,12 +419,12 @@
       <workItem from="1557045190372" duration="4422000" />
       <workItem from="1557060853799" duration="9434000" />
       <workItem from="1557082647953" duration="1071000" />
-      <workItem from="1557303103109" duration="6470000" />
+      <workItem from="1557303103109" duration="14540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69038000" />
+    <option name="totallyTimeSpent" value="77108000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="26" width="1928" height="1033" extended-state="6" />
@@ -423,6 +463,45 @@
     <option name="LAST_COMMIT_MESSAGE" value="start ex3" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MapReduceFramework.cpp</url>
+          <line>166</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MapReduceFramework.cpp</url>
+          <line>129</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Count.cpp</url>
+          <line>120</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MapReduceFramework.cpp</url>
+          <line>135</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MapReduceFramework.cpp</url>
+          <line>73</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MapReduceFramework.cpp</url>
+          <line>110</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Count.cpp</url>
+          <line>84</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="context-&gt;shuffledPairs" />
@@ -548,27 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/8/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="805" selection-start-line="805" selection-end-line="805" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MapReduceFramework.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SampleClient.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -579,27 +637,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
+    <entry file="file://$PROJECT_DIR$/../test/Count.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="385">
+          <caret line="156" column="15" selection-start-line="156" selection-start-column="15" selection-end-line="156" selection-end-column="15" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#74#132#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MapReduceFramework.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="998" selection-start-line="998" selection-end-line="998" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="185" selection-start-line="174" selection-end-line="185" />
+        <state relative-caret-position="177">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#1058#1563#0" />
-            <element signature="e#1565#2664#0" />
-            <element signature="e#4651#4892#0" />
-            <element signature="e#4894#5411#0" />
-            <element signature="e#7108#7174#0" />
+            <element signature="e#1518#2023#0" />
+            <element signature="e#4989#5230#0" />
+            <element signature="e#5752#6273#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Count.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+          <folding>
+            <element signature="e#74#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

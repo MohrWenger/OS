@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -109,6 +109,45 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named ex3
+
+# Build rule for target.
+ex3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex3
+.PHONY : ex3
+
+# fast build rule for target.
+ex3/fast:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
+.PHONY : ex3/fast
+
+#=============================================================================
+# Target rules for targets named reut_test
+
+# Build rule for target.
+reut_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 reut_test
+.PHONY : reut_test
+
+# fast build rule for target.
+reut_test/fast:
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/build
+.PHONY : reut_test/fast
+
+#=============================================================================
+# Target rules for targets named edited_client_testing
+
+# Build rule for target.
+edited_client_testing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 edited_client_testing
+.PHONY : edited_client_testing
+
+# fast build rule for target.
+edited_client_testing/fast:
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/build
+.PHONY : edited_client_testing/fast
 
 #=============================================================================
 # Target rules for targets named atomic_demo
@@ -149,27 +188,16 @@ barrier_demo/fast:
 	$(MAKE) -f CMakeFiles/barrier_demo.dir/build.make CMakeFiles/barrier_demo.dir/build
 .PHONY : barrier_demo/fast
 
-#=============================================================================
-# Target rules for targets named ex3
-
-# Build rule for target.
-ex3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex3
-.PHONY : ex3
-
-# fast build rule for target.
-ex3/fast:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
-.PHONY : ex3/fast
-
 Barrier.o: Barrier.cpp.o
 
 .PHONY : Barrier.o
 
 # target to build an object file
 Barrier.cpp.o:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.o
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.o
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Barrier.cpp.o
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/Barrier.cpp.o
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.o
 .PHONY : Barrier.cpp.o
 
 Barrier.i: Barrier.cpp.i
@@ -178,8 +206,10 @@ Barrier.i: Barrier.cpp.i
 
 # target to preprocess a source file
 Barrier.cpp.i:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.i
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.i
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Barrier.cpp.i
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/Barrier.cpp.i
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.i
 .PHONY : Barrier.cpp.i
 
 Barrier.s: Barrier.cpp.s
@@ -188,9 +218,38 @@ Barrier.s: Barrier.cpp.s
 
 # target to generate assembly for a file
 Barrier.cpp.s:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.s
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Barrier.cpp.s
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Barrier.cpp.s
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/Barrier.cpp.s
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/Barrier.cpp.s
 .PHONY : Barrier.cpp.s
+
+Count.o: Count.cpp.o
+
+.PHONY : Count.o
+
+# target to build an object file
+Count.cpp.o:
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Count.cpp.o
+.PHONY : Count.cpp.o
+
+Count.i: Count.cpp.i
+
+.PHONY : Count.i
+
+# target to preprocess a source file
+Count.cpp.i:
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Count.cpp.i
+.PHONY : Count.cpp.i
+
+Count.s: Count.cpp.s
+
+.PHONY : Count.s
+
+# target to generate assembly for a file
+Count.cpp.s:
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/Count.cpp.s
+.PHONY : Count.cpp.s
 
 MapReduceFramework.o: MapReduceFramework.cpp.o
 
@@ -198,8 +257,10 @@ MapReduceFramework.o: MapReduceFramework.cpp.o
 
 # target to build an object file
 MapReduceFramework.cpp.o:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.o
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/MapReduceFramework.cpp.o
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.o
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o
 .PHONY : MapReduceFramework.cpp.o
 
 MapReduceFramework.i: MapReduceFramework.cpp.i
@@ -208,8 +269,10 @@ MapReduceFramework.i: MapReduceFramework.cpp.i
 
 # target to preprocess a source file
 MapReduceFramework.cpp.i:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.i
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.i
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/MapReduceFramework.cpp.i
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.i
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.i
 .PHONY : MapReduceFramework.cpp.i
 
 MapReduceFramework.s: MapReduceFramework.cpp.s
@@ -218,8 +281,10 @@ MapReduceFramework.s: MapReduceFramework.cpp.s
 
 # target to generate assembly for a file
 MapReduceFramework.cpp.s:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.s
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/MapReduceFramework.cpp.s
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/MapReduceFramework.cpp.s
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.s
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/MapReduceFramework.cpp.s
 .PHONY : MapReduceFramework.cpp.s
 
 SampleClient.o: SampleClient.cpp.o
@@ -229,6 +294,7 @@ SampleClient.o: SampleClient.cpp.o
 # target to build an object file
 SampleClient.cpp.o:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/SampleClient.cpp.o
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/SampleClient.cpp.o
 .PHONY : SampleClient.cpp.o
 
 SampleClient.i: SampleClient.cpp.i
@@ -238,6 +304,7 @@ SampleClient.i: SampleClient.cpp.i
 # target to preprocess a source file
 SampleClient.cpp.i:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/SampleClient.cpp.i
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/SampleClient.cpp.i
 .PHONY : SampleClient.cpp.i
 
 SampleClient.s: SampleClient.cpp.s
@@ -247,6 +314,7 @@ SampleClient.s: SampleClient.cpp.s
 # target to generate assembly for a file
 SampleClient.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/SampleClient.cpp.s
+	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/SampleClient.cpp.s
 .PHONY : SampleClient.cpp.s
 
 SampleClient_for_testing.o: SampleClient_for_testing.cpp.o
@@ -255,7 +323,7 @@ SampleClient_for_testing.o: SampleClient_for_testing.cpp.o
 
 # target to build an object file
 SampleClient_for_testing.cpp.o:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/SampleClient_for_testing.cpp.o
 .PHONY : SampleClient_for_testing.cpp.o
 
 SampleClient_for_testing.i: SampleClient_for_testing.cpp.i
@@ -264,7 +332,7 @@ SampleClient_for_testing.i: SampleClient_for_testing.cpp.i
 
 # target to preprocess a source file
 SampleClient_for_testing.cpp.i:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.i
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/SampleClient_for_testing.cpp.i
 .PHONY : SampleClient_for_testing.cpp.i
 
 SampleClient_for_testing.s: SampleClient_for_testing.cpp.s
@@ -273,7 +341,7 @@ SampleClient_for_testing.s: SampleClient_for_testing.cpp.s
 
 # target to generate assembly for a file
 SampleClient_for_testing.cpp.s:
-	$(MAKE) -f CMakeFiles/client_testing.dir/build.make CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.s
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/SampleClient_for_testing.cpp.s
 .PHONY : SampleClient_for_testing.cpp.s
 
 demos/atomicdemo/atomicdemo.o: demos/atomicdemo/atomicdemo.cpp.o
@@ -363,15 +431,20 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... ex3"
+	@echo "... rebuild_cache"
+	@echo "... reut_test"
+	@echo "... edited_client_testing"
 	@echo "... atomic_demo"
 	@echo "... client_testing"
 	@echo "... barrier_demo"
-	@echo "... ex3"
 	@echo "... Barrier.o"
 	@echo "... Barrier.i"
 	@echo "... Barrier.s"
+	@echo "... Count.o"
+	@echo "... Count.i"
+	@echo "... Count.s"
 	@echo "... MapReduceFramework.o"
 	@echo "... MapReduceFramework.i"
 	@echo "... MapReduceFramework.s"

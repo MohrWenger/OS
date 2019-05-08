@@ -14,28 +14,34 @@ using namespace std;
 
 
 struct ThreadContext {
+    // TODO - change redundant pointers..
     pthread_t *workingThreads;
-    atomic<int> *atomic_index;
+    atomic<int> atomic_index;
     const MapReduceClient *global_client;
     const InputVec *inputVec;
     OutputVec *outputVec;
     Barrier *barrier;
     sem_t *semaphore;
-    atomic<int> *dealer;
+    atomic<int> dealer;
+    int thNum;
+    stage_t jobStage;
+    atomic<int> mapCounter;
+    atomic<int> reduceCounter;
+    int mapTotal;
+    atomic<int> reduceTotal;
     vector<IntermediateVec *> phase2vec;
     pthread_mutex_t lock_shuffledPairs{};
     pthread_mutex_t lock_outputVec{};
-    pthread_mutex_t lock_phase2vec{};
     deque<IntermediateVec> shuffledPairs;
 
-    ThreadContext(pthread_t *workingTh, atomic<int> *index, const MapReduceClient *client,
-                  const InputVec *input, OutputVec *output, Barrier *bar, sem_t *sem, atomic<int> *dealer) :
-            workingThreads(workingTh), atomic_index(index), global_client(client), inputVec(input), outputVec(output),
-            barrier(bar), semaphore(sem), dealer(dealer) {};
+    ThreadContext(pthread_t *workingTh, const MapReduceClient *client,
+                  const InputVec *input, OutputVec *output, Barrier *bar, sem_t *sem, int num) :
+            workingThreads(workingTh), atomic_index(0), global_client(client), inputVec(input), outputVec(output),
+            barrier(bar), semaphore(sem), dealer(0), thNum(num), jobStage(MAP_STAGE), mapCounter(0),
+            reduceCounter(0), mapTotal(0), reduceTotal(0) {};
 
     ~ThreadContext() {
         free(workingThreads);
-        free(atomic_index);
         //TODO - add more
     }
 
@@ -51,13 +57,13 @@ bool compareKeys(IntermediatePair &p1, IntermediatePair &p2) {
 IntermediatePair *getMax(vector<IntermediateVec *> vecs) //get maximum to compare
 {
     IntermediatePair *max = nullptr;
-    for (int i = 0; i < vecs.size(); ++i) {
-        if (!max && !(vecs.at(i)->empty())) // if there isn't a value ther yet then put one.
+    for (auto &vec : vecs) {
+        if (!max && !(vec->empty())) // if there isn't a value ther yet then put one.
         {
-            max = &vecs.at(i)->back();
-        } else if (!(vecs.at(i)->empty())) {
-            if (*(max->first) < *(vecs.at(i)->back().first)) {
-                max = &vecs.at(i)->back();
+            max = &vec->back();
+        } else if (!(vec->empty())) {
+            if (*(max->first) < *(vec->back().first)) {
+                max = &vec->back();
             }
         }
     }
@@ -65,6 +71,7 @@ IntermediatePair *getMax(vector<IntermediateVec *> vecs) //get maximum to compar
 }
 
 void shuffle(ThreadContext * context) {
+    context->jobStage = REDUCE_STAGE;
     IntermediatePair *max = getMax(context->phase2vec);
     IntermediateVec tempVec;
     while (max) // while it doesn't return a nullptr because there exists a max
@@ -72,7 +79,6 @@ void shuffle(ThreadContext * context) {
         for (auto &i : context->phase2vec) {
             while (!(i->empty()) && !(*(i->back().first) < *max->first)) {
                 tempVec.push_back(i->back());
-//                cout << "size i : " << i->size() << endl;
                 i->pop_back();
             }
         }
@@ -81,6 +87,7 @@ void shuffle(ThreadContext * context) {
             exit(1);
         }
         context->shuffledPairs.push_back(tempVec);
+        context->reduceTotal++;
         sem_post(context->semaphore);
         if (pthread_mutex_unlock(&context->lock_shuffledPairs) != 0) {
             fprintf(stderr, "In Shuffle: error on pthread_mutex_unlock");
@@ -96,14 +103,15 @@ void shuffle(ThreadContext * context) {
 void *threadWrapper(void *arg) {
     auto context = (ThreadContext *) arg; // casting in order to use the attributes of the vector
     int len = (int) context->inputVec->size();
-    int old = (*(context->atomic_index))++;
+    int old = (context->atomic_index)++;
     auto map_results = new(IntermediateVec);
 
     while (old < len) {
 
         context->global_client->map(context->inputVec->at(old).first, context->inputVec->at(old).second,
                                     map_results);
-        old = (*(context->atomic_index))++;
+        old = (context->atomic_index)++;
+        context->mapCounter++;
     }
 
 
@@ -119,18 +127,16 @@ void *threadWrapper(void *arg) {
         exit(1);
     }
 
-    // barrier - wait until all threads finish mapping.
-    context->barrier->barrier();
+    context->barrier->barrier(); // barrier - wait until all threads finish mapping.
 
-    if (!((*(context->dealer))++)) {    // TODO - explain to mor
+    if (!((context->dealer)++)) {
         shuffle(context);
     }
 
-    while (!context->shuffledPairs.empty()) {
+    while (!context->shuffledPairs.empty()) { // TODO - is this the correct condition?
 
         sem_wait(context->semaphore);
 
-        //calling client's reduce with API: (const IntermediateVec* pairs, void* context)
         if (pthread_mutex_lock(&context->lock_shuffledPairs) != 0) {
             fprintf(stderr, "In threadWrapper: error on pthread_mutex_lock");
             exit(1);
@@ -138,6 +144,7 @@ void *threadWrapper(void *arg) {
         if (!context->shuffledPairs.empty()) {
             context->global_client->reduce(&context->shuffledPairs.back(), context);
             context->shuffledPairs.pop_back();
+            context->reduceCounter++;
         } else {
             sem_post(context->semaphore);
         }
@@ -150,7 +157,6 @@ void *threadWrapper(void *arg) {
 }
 
 
-/////////////////////////// given ///////////////////////
 void emit2(K2 *key, V2 *value, void *context) {
     auto jobVec = (IntermediateVec *) context;
     IntermediatePair toAdd = std::make_pair(key, value);
@@ -172,38 +178,8 @@ void emit3(K3 *key, V3 *value, void *context) {
     }
 }
 
-void MapReduce(int threadAmount, ThreadContext *context) {
-    // todo - protect with mutex?
-    for (unsigned long i = 0; i < threadAmount; ++i) {
-        pthread_create(context->workingThreads + i, nullptr, threadWrapper, context);
-    }
-    // TODO - moved to wait for join!!
-    for (unsigned long i = 0; i < threadAmount; ++i) {
-        pthread_join(*(context->workingThreads + i), nullptr);
-    }
-    cout << "\nBehold! I have finished reducing\nElla: I'm so clever!!" << endl;
-}
 
-JobHandle startMapReduceJob(const MapReduceClient &client,
-                            const InputVec &inputVec, OutputVec &outputVec,
-                            int multiThreadLevel) {
-
-    // initializing variables
-    std::atomic<int> atomic_index(0);
-    std::atomic<int> atomic_dealer(0);
-    auto *barrier = new Barrier(multiThreadLevel);
-    auto semaphore = new sem_t;
-    sem_init(semaphore, 0, 1);
-
-    auto workingThreads = new pthread_t[multiThreadLevel];
-
-
-//    ThreadContext ThreadContext = {workingThreads, &atomic_index, &client, &inputVec, &outputVec, barrier,
-//                                   semaphore, &atomic_dealer};
-    auto jobContext = new ThreadContext(workingThreads, &atomic_index, &client, &inputVec, &outputVec, barrier,
-                                           semaphore, &atomic_dealer);
-
-    // init mutexes
+void *init_mutexes(ThreadContext * jobContext) {
     if (pthread_mutex_init(&jobContext->lock_shuffledPairs, nullptr) != 0) {
         cout << "Error initializing mutex" << endl;
         return nullptr;
@@ -212,22 +188,49 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
         cout << "Error initializing mutex" << endl;
         return nullptr;
     }
-    if (pthread_mutex_init(&jobContext->lock_phase2vec, nullptr) != 0) {
-        cout << "Error initializing mutex" << endl;
-        return nullptr;
+    return nullptr;
+}
+
+JobHandle startMapReduceJob(const MapReduceClient &client,
+                            const InputVec &inputVec, OutputVec &outputVec,
+                            int multiThreadLevel) {
+
+    // initializing variables
+    cout << "heree " << endl;
+    auto *barrier = new Barrier(multiThreadLevel);
+    auto semaphore = new sem_t;
+    sem_init(semaphore, 0, 1);
+
+    auto workingThreads = new pthread_t[multiThreadLevel];
+    auto jobContext = new ThreadContext(workingThreads, &client, &inputVec, &outputVec, barrier,
+                                        semaphore, multiThreadLevel);
+
+    init_mutexes(jobContext); // init mutexes
+    for (unsigned long i = 0; i < multiThreadLevel; ++i) { // creating threads
+        pthread_create(jobContext->workingThreads + i, nullptr, threadWrapper, jobContext);
     }
-    // calling main function
-    MapReduce(multiThreadLevel, jobContext);
+
     return jobContext;
-//    return nullptr;
 }
 
 void waitForJob(JobHandle job) {
-    // TODO - put the join here
+    auto jobContex = (ThreadContext *) job;
+    for (unsigned long i = 0; i < jobContex->thNum; ++i) {
+        pthread_join(*(jobContex->workingThreads + i), nullptr);
+    }
 }
 
 void getJobState(JobHandle job, JobState *state) {
     // TODO - count status of work -
+    auto jobContext = (ThreadContext *) job;
+    auto allMapJobs = jobContext->inputVec->size();
+    auto allReduceJobs = (float) jobContext->reduceTotal;
+    auto currMap = (float) jobContext->mapCounter;
+    auto currRed = (float) jobContext->reduceCounter;
+
+
+    state->stage = jobContext->jobStage;
+    state->percentage = ((currMap + currRed) / (allMapJobs + allReduceJobs)) * 100;
     // for map 100% = size of inputVec
     //         1% = each time we called client map
     // for reduce 100% = len of shuffled pairs
@@ -235,6 +238,6 @@ void getJobState(JobHandle job, JobState *state) {
 }
 
 void closeJobHandle(JobHandle job) {
-    // TODO - delete every thing
-    // call for wait!! that's how we know
+    waitForJob(job);
+    // TODO - delete everything kill them all!
 }

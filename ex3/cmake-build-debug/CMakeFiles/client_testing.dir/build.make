@@ -70,18 +70,18 @@ CMakeFiles/client_testing.dir/MapReduceFramework.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_testing.dir/MapReduceFramework.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.cpp -o CMakeFiles/client_testing.dir/MapReduceFramework.cpp.s
 
-CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o: CMakeFiles/client_testing.dir/flags.make
-CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o: ../SampleClient_for_testing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o -c /cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient_for_testing.cpp
+CMakeFiles/client_testing.dir/SampleClient.cpp.o: CMakeFiles/client_testing.dir/flags.make
+CMakeFiles/client_testing.dir/SampleClient.cpp.o: ../SampleClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client_testing.dir/SampleClient.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_testing.dir/SampleClient.cpp.o -c /cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient.cpp
 
-CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient_for_testing.cpp > CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.i
+CMakeFiles/client_testing.dir/SampleClient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_testing.dir/SampleClient.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient.cpp > CMakeFiles/client_testing.dir/SampleClient.cpp.i
 
-CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient_for_testing.cpp -o CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.s
+CMakeFiles/client_testing.dir/SampleClient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_testing.dir/SampleClient.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient.cpp -o CMakeFiles/client_testing.dir/SampleClient.cpp.s
 
 CMakeFiles/client_testing.dir/Barrier.cpp.o: CMakeFiles/client_testing.dir/flags.make
 CMakeFiles/client_testing.dir/Barrier.cpp.o: ../Barrier.cpp
@@ -99,14 +99,14 @@ CMakeFiles/client_testing.dir/Barrier.cpp.s: cmake_force
 # Object files for target client_testing
 client_testing_OBJECTS = \
 "CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o" \
-"CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o" \
+"CMakeFiles/client_testing.dir/SampleClient.cpp.o" \
 "CMakeFiles/client_testing.dir/Barrier.cpp.o"
 
 # External object files for target client_testing
 client_testing_EXTERNAL_OBJECTS =
 
 client_testing: CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o
-client_testing: CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o
+client_testing: CMakeFiles/client_testing.dir/SampleClient.cpp.o
 client_testing: CMakeFiles/client_testing.dir/Barrier.cpp.o
 client_testing: CMakeFiles/client_testing.dir/build.make
 client_testing: CMakeFiles/client_testing.dir/link.txt

@@ -68,7 +68,7 @@ public:
             delete pair.first;
             delete pair.second;
         }
-        cout << "c = " << (char) c << endl;
+        cout << "c = " << (char) c << " total of: " << count << endl;
         KChar *k3 = new KChar(c);
         VCount *v3 = new VCount(count);
         usleep(150000);
@@ -93,10 +93,20 @@ int main(int argc, char **argv) {
     JobHandle job = startMapReduceJob(client, inputVec, outputVec, 4);
 //	JobHandle job = startMapReduceJob(client, inputVec, outputVec, 2);
 
-//	getJobState(job, &state);
-//
-//	while (state.stage != REDUCE_STAGE || state.percentage != 100.0)
+	getJobState(job, &state);
+    printf("stage %d, %f\n",
+           state.stage, state.percentage);
+
+
+
+//    while (state.stage != REDUCE_STAGE || state.percentage != 100.0)
 //	{
+//	    printf("here!\n");
+//        getJobState(job, &state);
+//        printf("stage %d, %f%% \n",
+//               state.stage, state.percentage);
+
+
 //        if (last_state.stage != state.stage || last_state.percentage != state.percentage){
 //            printf("stage %d, %f%% \n",
 //			state.stage, state.percentage);
@@ -109,7 +119,11 @@ int main(int argc, char **argv) {
 //			state.stage, state.percentage);
 //	printf("Done!\n");
 //
-//	closeJobHandle(job);
+    closeJobHandle(job);
+    getJobState(job, &state);
+    printf("stage %d, %f\n",
+           state.stage, state.percentage);
+
 //
 //	for (OutputPair& pair: outputVec) {
 //		char c = ((const KChar*)pair.first)->c;

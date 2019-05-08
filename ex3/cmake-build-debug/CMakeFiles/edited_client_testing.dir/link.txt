@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/edited_client_testing.dir/MapReduceFramework.cpp.o CMakeFiles/edited_client_testing.dir/SampleClient_for_testing.cpp.o CMakeFiles/edited_client_testing.dir/Barrier.cpp.o  -o edited_client_testing 

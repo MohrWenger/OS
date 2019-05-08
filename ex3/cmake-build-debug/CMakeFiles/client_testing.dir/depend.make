@@ -9,7 +9,7 @@ CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o: ../MapReduceClient.h
 CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o: ../MapReduceFramework.cpp
 CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o: ../MapReduceFramework.h
 
-CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o: ../MapReduceClient.h
-CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o: ../MapReduceFramework.h
-CMakeFiles/client_testing.dir/SampleClient_for_testing.cpp.o: ../SampleClient_for_testing.cpp
+CMakeFiles/client_testing.dir/SampleClient.cpp.o: ../MapReduceClient.h
+CMakeFiles/client_testing.dir/SampleClient.cpp.o: ../MapReduceFramework.h
+CMakeFiles/client_testing.dir/SampleClient.cpp.o: ../SampleClient.cpp
 

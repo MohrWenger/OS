@@ -65,6 +65,117 @@ CMAKE_SOURCE_DIR = /cs/usr/ellonet/SCHOOL/OS/ex3
 CMAKE_BINARY_DIR = /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/ex3.dir
+
+# All Build rule for target.
+CMakeFiles/ex3.dir/all:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/depend
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles --progress-num=14,15,16,17 "Built target ex3"
+.PHONY : CMakeFiles/ex3.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex3.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex3.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex3.dir/rule
+
+# Convenience name for target.
+ex3: CMakeFiles/ex3.dir/rule
+
+.PHONY : ex3
+
+# clean rule for target.
+CMakeFiles/ex3.dir/clean:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/clean
+.PHONY : CMakeFiles/ex3.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex3.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/reut_test.dir
+
+# All Build rule for target.
+CMakeFiles/reut_test.dir/all:
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/depend
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles --progress-num=18,19,20,21 "Built target reut_test"
+.PHONY : CMakeFiles/reut_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/reut_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/reut_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/reut_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/reut_test.dir/rule
+
+# Convenience name for target.
+reut_test: CMakeFiles/reut_test.dir/rule
+
+.PHONY : reut_test
+
+# clean rule for target.
+CMakeFiles/reut_test.dir/clean:
+	$(MAKE) -f CMakeFiles/reut_test.dir/build.make CMakeFiles/reut_test.dir/clean
+.PHONY : CMakeFiles/reut_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/reut_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/edited_client_testing.dir
+
+# All Build rule for target.
+CMakeFiles/edited_client_testing.dir/all:
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/depend
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13 "Built target edited_client_testing"
+.PHONY : CMakeFiles/edited_client_testing.dir/all
+
+# Include target in all.
+all: CMakeFiles/edited_client_testing.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/edited_client_testing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/edited_client_testing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/edited_client_testing.dir/rule
+
+# Convenience name for target.
+edited_client_testing: CMakeFiles/edited_client_testing.dir/rule
+
+.PHONY : edited_client_testing
+
+# clean rule for target.
+CMakeFiles/edited_client_testing.dir/clean:
+	$(MAKE) -f CMakeFiles/edited_client_testing.dir/build.make CMakeFiles/edited_client_testing.dir/clean
+.PHONY : CMakeFiles/edited_client_testing.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/edited_client_testing.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/atomic_demo.dir
 
 # All Build rule for target.
@@ -172,43 +283,6 @@ CMakeFiles/barrier_demo.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/barrier_demo.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/ex3.dir
-
-# All Build rule for target.
-CMakeFiles/ex3.dir/all:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/depend
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13 "Built target ex3"
-.PHONY : CMakeFiles/ex3.dir/all
-
-# Include target in all.
-all: CMakeFiles/ex3.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/ex3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex3/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex3.dir/rule
-
-# Convenience name for target.
-ex3: CMakeFiles/ex3.dir/rule
-
-.PHONY : ex3
-
-# clean rule for target.
-CMakeFiles/ex3.dir/clean:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/clean
-.PHONY : CMakeFiles/ex3.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/ex3.dir/clean
 
 .PHONY : clean
 
