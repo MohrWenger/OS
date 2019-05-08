@@ -17,6 +17,7 @@
     <list default="true" id="3194448c-adef-4936-8072-bc2f5fb1c01a" name="Default Changelist" comment="start ex3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MapReduceFramework.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MapReduceFramework.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SampleClient_for_testing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SampleClient_for_testing.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client_testing.dir/MapReduceFramework.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/client_testing" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/client_testing" afterDir="false" />
     </list>
@@ -94,13 +95,13 @@
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="11312" />
+          <entry key="cpp" value="11954" />
           <entry key="h" value="3" />
           <entry key="mm" value="105" />
           <entry key="txt" value="125" />
@@ -110,7 +111,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="125" />
           <entry key="Doxygen file" value="1" />
-          <entry key="ObjectiveC" value="11419" />
+          <entry key="ObjectiveC" value="12061" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -118,13 +119,13 @@
           <entry key="Makefile" value="1" />
           <entry key="client_testing (disassembly)" value="2" />
           <entry key="cpp" value="11" />
-          <entry key="h" value="8" />
+          <entry key="h" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Disassembly" value="2" />
-          <entry key="ObjectiveC" value="19" />
+          <entry key="ObjectiveC" value="21" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -144,48 +145,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            <state relative-caret-position="-72">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Makefile">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="78" column="29" selection-start-line="78" selection-end-line="79" />
+            <state relative-caret-position="-796">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demos/barrierdemo/barrierdemo.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MapReduceClient.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-              <folding>
-                <element signature="e#53#85#0" expanded="true" />
+                <element signature="e#1058#1563#0" />
+                <element signature="e#1565#2664#0" />
+                <element signature="e#4651#4892#0" />
+                <element signature="e#4894#5411#0" />
+                <element signature="e#7108#7174#0" />
               </folding>
             </state>
           </provider>
@@ -194,8 +174,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MapReduceFramework.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="39">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -203,8 +183,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleClient.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1278">
-              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+            <state relative-caret-position="129">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -225,9 +205,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pthread_create</find>
-      <find>foo</find>
-      <find>startMapReduceJob</find>
       <find>InputVec</find>
       <find>: 0</find>
       <find>new</find>
@@ -251,6 +228,13 @@
       <find>reduc</find>
       <find>map</find>
       <find>phase</find>
+      <find>joi</find>
+      <find>workingThreadsworkingThreads</find>
+      <find>jobContext1</find>
+      <find>starting</find>
+      <find>waitForJob</find>
+      <find>JobHandle</find>
+      <find>jobContext</find>
     </findStrings>
     <replaceStrings>
       <replace>lock_shuffledPairs</replace>
@@ -294,6 +278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,7 +301,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,21 +379,23 @@
       <workItem from="1557045190372" duration="4422000" />
       <workItem from="1557060853799" duration="9434000" />
       <workItem from="1557082647953" duration="1071000" />
+      <workItem from="1557303103109" duration="5499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61713000" />
+    <option name="totallyTimeSpent" value="68067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="26" width="1928" height="1033" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16435432" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16755603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297244" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1330377" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3059867" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31707317" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -521,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/8/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12564">
-          <caret line="698" selection-start-line="698" selection-end-line="698" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/8/bits/stl_iterator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14094">
@@ -542,59 +521,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/barrierdemo/barrierdemo.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MapReduceClient.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding>
-            <element signature="e#53#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MapReduceFramework.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SampleClient.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Barrier.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -603,12 +531,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
+    <entry file="file://$PROJECT_DIR$/MapReduceClient.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="78" column="29" selection-start-line="78" selection-end-line="79" />
+        <state relative-caret-position="536">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding>
+            <element signature="e#53#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/barrierdemo/barrierdemo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="805" selection-start-line="805" selection-end-line="805" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MapReduceFramework.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SampleClient.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-796">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#1058#1563#0" />
+            <element signature="e#1565#2664#0" />
+            <element signature="e#4651#4892#0" />
+            <element signature="e#4894#5411#0" />
+            <element signature="e#7108#7174#0" />
           </folding>
         </state>
       </provider>
