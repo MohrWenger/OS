@@ -101,7 +101,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="11954" />
+          <entry key="cpp" value="12274" />
           <entry key="h" value="3" />
           <entry key="mm" value="105" />
           <entry key="txt" value="125" />
@@ -111,7 +111,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="125" />
           <entry key="Doxygen file" value="1" />
-          <entry key="ObjectiveC" value="12061" />
+          <entry key="ObjectiveC" value="12381" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -157,8 +157,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-796">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="344">
+              <caret line="185" selection-start-line="174" selection-end-line="185" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <element signature="e#1058#1563#0" />
@@ -205,7 +205,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>InputVec</find>
       <find>: 0</find>
       <find>new</find>
       <find>sort</find>
@@ -235,6 +234,7 @@
       <find>waitForJob</find>
       <find>JobHandle</find>
       <find>jobContext</find>
+      <find>dealer</find>
     </findStrings>
     <replaceStrings>
       <replace>lock_shuffledPairs</replace>
@@ -266,7 +266,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="215" />
     <option name="y" value="126" />
     <option name="width" value="1083" />
@@ -379,12 +379,12 @@
       <workItem from="1557045190372" duration="4422000" />
       <workItem from="1557060853799" duration="9434000" />
       <workItem from="1557082647953" duration="1071000" />
-      <workItem from="1557303103109" duration="5499000" />
+      <workItem from="1557303103109" duration="6470000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68067000" />
+    <option name="totallyTimeSpent" value="69038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="26" width="1928" height="1033" extended-state="6" />
@@ -394,7 +394,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3297244" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3059867" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31707317" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -591,8 +591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-796">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="344">
+          <caret line="185" selection-start-line="174" selection-end-line="185" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <element signature="e#1058#1563#0" />
