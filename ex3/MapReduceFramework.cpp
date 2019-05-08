@@ -12,7 +12,9 @@ using namespace std;
 
 ///////////////////// Global variables /////////////////////
 
-
+/**
+ * This is aa sturct that keeps all the context that is relevant for all the threads in the same job
+ */
 struct ThreadContext {
     // TODO - change redundant pointers..
     pthread_t *workingThreads;
@@ -20,7 +22,7 @@ struct ThreadContext {
     const MapReduceClient *global_client;
     const InputVec *inputVec;
     OutputVec *outputVec;
-    Barrier *barrier;
+    Barrier barrier;
     sem_t *semaphore;
     atomic<int> dealer;
     int thNum;
@@ -35,31 +37,52 @@ struct ThreadContext {
     deque<IntermediateVec> shuffledPairs;
     bool wasJoined;
 
+    /**
+     * This is the constructor for the Thread context
+     * @param workingTh a list of the worknig threads
+     * @param client  the client whos map reduce functions we run
+     * @param input the input given
+     * @param output a pointer to where we put the output
+     * @param sem a semaphor
+     * @param num the number of threads
+     */
     ThreadContext(pthread_t *workingTh, const MapReduceClient *client,
-                  const InputVec *input, OutputVec *output, Barrier *bar, sem_t *sem, int num) :
+                  const InputVec *input, OutputVec *output, sem_t *sem, int num) :
             workingThreads(workingTh), atomic_index(0), global_client(client), inputVec(input), outputVec(output),
-            barrier(bar), semaphore(sem), dealer(0), thNum(num), jobStage(MAP_STAGE), mapCounter(0),
-            reduceCounter(0), mapTotal(0), reduceTotal(0),wasJoined(0){};
+            barrier(Barrier(num)), semaphore(sem), dealer(0), thNum(num), jobStage(MAP_STAGE), mapCounter(0),
+            reduceCounter(0), mapTotal(0), reduceTotal(0), wasJoined(false) {};
 
+    /**
+     * S destructor for the thread context
+     */
     ~ThreadContext() {
-        free(workingThreads);
-        for (auto vec2: phase2vec)
-        {
-            delete(vec2);
+        delete[] workingThreads;
+        for (auto vec2: phase2vec) {
+            delete (vec2);
         }
-
-        //TODO - add more
+        delete semaphore;
     }
 
 } typedef ThreadContext;
 
 ///////////////////// private functions /////////////////////
 
+/**
+ * a compartor we use to sort the pairs
+ * @param p1 first pair
+ * @param p2 second pair
+ * @return if the first pair is smaller then the second
+ */
 bool compareKeys(IntermediatePair &p1, IntermediatePair &p2) {
     return (*(p1.first) < *(p2.first)); //they only implemented <
 
 }
 
+/**
+ * gets the maximum value  of all pairs
+ * @param vecs a vector f vector of pairs
+ * @return the maximim
+ */
 IntermediatePair *getMax(vector<IntermediateVec *> vecs) //get maximum to compare
 {
     IntermediatePair *max = nullptr;
@@ -76,6 +99,9 @@ IntermediatePair *getMax(vector<IntermediateVec *> vecs) //get maximum to compar
     return max;
 }
 
+/**
+ * shuffles the results of the map
+ */
 void shuffle(ThreadContext * context) {
     context->jobStage = REDUCE_STAGE;
     IntermediatePair *max = getMax(context->phase2vec);
@@ -105,7 +131,11 @@ void shuffle(ThreadContext * context) {
     }
 }
 
-
+/**
+ * This is the actuall proceedure for each thread
+ * @param arg the context for every job
+ * @return nullptr ( nessecary so we can add it o thread create )
+ */
 void *threadWrapper(void *arg) {
     auto context = (ThreadContext *) arg; // casting in order to use the attributes of the vector
     int len = (int) context->inputVec->size();
@@ -133,13 +163,13 @@ void *threadWrapper(void *arg) {
         exit(1);
     }
 
-    context->barrier->barrier(); // barrier - wait until all threads finish mapping.
+    context->barrier.barrier(); // barrier - wait until all threads finish mapping.
 
     if (!((context->dealer)++)) {
         shuffle(context);
     }
 
-    while (!context->shuffledPairs.empty()) { // TODO - is this the correct condition?
+    while (!context->shuffledPairs.empty()) {
 
         sem_wait(context->semaphore);
 
@@ -162,13 +192,24 @@ void *threadWrapper(void *arg) {
     return nullptr;
 }
 
-
+/**
+ * creates the intermediate vector
+ * @param key a key from the map
+ * @param value the value produced from the map
+ * @param context the vector to add the pairs to
+ */
 void emit2(K2 *key, V2 *value, void *context) {
     auto jobVec = (IntermediateVec *) context;
     IntermediatePair toAdd = std::make_pair(key, value);
     jobVec->push_back(toAdd);
 }
 
+/**
+ * creates the vector for the output
+ * @param key a key to put the vector in
+ * @param value the value to produce from the reduce
+ * @param context the context for all the job
+ */
 void emit3(K3 *key, V3 *value, void *context) {
     auto local_context = (ThreadContext *) context;
     OutputPair toAdd = std::make_pair(key, value);
@@ -184,7 +225,9 @@ void emit3(K3 *key, V3 *value, void *context) {
     }
 }
 
-
+/**
+ * initializes the mutexes
+ */
 void *init_mutexes(ThreadContext * jobContext) {
     if (pthread_mutex_init(&jobContext->lock_shuffledPairs, nullptr) != 0) {
         cout << "Error initializing mutex" << endl;
@@ -202,15 +245,11 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
                             int multiThreadLevel) {
 
     // initializing variables
-    cout << "heree " << endl;
-    auto *barrier = new Barrier(multiThreadLevel);
     auto semaphore = new sem_t;
     sem_init(semaphore, 0, 1);
 
     auto workingThreads = new pthread_t[multiThreadLevel];
-    auto jobContext = new ThreadContext(workingThreads, &client, &inputVec, &outputVec, barrier,
-                                        semaphore, multiThreadLevel);
-
+    auto jobContext = new ThreadContext(workingThreads, &client, &inputVec, &outputVec, semaphore, multiThreadLevel);
     init_mutexes(jobContext); // init mutexes
     for (unsigned long i = 0; i < multiThreadLevel; ++i) { // creating threads
         pthread_create(jobContext->workingThreads + i, nullptr, threadWrapper, jobContext);
@@ -219,15 +258,18 @@ JobHandle startMapReduceJob(const MapReduceClient &client,
     return jobContext;
 }
 
+/**
+ * joins the threads to make sure they all finish
+ * @param job the job con
+ */
 void waitForJob(JobHandle job) {
     auto jobContex = (ThreadContext *) job;
-//    bool joined = false;
     for (unsigned long i = 0; i < jobContex->thNum; ++i) {
-        if (jobContex->wasJoined == false) {
+        if (!jobContex->wasJoined) {
             pthread_join(*(jobContex->workingThreads + i), nullptr);
-            jobContex->wasJoined = true;
         }
     }
+    jobContex->wasJoined = true;
 }
 
 void getJobState(JobHandle job, JobState *state) {
@@ -250,6 +292,5 @@ void getJobState(JobHandle job, JobState *state) {
 void closeJobHandle(JobHandle job) {
     waitForJob(job);
     auto jobContext = (ThreadContext *) job;
-    jobContext->~ThreadContext();
-    // TODO - delete everything kill them all!
+    delete jobContext;
 }

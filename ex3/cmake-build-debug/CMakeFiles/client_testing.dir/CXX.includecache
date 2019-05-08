@@ -6,37 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.h
-pthread.h
--
-
 /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h
 vector
 -
 utility
 -
 
-/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.cpp
-MapReduceFramework.h
-/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h
-Barrier.h
-/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.h
-pthread.h
--
-atomic
--
-iostream
--
-thread
--
-algorithm
--
-deque
--
-semaphore.h
--
-
 /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h
 MapReduceClient.h
 /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h
+
+/cs/usr/ellonet/SCHOOL/OS/ex3/SampleClient.cpp
+MapReduceFramework.h
+/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h
+cstdio
+-
+string
+-
+array
+-
+unistd.h
+-
 
