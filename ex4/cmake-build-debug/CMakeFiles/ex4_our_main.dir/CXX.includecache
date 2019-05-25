@@ -12,20 +12,6 @@ climits
 stdint.h
 -
 
-/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h
-MemoryConstants.h
-/cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
-
-/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp
-cmath
--
-iostream
--
-VirtualMemory.h
-/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
-PhysicalMemory.h
-/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h
-
 /cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
 MemoryConstants.h
 /cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h

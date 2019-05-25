@@ -17,8 +17,9 @@ int main() {
 //    cout << "NUM_PAGES = " << NUM_PAGES << std::endl;
 //    cout << "TABLES_DEPTH = " << TABLES_DEPTH << std::endl;
 
-    uint64_t x = 1302;
+//    uint64_t x = 1302;
 //    cout << x << endl;
+    uint64_t x = 13;
     VMwrite(x, 3);
     return 0;
 
