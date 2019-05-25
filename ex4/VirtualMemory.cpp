@@ -8,8 +8,7 @@ using namespace std;
 void breakVirtualAddre(uint64_t *p, uint64_t addr) {
     while (addr) {
         *p = (addr & (uint64_t) (pow(2, OFFSET_WIDTH) - 1));
-        addr = addr >> OFFSET_WIDTH
-                ;
+        addr = addr >> OFFSET_WIDTH;
         p += 1;
     }
 }
