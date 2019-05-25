@@ -19,7 +19,10 @@ int main() {
 
 //    uint64_t x = 1302;
     uint64_t x = 13;
+    print_all_tables();
     VMwrite(x, 3);
+    print_all_tables();
+//    VMwrite(x, 3);
     return 0;
 
 
