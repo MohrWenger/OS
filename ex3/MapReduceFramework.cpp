@@ -285,7 +285,13 @@ void getJobState(JobHandle job, JobState *state) {
     auto currRed = (float) jobContext->reduceCounter;
 
     state->stage = jobContext->jobStage;
-    state->percentage = ((currMap + currRed) / (allMapJobs + allReduceJobs)) * 100;
+    if (currMap == allMapJobs) {
+        state->percentage = currRed/allReduceJobs*100;
+    } else
+    {
+        state -> percentage = currMap/allMapJobs*100;
+    }
+//                state->percentage = ((currMap + currRed) / (allMapJobs + allReduceJobs)) * 100;
 }
 
 /**

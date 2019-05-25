@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.cpp
+Barrier.h
+/cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.h
+cstdlib
+-
+cstdio
+-
+
 /cs/usr/ellonet/SCHOOL/OS/ex3/Barrier.h
 pthread.h
 -
@@ -39,4 +47,24 @@ semaphore.h
 /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h
 MapReduceClient.h
 /cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h
+
+/cs/usr/ellonet/SCHOOL/OS/ex3/WordFrequencies.cpp
+WordFrequenciesClient.hpp
+/cs/usr/ellonet/SCHOOL/OS/ex3/WordFrequenciesClient.hpp
+algorithm
+-
+
+/cs/usr/ellonet/SCHOOL/OS/ex3/WordFrequenciesClient.hpp
+fstream
+-
+iostream
+-
+sstream
+-
+unistd.h
+-
+MapReduceClient.h
+/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceClient.h
+MapReduceFramework.h
+/cs/usr/ellonet/SCHOOL/OS/ex3/MapReduceFramework.h
 

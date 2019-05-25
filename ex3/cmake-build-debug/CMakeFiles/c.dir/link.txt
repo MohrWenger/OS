@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -g   CMakeFiles/c.dir/MapReduceFramework.cpp.o CMakeFiles/c.dir/SampleClient.cpp.o  -o c 
