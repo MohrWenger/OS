@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ex4_SimpleTest
+
+# Build rule for target.
+ex4_SimpleTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_SimpleTest
+.PHONY : ex4_SimpleTest
+
+# fast build rule for target.
+ex4_SimpleTest/fast:
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/build
+.PHONY : ex4_SimpleTest/fast
+
+#=============================================================================
 # Target rules for targets named ex4_our_main
 
 # Build rule for target.
@@ -124,17 +137,17 @@ ex4_our_main/fast:
 .PHONY : ex4_our_main/fast
 
 #=============================================================================
-# Target rules for targets named ex4_SimpleTest
+# Target rules for targets named ex4_like_example
 
 # Build rule for target.
-ex4_SimpleTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex4_SimpleTest
-.PHONY : ex4_SimpleTest
+ex4_like_example: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_like_example
+.PHONY : ex4_like_example
 
 # fast build rule for target.
-ex4_SimpleTest/fast:
-	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/build
-.PHONY : ex4_SimpleTest/fast
+ex4_like_example/fast:
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/build
+.PHONY : ex4_like_example/fast
 
 PhysicalMemory.o: PhysicalMemory.cpp.o
 
@@ -142,8 +155,9 @@ PhysicalMemory.o: PhysicalMemory.cpp.o
 
 # target to build an object file
 PhysicalMemory.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.o
 .PHONY : PhysicalMemory.cpp.o
 
 PhysicalMemory.i: PhysicalMemory.cpp.i
@@ -152,8 +166,9 @@ PhysicalMemory.i: PhysicalMemory.cpp.i
 
 # target to preprocess a source file
 PhysicalMemory.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.i
 .PHONY : PhysicalMemory.cpp.i
 
 PhysicalMemory.s: PhysicalMemory.cpp.s
@@ -162,8 +177,9 @@ PhysicalMemory.s: PhysicalMemory.cpp.s
 
 # target to generate assembly for a file
 PhysicalMemory.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.s
 .PHONY : PhysicalMemory.cpp.s
 
 SimpleTest.o: SimpleTest.cpp.o
@@ -199,8 +215,9 @@ VirtualMemory.o: VirtualMemory.cpp.o
 
 # target to build an object file
 VirtualMemory.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.o
 .PHONY : VirtualMemory.cpp.o
 
 VirtualMemory.i: VirtualMemory.cpp.i
@@ -209,8 +226,9 @@ VirtualMemory.i: VirtualMemory.cpp.i
 
 # target to preprocess a source file
 VirtualMemory.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.i
 .PHONY : VirtualMemory.cpp.i
 
 VirtualMemory.s: VirtualMemory.cpp.s
@@ -219,8 +237,9 @@ VirtualMemory.s: VirtualMemory.cpp.s
 
 # target to generate assembly for a file
 VirtualMemory.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.s
 .PHONY : VirtualMemory.cpp.s
 
 main.o: main.cpp.o
@@ -230,6 +249,7 @@ main.o: main.cpp.o
 # target to build an object file
 main.cpp.o:
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -239,6 +259,7 @@ main.i: main.cpp.i
 # target to preprocess a source file
 main.cpp.i:
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -248,6 +269,7 @@ main.s: main.cpp.s
 # target to generate assembly for a file
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -257,9 +279,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... ex4_our_main"
 	@echo "... ex4_SimpleTest"
+	@echo "... ex4_our_main"
+	@echo "... ex4_like_example"
+	@echo "... edit_cache"
 	@echo "... PhysicalMemory.o"
 	@echo "... PhysicalMemory.i"
 	@echo "... PhysicalMemory.s"

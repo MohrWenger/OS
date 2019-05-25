@@ -65,43 +65,6 @@ CMAKE_SOURCE_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4
 CMAKE_BINARY_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex4_our_main.dir
-
-# All Build rule for target.
-CMakeFiles/ex4_our_main.dir/all:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/depend
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8 "Built target ex4_our_main"
-.PHONY : CMakeFiles/ex4_our_main.dir/all
-
-# Include target in all.
-all: CMakeFiles/ex4_our_main.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/ex4_our_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_our_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex4_our_main.dir/rule
-
-# Convenience name for target.
-ex4_our_main: CMakeFiles/ex4_our_main.dir/rule
-
-.PHONY : ex4_our_main
-
-# clean rule for target.
-CMakeFiles/ex4_our_main.dir/clean:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/clean
-.PHONY : CMakeFiles/ex4_our_main.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/ex4_our_main.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/ex4_SimpleTest.dir
 
 # All Build rule for target.
@@ -135,6 +98,80 @@ CMakeFiles/ex4_SimpleTest.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/ex4_SimpleTest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex4_our_main.dir
+
+# All Build rule for target.
+CMakeFiles/ex4_our_main.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12 "Built target ex4_our_main"
+.PHONY : CMakeFiles/ex4_our_main.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex4_our_main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex4_our_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_our_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex4_our_main.dir/rule
+
+# Convenience name for target.
+ex4_our_main: CMakeFiles/ex4_our_main.dir/rule
+
+.PHONY : ex4_our_main
+
+# clean rule for target.
+CMakeFiles/ex4_our_main.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/clean
+.PHONY : CMakeFiles/ex4_our_main.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_our_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex4_like_example.dir
+
+# All Build rule for target.
+CMakeFiles/ex4_like_example.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8 "Built target ex4_like_example"
+.PHONY : CMakeFiles/ex4_like_example.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex4_like_example.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex4_like_example.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_like_example.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex4_like_example.dir/rule
+
+# Convenience name for target.
+ex4_like_example: CMakeFiles/ex4_like_example.dir/rule
+
+.PHONY : ex4_like_example
+
+# clean rule for target.
+CMakeFiles/ex4_like_example.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/clean
+.PHONY : CMakeFiles/ex4_like_example.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_like_example.dir/clean
 
 .PHONY : clean
 
