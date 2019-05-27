@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_SimpleTest">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/ex4_SimpleTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_SimpleTest/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/ex4_SimpleTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,15 +67,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_our_main">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_our_main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/ex4_our_main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -90,15 +90,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_our_main/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_our_main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/ex4_our_main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -113,15 +113,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_like_example">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_like_example" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/ex4_like_example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -136,15 +136,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_like_example/fast">
-				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_like_example" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/ex4_like_example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -159,58 +159,58 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/ConstantsTest.h">
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/ConstantsTest.h">
 			<Option target="ex4_like_example"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h">
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/MemoryConstants.h">
 			<Option target="ex4_SimpleTest"/>
 			<Option target="ex4_our_main"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp">
-			<Option target="ex4_SimpleTest"/>
-			<Option target="ex4_our_main"/>
-			<Option target="ex4_like_example"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h">
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.cpp">
 			<Option target="ex4_SimpleTest"/>
 			<Option target="ex4_our_main"/>
 			<Option target="ex4_like_example"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/SimpleTest.cpp">
-			<Option target="ex4_SimpleTest"/>
-		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp">
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.h">
 			<Option target="ex4_SimpleTest"/>
 			<Option target="ex4_our_main"/>
 			<Option target="ex4_like_example"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h">
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/SimpleTest.cpp">
+			<Option target="ex4_SimpleTest"/>
+		</Unit>
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.cpp">
 			<Option target="ex4_SimpleTest"/>
 			<Option target="ex4_our_main"/>
 			<Option target="ex4_like_example"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp">
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.h">
+			<Option target="ex4_SimpleTest"/>
 			<Option target="ex4_our_main"/>
 			<Option target="ex4_like_example"/>
 		</Unit>
-		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/CMakeLists.txt">
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/main.cpp">
+			<Option target="ex4_our_main"/>
+			<Option target="ex4_like_example"/>
+		</Unit>
+		<Unit filename="/cs/usr/mohr/Desktop/Studies/OS/ex4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

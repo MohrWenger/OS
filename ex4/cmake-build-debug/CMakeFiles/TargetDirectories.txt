@@ -1,5 +1,5 @@
-/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir
-/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir
-/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir
-/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir
+/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir
+/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir
+/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/edit_cache.dir
