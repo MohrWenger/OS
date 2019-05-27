@@ -24,28 +24,28 @@ void clearTable(uint64_t frameIndex) {
 
 
 uint64_t get_frame(uint64_t curr) {
-    uint64_t begining = curr * PAGE_SIZE;
-    word_t row_val;
-    uint64_t nxt = 0;
-    int zero_num = 0;
-    for (int i = 0; i < PAGE_SIZE; ++i)  // go to each of the sons by DFS
-    {
-        PMread(begining + i, &row_val);
-        if (row_val != 0) {
-            nxt = get_frame((uint64_t) row_val);//enter the frame in this index
-            if (nxt != 0) {
-                return nxt;
-            }
-        } else {
-            zero_num++;
-        }
-    }
-    if (zero_num == PAGE_SIZE) // then it is empty
-    {
-        return curr;
-    } else {
-        return nxt;
-    }
+//    uint64_t begining = curr * PAGE_SIZE;
+//    word_t row_val;
+//    uint64_t nxt = 0;
+//    int zero_num = 0;
+//    for (int i = 0; i < PAGE_SIZE; ++i)  // go to each of the sons by DFS
+//    {
+//        PMread(begining + i, &row_val);
+//        if (row_val != 0) {
+//            nxt = get_frame((uint64_t) row_val);//enter the frame in this index
+//            if (nxt != 0) {
+//                return nxt;
+//            }
+//        } else {
+//            zero_num++;
+//        }
+//    }
+//    if (zero_num == PAGE_SIZE) // then it is empty
+//    {
+//        return curr;
+//    } else {
+//        return nxt;
+//    }
 }
 
 void VMinitialize() {
@@ -72,7 +72,7 @@ int VMwrite(uint64_t virtualAddress, word_t value) {
         if (!addr_i) {
             uint64_t frame = get_frame(ROOT);
             PMwrite(curr + p_ref[i], frame);
-//            curr = (uint64_t) (i) * PAGE_SIZE;
+            curr = (uint64_t) (frame) * PAGE_SIZE;
         } else {
             curr = (uint64_t) (addr_i * PAGE_SIZE);
         }

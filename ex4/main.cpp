@@ -21,9 +21,7 @@ int main() {
     uint64_t x = 13;
     VMwrite(x, 3);
     print_all_frames();
-    cout << endl;
-    VMwrite(x, 3);
-    print_all_frames();
+
 
     return 0;
 

@@ -1,0 +1,38 @@
+get_next_frame():
+    d = REAL_DEPTH
+    max_t = 0
+    get_frame_helper(null, root, d, max_t, -1)
+
+    if (found != -1):
+        return found
+
+    else if (max_t < NUM_FRAMES):
+        return max_t + 1
+
+    else:
+        go to evict_LRU()
+
+-------------------------------------------------------------------------------
+
+    get_frame_helper(prev, row, depth, max_t, found):
+        curr = prev + row
+
+        if (depth == 0):
+            return
+
+        else:
+            zeros = 0
+            for (i in page_size):
+
+                if (curr[i] == 0):
+                    zeros++
+                
+                else:
+                    if (max_t < curr[i]):
+                        max_t = curr[i]
+                    get_frame_helper(curr, curr[i], depth-1, max_t, found)
+
+            if (zeros == page_size):
+                found = curr
+                prev[row] = 0
+
