@@ -36,11 +36,3 @@ PhysicalMemory.h
 MemoryConstants.h
 /cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
 
-/cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp
-iostream
--
-VirtualMemory.h
-/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
-cmath
--
-
