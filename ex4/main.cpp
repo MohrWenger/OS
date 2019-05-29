@@ -18,8 +18,11 @@ int main() {
 //    cout << "TABLES_DEPTH = " << TABLES_DEPTH << std::endl;
 //    uint64_t x = 1302;
 
-    uint64_t x = 13;
-    VMwrite(x, 3);
+
+    VMwrite(12, 12);
+    VMwrite(13, 13);
+    VMwrite(6, 6);
+
     print_all_frames();
 
 

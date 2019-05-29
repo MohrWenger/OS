@@ -47,8 +47,6 @@ void get_frame_helper(const uint64_t prev, const int row, int depth, int *max_t,
 
         if (zeros == PAGE_SIZE) { //TODO check prev != null
             *found = (int) curr;
-//            uint64_t address = (prev + row);
-//            PMwrite(address, 0);
         }
     }
 }
@@ -58,19 +56,12 @@ void evictLRU() {
 }
 
 int get_frame(int lastFound) {
-
-// read gets: uint64_t virtualAddress, word_t *value
-// write gets: uint64_t virtualAddress, word_t value
-//    cout << " in get frame "<< endl;
     int d = TABLES_DEPTH;
     int max_t = 0;    //TODO maybe uint64_t ?
     uint64_t prev = 0;
     int row = ROOT;
     int found = -1;
     get_frame_helper(prev, row, d, &max_t, &found, true);
-//    cout << "found = " << found << endl;
-//    cout << "max t = " << max_t << endl;
-
     if (found > 0 && found != lastFound) {
         return found; //TODO when *PAGE_SIZE
     } else if (max_t < NUM_FRAMES) //TODO how does max_T work?
@@ -103,7 +94,8 @@ int VMwrite(uint64_t virtualAddress, word_t value) {
     word_t addr_i;
     uint64_t curr = ROOT * PAGE_SIZE;
     int prevFrame = 0;
-    for (int i = 1; i < TABLES_DEPTH + 1; ++i) {
+//    for (int i = 1; i < TABLES_DEPTH + 1; ++i) {
+    for (int i = TABLES_DEPTH; i > 0; --i) {
         PMread(curr + p_ref[i], &addr_i);
         if (!addr_i) {
             int frame = get_frame(prevFrame);
@@ -114,7 +106,7 @@ int VMwrite(uint64_t virtualAddress, word_t value) {
             curr = (uint64_t) (addr_i * PAGE_SIZE);
         }
     }
-
+    PMwrite(curr + offset, value);
     return 1;
 }
 
