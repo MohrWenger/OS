@@ -25,6 +25,11 @@ void clearTable(uint64_t frameIndex) {
 }
 
 
+/**
+ * MOR YOU ARE A RAY OF SUNLIGHT IN THIS CLOUDY SHITSHOW
+ * @param curr
+ * @return
+ */
 uint64_t get_frame(uint64_t curr) {
     uint64_t begining = curr * PAGE_SIZE;
     word_t row_val;
