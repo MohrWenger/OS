@@ -25,10 +25,11 @@ void clearTable(uint64_t frameIndex) {
 
 void get_frame_helper(const uint64_t prev, const int row, int depth, int *max_t, int *found, bool firstRun) {
 
-    auto curr = (uint64_t) (prev * PAGE_SIZE + row);
-//    word_t curr;
-//    PMread(prev+row * P, &curr);
-
+//    auto curr = (uint64_t) (prev * PAGE_SIZE + row);
+    word_t curr = 0;
+    if (!firstRun) {
+        PMread(prev * PAGE_SIZE + row, &curr);
+    }
     if (depth == 0) {
         return;
     } else {
@@ -48,8 +49,8 @@ void get_frame_helper(const uint64_t prev, const int row, int depth, int *max_t,
 
         if (zeros == PAGE_SIZE) { //TODO check prev != null
             *found = (int) curr;
-            uint64_t address = (prev + row);
-            PMwrite(address, 0);
+//            uint64_t address = (prev + row);
+//            PMwrite(address, 0);
         }
     }
 }
@@ -58,7 +59,7 @@ void evictLRU() {
     cout << "not implemened LRU" << endl;
 }
 
-int get_frame() {
+int get_frame(int lastFound) {
 // read gets: uint64_t virtualAddress, word_t *value
 // write gets: uint64_t virtualAddress, word_t value
 //    cout << " in get frame "<< endl;
@@ -69,16 +70,23 @@ int get_frame() {
     int found = -1;
     get_frame_helper(prev, row, d, &max_t, &found, true);
     cout << "found = " << found << endl;
+    cout << "max t = " << max_t << endl;
 
-    if (found > 0) {
+
+    if (found > 0 && found != lastFound) {
         return found; //TODO when *PAGE_SIZE
     } else if (max_t < NUM_FRAMES) //TODO how does max_T work?
     {
 //        cout << "frame from max = " << max_t + 1 << endl;
+
         return max_t + 1;
     } else {
         evictLRU();
     }
+
+//    cout << endl;
+//    print_all_frames();
+//    cout << endl;
     return -1;
 }
 
@@ -102,14 +110,20 @@ int VMwrite(uint64_t virtualAddress, word_t value) {
     uint64_t offset = p_ref[0];
     word_t addr_i;
     uint64_t curr = ROOT * PAGE_SIZE;
+    int prevFrame = 0;
     for (int i = 1; i < TABLES_DEPTH + 1; ++i) {
         PMread(curr + p_ref[i], &addr_i);
         if (!addr_i) {
 //            cout << "in write , i =  " <<i<<" and curr = "<< curr <<endl;
-            int frame = get_frame();
+            int frame = get_frame(prevFrame);
+            prevFrame = frame ;
+            cout << "prev frame = " << prevFrame << endl;
 //            cout << "GOT frame: " << frame << endl;
             PMwrite(curr + p_ref[i], frame);
             curr = (uint64_t) (frame) * PAGE_SIZE;
+            cout << endl;
+            print_all_frames();
+            cout << endl;
         } else {
             curr = (uint64_t) (addr_i * PAGE_SIZE);
         }
