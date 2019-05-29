@@ -6,15 +6,45 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /cs/usr/mohr/Desktop/Studies/OS/ex4/ConstantsTest.h
+=======
+/cs/usr/ellonet/SCHOOL/OS/ex4/ConstantsTest.h
 climits
 -
 stdint.h
 -
 
+/cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
+>>>>>>> master
+climits
+-
+stdint.h
+-
+
+<<<<<<< HEAD
 /cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.h
 ConstantsTest.h
 /cs/usr/mohr/Desktop/Studies/OS/ex4/ConstantsTest.h
+=======
+/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h
+ConstantsTest.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/ConstantsTest.h
+
+/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp
+cmath
+-
+iostream
+-
+VirtualMemory.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
+PhysicalMemory.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h
+
+/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
+MemoryConstants.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
+>>>>>>> master
 
 /cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.cpp
 cmath

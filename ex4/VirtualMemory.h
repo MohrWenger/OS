@@ -26,4 +26,4 @@ int VMread(uint64_t virtualAddress, word_t* value);
 int VMwrite(uint64_t virtualAddress, word_t value);
 
 
-void print_all_tables();
+void print_all_frames();
