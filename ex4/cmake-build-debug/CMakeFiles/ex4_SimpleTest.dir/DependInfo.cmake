@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.o"
-  "/cs/usr/ellonet/SCHOOL/OS/ex4/SimpleTest.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.o"
-  "/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o"
+  "/cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.cpp" "/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.o"
+  "/cs/usr/mohr/Desktop/Studies/OS/ex4/SimpleTest.cpp" "/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.o"
+  "/cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.cpp" "/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -20,13 +20,13 @@ int main() {
 //    uint64_t x = 1302;
 
 
-    VMwrite(13, 3);
+    VMwrite(13, 333);
     cout << endl;
     VMwrite(6, 43);
     cout << endl;
     VMwrite(31, 34);
 
-//    print_all_frames();
+    print_all_frames();
 
     return 0;
 
