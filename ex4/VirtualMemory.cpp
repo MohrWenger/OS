@@ -70,12 +70,6 @@ void get_frame_helper ( const uint64_t *prev, const int row, int depth, uint64_t
         { //TODO check prev != null
             *found = ( int ) curr;
             *father = *prev * PAGE_SIZE + row;
-//            if ( prev )
-//            {
-//                cout << "IN THIS CASEEE" << endl;
-//                cout << "prev: " << *prev << endl;
-//                PMwrite ( prev * PAGE_SIZE + row, 0 );
-//            }
         }
     }
 }
@@ -105,7 +99,7 @@ void getFrameToEvict ( uint64_t pageNum, uint64_t *frame, uint64_t *page )
     *page = best_page;
 }
 
-uint64_t getFrame ( int lastFound, uint64_t pageNum )
+uint64_t getFrame ( uint64_t lastFound, uint64_t pageNum )
 {
     int d = TABLES_DEPTH;
     uint64_t max_t = 0;    //TODO maybe uint64_t ?
@@ -115,19 +109,19 @@ uint64_t getFrame ( int lastFound, uint64_t pageNum )
     uint64_t father;
     get_frame_helper ( &prev, row, d, &max_t, &found, &father, true );
 
-//    cout << father << endl;
-//    cout << "father of " << found << endl;
-//    print_all_frames ();
-
     if ( found > 0 && found != lastFound )
     {
-        PMwrite ( father, 0 ); //TODO we think it is ok but habent actually got here yet
-        return found;
+        PMwrite ( father, 0 );
+        clearTable (found);
+        cout << found << endl;
+        return ( uint64_t ) found;
+
+
+        //TODO we think it is ok but habent actually got here yet
         // TODO - also clear table / father?
     }
     else if ( max_t < NUM_FRAMES - 1 )
     {
-//        cout << "from here"<< endl;
         return max_t + 1;
     }
     else
@@ -138,7 +132,10 @@ uint64_t getFrame ( int lastFound, uint64_t pageNum )
         clearTable ( page_to_swap );
 
         uint64_t page_father = PagesToFrames[ page_to_swap ][ 1 ];
-        PMwrite ( page_father, 0 );
+//        print_all_frames ();
+//        cout << ">>>> " << page_father << endl;
+        PMwrite (page_father, 0);
+//        print_all_frames ();
 
         return frame_to_evict;
     }
@@ -154,13 +151,14 @@ int access ( uint64_t virtualAddress, word_t value, uint64_t *curr, uint64_t *fa
 {
     uint64_t pageNum = breakVirtualAddress ( p_ref, virtualAddress );
     word_t addr_i;
-    int prevFrame = 0;
+    uint64_t prevFrame = 0;
     for ( int i = TABLES_DEPTH; i > 0; -- i )
     {
         PMread ( *curr + p_ref[ i ], &addr_i );
         if ( ! addr_i )
         {
-            int frame = getFrame ( prevFrame, pageNum );
+            uint64_t frame = getFrame ( prevFrame, pageNum );
+
             if ( frame != - 1 )
             {
                 *father = ( uint64_t ) prevFrame;
@@ -202,9 +200,6 @@ int VMread ( uint64_t virtualAddress, word_t *value )
         PagesToFrames[ pageNum ][ 1 ] = father * PAGE_SIZE + p_ref[ 1 ];
         cout << "father = " << PagesToFrames[ pageNum ][ 1 ] << ", son = " << pageNum << endl;
     }
-//    cout << "son: " << PagesToFrames[ pageNum ][ 0 ] << endl;
-//    cout << "father: " << PagesToFrames[ pageNum ][ 1 ] << endl;
-
     return 1;
 }
 
