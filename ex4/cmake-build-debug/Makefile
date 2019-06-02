@@ -149,6 +149,46 @@ ex4_like_example/fast:
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/build
 .PHONY : ex4_like_example/fast
 
+#=============================================================================
+# Target rules for targets named ex4_evyaTest
+
+# Build rule for target.
+ex4_evyaTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_evyaTest
+.PHONY : ex4_evyaTest
+
+# fast build rule for target.
+ex4_evyaTest/fast:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/build
+.PHONY : ex4_evyaTest/fast
+
+FlowExampleSimulation.o: FlowExampleSimulation.cpp.o
+
+.PHONY : FlowExampleSimulation.o
+
+# target to build an object file
+FlowExampleSimulation.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o
+.PHONY : FlowExampleSimulation.cpp.o
+
+FlowExampleSimulation.i: FlowExampleSimulation.cpp.i
+
+.PHONY : FlowExampleSimulation.i
+
+# target to preprocess a source file
+FlowExampleSimulation.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.i
+.PHONY : FlowExampleSimulation.cpp.i
+
+FlowExampleSimulation.s: FlowExampleSimulation.cpp.s
+
+.PHONY : FlowExampleSimulation.s
+
+# target to generate assembly for a file
+FlowExampleSimulation.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.s
+.PHONY : FlowExampleSimulation.cpp.s
+
 PhysicalMemory.o: PhysicalMemory.cpp.o
 
 .PHONY : PhysicalMemory.o
@@ -158,6 +198,7 @@ PhysicalMemory.cpp.o:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o
 .PHONY : PhysicalMemory.cpp.o
 
 PhysicalMemory.i: PhysicalMemory.cpp.i
@@ -169,6 +210,7 @@ PhysicalMemory.cpp.i:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.i
 .PHONY : PhysicalMemory.cpp.i
 
 PhysicalMemory.s: PhysicalMemory.cpp.s
@@ -180,6 +222,7 @@ PhysicalMemory.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.s
 .PHONY : PhysicalMemory.cpp.s
 
 SimpleTest.o: SimpleTest.cpp.o
@@ -218,6 +261,7 @@ VirtualMemory.cpp.o:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o
 .PHONY : VirtualMemory.cpp.o
 
 VirtualMemory.i: VirtualMemory.cpp.i
@@ -229,6 +273,7 @@ VirtualMemory.cpp.i:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.i
 .PHONY : VirtualMemory.cpp.i
 
 VirtualMemory.s: VirtualMemory.cpp.s
@@ -240,6 +285,7 @@ VirtualMemory.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.s
 .PHONY : VirtualMemory.cpp.s
 
 main.o: main.cpp.o
@@ -279,10 +325,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... ex4_SimpleTest"
 	@echo "... ex4_our_main"
 	@echo "... ex4_like_example"
-	@echo "... edit_cache"
+	@echo "... ex4_evyaTest"
+	@echo "... FlowExampleSimulation.o"
+	@echo "... FlowExampleSimulation.i"
+	@echo "... FlowExampleSimulation.s"
 	@echo "... PhysicalMemory.o"
 	@echo "... PhysicalMemory.i"
 	@echo "... PhysicalMemory.s"

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o  -o ex4_evyaTest 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ex4_evuaTest.dir/main.cpp.o CMakeFiles/ex4_evuaTest.dir/VirtualMemory.cpp.o CMakeFiles/ex4_evuaTest.dir/PhysicalMemory.cpp.o  -o ex4_evuaTest 

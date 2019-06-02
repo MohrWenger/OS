@@ -16,7 +16,6 @@ void initialize() {
 void PMread(uint64_t physicalAddress, word_t *value) {
     if (RAM.empty())
         initialize();
-
     assert(physicalAddress < RAM_SIZE);
 
     *value = RAM[physicalAddress / PAGE_SIZE][physicalAddress % PAGE_SIZE];

@@ -10,6 +10,7 @@ CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o: ../PhysicalMemory.h
 CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o: ../VirtualMemory.cpp
 CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o: ../VirtualMemory.h
 
+CMakeFiles/ex4_our_main.dir/main.cpp.o: ../ConstantsTest.h
 CMakeFiles/ex4_our_main.dir/main.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_our_main.dir/main.cpp.o: ../VirtualMemory.h
 CMakeFiles/ex4_our_main.dir/main.cpp.o: ../main.cpp

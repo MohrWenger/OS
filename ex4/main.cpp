@@ -20,13 +20,29 @@ int main() {
 //    uint64_t x = 1302;
 
 
-    VMwrite(13, 333);
-    cout << endl;
-    VMwrite(6, 43);
-    cout << endl;
-    VMwrite(31, 34);
+    print_all_frames ();
+    VMwrite(13, 3);
+    VMwrite(13, 3);
+    print_all_frames ();
+//    cout << endl;
 
-    print_all_frames();
+//    word_t val;
+//    VMread(13, &val);
+//    cout << "val = "<< val << endl;
+//
+//    VMwrite(6, 22);
+//    cout << endl;
+//    VMread(6, &val);
+//    cout << "val = "<< val << endl;
+//
+//    cout << endl;
+//    word_t x;
+//
+
+//    cout << endl;
+//    VMread (31, &x);
+//    cout << endl;
+//    print_all_frames();
 
     return 0;
 

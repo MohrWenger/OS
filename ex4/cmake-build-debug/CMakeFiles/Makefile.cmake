@@ -49,4 +49,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ex4_SimpleTest.dir/DependInfo.cmake"
   "CMakeFiles/ex4_our_main.dir/DependInfo.cmake"
   "CMakeFiles/ex4_like_example.dir/DependInfo.cmake"
+  "CMakeFiles/ex4_evyaTest.dir/DependInfo.cmake"
   )
