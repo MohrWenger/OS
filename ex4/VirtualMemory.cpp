@@ -99,19 +99,20 @@ void getFrameToEvict ( uint64_t pageNum, uint64_t *frame, uint64_t *page )
     *page = best_page;
 }
 
-uint64_t getFrame ( uint64_t lastFound, uint64_t pageNum )
+uint64_t getFrame ( uint64_t lastFound, uint64_t pageNum, uint64_t* father, bool* wasFound)
 {
     int d = TABLES_DEPTH;
     uint64_t max_t = 0;    //TODO maybe uint64_t ?
     uint64_t prev = 0;
     int row = ROOT;
     int found = - 1;
-    uint64_t father;
-    get_frame_helper ( &prev, row, d, &max_t, &found, &father, true );
+//    uint64_t father;
+    get_frame_helper ( &prev, row, d, &max_t, &found, father, true );
 
     if ( found > 0 && found != lastFound )
     {
-        PMwrite ( father, 0 );
+//        PMwrite ( father, 0 );
+        *wasFound = true;
         clearTable (found);
         cout << found << endl;
         return ( uint64_t ) found;
@@ -129,13 +130,18 @@ uint64_t getFrame ( uint64_t lastFound, uint64_t pageNum )
         uint64_t frame_to_evict;
         uint64_t page_to_swap;
         getFrameToEvict ( pageNum, &frame_to_evict, &page_to_swap );
-        clearTable ( page_to_swap );
-
         uint64_t page_father = PagesToFrames[ page_to_swap ][ 1 ];
-//        print_all_frames ();
-//        cout << ">>>> " << page_father << endl;
         PMwrite (page_father, 0);
-//        print_all_frames ();
+
+        clearTable ( frame_to_evict);                               //TODO - update ella: we forgot this
+        PagesToFrames[ page_to_swap][0] = 0;
+        PagesToFrames[ page_to_swap][1] =0;                         //TODO - next issue will be handeling a case that
+                                                                    //(TODO) we need to evict somthing that is not a leaf
+
+        cout << endl;
+        print_all_frames ();
+        cout << endl;
+
 
         return frame_to_evict;
     }
@@ -152,12 +158,14 @@ int access ( uint64_t virtualAddress, word_t value, uint64_t *curr, uint64_t *fa
     uint64_t pageNum = breakVirtualAddress ( p_ref, virtualAddress );
     word_t addr_i;
     uint64_t prevFrame = 0;
+    uint64_t foundFather = 0;
+    bool wasFound = false;
     for ( int i = TABLES_DEPTH; i > 0; -- i )
     {
         PMread ( *curr + p_ref[ i ], &addr_i );
         if ( ! addr_i )
         {
-            uint64_t frame = getFrame ( prevFrame, pageNum );
+            uint64_t frame = getFrame ( prevFrame, pageNum, &foundFather, &wasFound );
 
             if ( frame != - 1 )
             {
@@ -198,6 +206,7 @@ int VMread ( uint64_t virtualAddress, word_t *value )
     {
         PagesToFrames[ pageNum ][ 0 ] = curr / PAGE_SIZE;
         PagesToFrames[ pageNum ][ 1 ] = father * PAGE_SIZE + p_ref[ 1 ];
+        print_all_frames ();
         cout << "father = " << PagesToFrames[ pageNum ][ 1 ] << ", son = " << pageNum << endl;
     }
     return 1;
