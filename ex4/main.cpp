@@ -1,5 +1,6 @@
 #include <iostream>
 #include "VirtualMemory.h"
+#include "ConstantsTest.h"
 #include <cmath>
 
 using namespace std;
@@ -19,12 +20,13 @@ int main() {
 //    uint64_t x = 1302;
 
 
-    VMwrite(12, 12);
-    VMwrite(13, 13);
-    VMwrite(6, 6);
+    VMwrite(13, 3);
+    cout << endl;
+    VMwrite(6, 43);
+    cout << endl;
+    VMwrite(31, 34);
 
-    print_all_frames();
-
+//    print_all_frames();
 
     return 0;
 

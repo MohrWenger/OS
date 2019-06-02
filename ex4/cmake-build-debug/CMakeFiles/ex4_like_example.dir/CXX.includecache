@@ -6,21 +6,35 @@
 
 #IncludeRegexTransform: 
 
+/cs/usr/ellonet/SCHOOL/OS/ex4/ConstantsTest.h
+climits
+-
+stdint.h
+-
+
 /cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
 climits
 -
 stdint.h
 -
 
-/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
-MemoryConstants.h
-/cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h
+ConstantsTest.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/ConstantsTest.h
 
-/cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp
+/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp
+cmath
+-
 iostream
+-
+cmath
 -
 VirtualMemory.h
 /cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
-cmath
--
+PhysicalMemory.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h
+
+/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
+MemoryConstants.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
 
