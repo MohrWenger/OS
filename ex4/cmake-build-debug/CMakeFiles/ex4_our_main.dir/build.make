@@ -43,10 +43,10 @@ RM = /usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -E remove
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cs/usr/mohr/Desktop/Studies/OS/ex4
+CMAKE_SOURCE_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug
+CMAKE_BINARY_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ex4_our_main.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/ex4_our_main.dir/flags.make
 
 CMakeFiles/ex4_our_main.dir/main.cpp.o: CMakeFiles/ex4_our_main.dir/flags.make
 CMakeFiles/ex4_our_main.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex4_our_main.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4_our_main.dir/main.cpp.o -c /cs/usr/mohr/Desktop/Studies/OS/ex4/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex4_our_main.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4_our_main.dir/main.cpp.o -c /cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp
 
 CMakeFiles/ex4_our_main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4_our_main.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/mohr/Desktop/Studies/OS/ex4/main.cpp > CMakeFiles/ex4_our_main.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp > CMakeFiles/ex4_our_main.dir/main.cpp.i
 
 CMakeFiles/ex4_our_main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4_our_main.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/mohr/Desktop/Studies/OS/ex4/main.cpp -o CMakeFiles/ex4_our_main.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp -o CMakeFiles/ex4_our_main.dir/main.cpp.s
 
 CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o: CMakeFiles/ex4_our_main.dir/flags.make
 CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o: ../VirtualMemory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o -c /cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o -c /cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp
 
 CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.cpp > CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp > CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i
 
 CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.cpp -o CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp -o CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s
 
 CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o: CMakeFiles/ex4_our_main.dir/flags.make
 CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o: ../PhysicalMemory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o -c /cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o -c /cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp
 
 CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.cpp > CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp > CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i
 
 CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.cpp -o CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp -o CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s
 
 # Object files for target ex4_our_main
 ex4_our_main_OBJECTS = \
@@ -110,7 +110,7 @@ ex4_our_main: CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o
 ex4_our_main: CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o
 ex4_our_main: CMakeFiles/ex4_our_main.dir/build.make
 ex4_our_main: CMakeFiles/ex4_our_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ex4_our_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ex4_our_main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex4_our_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +123,6 @@ CMakeFiles/ex4_our_main.dir/clean:
 .PHONY : CMakeFiles/ex4_our_main.dir/clean
 
 CMakeFiles/ex4_our_main.dir/depend:
-	cd /cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cs/usr/mohr/Desktop/Studies/OS/ex4 /cs/usr/mohr/Desktop/Studies/OS/ex4 /cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug /cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug /cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cs/usr/ellonet/SCHOOL/OS/ex4 /cs/usr/ellonet/SCHOOL/OS/ex4 /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ex4_our_main.dir/depend
 

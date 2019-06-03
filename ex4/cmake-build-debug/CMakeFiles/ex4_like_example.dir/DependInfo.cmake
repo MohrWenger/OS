@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cs/usr/mohr/Desktop/Studies/OS/ex4/PhysicalMemory.cpp" "/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.o"
-  "/cs/usr/mohr/Desktop/Studies/OS/ex4/VirtualMemory.cpp" "/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.o"
-  "/cs/usr/mohr/Desktop/Studies/OS/ex4/main.cpp" "/cs/usr/mohr/Desktop/Studies/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir/main.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_like_example.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
