@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/mohrw/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/mohrw/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4
+CMAKE_SOURCE_DIR = "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug
+CMAKE_BINARY_DIR = "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/mohrw/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/mohrw/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ex4_evyaTest
+# Target rules for targets named ex4_randomTest
 
 # Build rule for target.
-ex4_evyaTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex4_evyaTest
-.PHONY : ex4_evyaTest
+ex4_randomTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_randomTest
+.PHONY : ex4_randomTest
 
 # fast build rule for target.
-ex4_evyaTest/fast:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/build
-.PHONY : ex4_evyaTest/fast
+ex4_randomTest/fast:
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/build
+.PHONY : ex4_randomTest/fast
 
 #=============================================================================
 # Target rules for targets named ex4_SimpleTest
@@ -137,19 +137,6 @@ ex4_SimpleTest/fast:
 .PHONY : ex4_SimpleTest/fast
 
 #=============================================================================
-# Target rules for targets named ex4_our_main
-
-# Build rule for target.
-ex4_our_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex4_our_main
-.PHONY : ex4_our_main
-
-# fast build rule for target.
-ex4_our_main/fast:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/build
-.PHONY : ex4_our_main/fast
-
-#=============================================================================
 # Target rules for targets named ex4_SimpleTestDebug
 
 # Build rule for target.
@@ -161,6 +148,32 @@ ex4_SimpleTestDebug: cmake_check_build_system
 ex4_SimpleTestDebug/fast:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/build
 .PHONY : ex4_SimpleTestDebug/fast
+
+#=============================================================================
+# Target rules for targets named ex4_testerTest
+
+# Build rule for target.
+ex4_testerTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_testerTest
+.PHONY : ex4_testerTest
+
+# fast build rule for target.
+ex4_testerTest/fast:
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/build
+.PHONY : ex4_testerTest/fast
+
+#=============================================================================
+# Target rules for targets named ex4_our_main
+
+# Build rule for target.
+ex4_our_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_our_main
+.PHONY : ex4_our_main
+
+# fast build rule for target.
+ex4_our_main/fast:
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/build
+.PHONY : ex4_our_main/fast
 
 #=============================================================================
 # Target rules for targets named ex4_like_example
@@ -175,12 +188,52 @@ ex4_like_example/fast:
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/build
 .PHONY : ex4_like_example/fast
 
+#=============================================================================
+# Target rules for targets named ex4_evyaTest_old
+
+# Build rule for target.
+ex4_evyaTest_old: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_evyaTest_old
+.PHONY : ex4_evyaTest_old
+
+# fast build rule for target.
+ex4_evyaTest_old/fast:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/build
+.PHONY : ex4_evyaTest_old/fast
+
+#=============================================================================
+# Target rules for targets named ex4_SimpleTest_old
+
+# Build rule for target.
+ex4_SimpleTest_old: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_SimpleTest_old
+.PHONY : ex4_SimpleTest_old
+
+# fast build rule for target.
+ex4_SimpleTest_old/fast:
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/build
+.PHONY : ex4_SimpleTest_old/fast
+
+#=============================================================================
+# Target rules for targets named ex4_evyaTest
+
+# Build rule for target.
+ex4_evyaTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex4_evyaTest
+.PHONY : ex4_evyaTest
+
+# fast build rule for target.
+ex4_evyaTest/fast:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/build
+.PHONY : ex4_evyaTest/fast
+
 FlowExampleSimulation.o: FlowExampleSimulation.cpp.o
 
 .PHONY : FlowExampleSimulation.o
 
 # target to build an object file
 FlowExampleSimulation.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/FlowExampleSimulation.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o
 .PHONY : FlowExampleSimulation.cpp.o
 
@@ -190,6 +243,7 @@ FlowExampleSimulation.i: FlowExampleSimulation.cpp.i
 
 # target to preprocess a source file
 FlowExampleSimulation.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/FlowExampleSimulation.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.i
 .PHONY : FlowExampleSimulation.cpp.i
 
@@ -199,6 +253,7 @@ FlowExampleSimulation.s: FlowExampleSimulation.cpp.s
 
 # target to generate assembly for a file
 FlowExampleSimulation.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/FlowExampleSimulation.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.s
 .PHONY : FlowExampleSimulation.cpp.s
 
@@ -208,11 +263,15 @@ PhysicalMemory.o: PhysicalMemory.cpp.o
 
 # target to build an object file
 PhysicalMemory.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/PhysicalMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.o
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/PhysicalMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o
 .PHONY : PhysicalMemory.cpp.o
 
 PhysicalMemory.i: PhysicalMemory.cpp.i
@@ -221,11 +280,15 @@ PhysicalMemory.i: PhysicalMemory.cpp.i
 
 # target to preprocess a source file
 PhysicalMemory.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/PhysicalMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.i
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/PhysicalMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.i
 .PHONY : PhysicalMemory.cpp.i
 
 PhysicalMemory.s: PhysicalMemory.cpp.s
@@ -234,11 +297,15 @@ PhysicalMemory.s: PhysicalMemory.cpp.s
 
 # target to generate assembly for a file
 PhysicalMemory.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/PhysicalMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.s
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/PhysicalMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.s
 .PHONY : PhysicalMemory.cpp.s
 
 SimpleTest.o: SimpleTest.cpp.o
@@ -248,6 +315,7 @@ SimpleTest.o: SimpleTest.cpp.o
 # target to build an object file
 SimpleTest.cpp.o:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/SimpleTest.cpp.o
 .PHONY : SimpleTest.cpp.o
 
 SimpleTest.i: SimpleTest.cpp.i
@@ -257,6 +325,7 @@ SimpleTest.i: SimpleTest.cpp.i
 # target to preprocess a source file
 SimpleTest.cpp.i:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/SimpleTest.cpp.i
 .PHONY : SimpleTest.cpp.i
 
 SimpleTest.s: SimpleTest.cpp.s
@@ -266,6 +335,7 @@ SimpleTest.s: SimpleTest.cpp.s
 # target to generate assembly for a file
 SimpleTest.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/SimpleTest.cpp.s
 .PHONY : SimpleTest.cpp.s
 
 SimpleTestDebugging.o: SimpleTestDebugging.cpp.o
@@ -301,11 +371,10 @@ VirtualMemory.o: VirtualMemory.cpp.o
 
 # target to build an object file
 VirtualMemory.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/VirtualMemory.cpp.o
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.o
-	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/VirtualMemory.cpp.o
-	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o
 .PHONY : VirtualMemory.cpp.o
 
 VirtualMemory.i: VirtualMemory.cpp.i
@@ -314,11 +383,10 @@ VirtualMemory.i: VirtualMemory.cpp.i
 
 # target to preprocess a source file
 VirtualMemory.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/VirtualMemory.cpp.i
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.i
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.i
-	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/VirtualMemory.cpp.i
-	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.i
 .PHONY : VirtualMemory.cpp.i
 
 VirtualMemory.s: VirtualMemory.cpp.s
@@ -327,12 +395,50 @@ VirtualMemory.s: VirtualMemory.cpp.s
 
 # target to generate assembly for a file
 VirtualMemory.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/VirtualMemory.cpp.s
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.s
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory.cpp.s
-	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/VirtualMemory.cpp.s
-	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.s
 .PHONY : VirtualMemory.cpp.s
+
+VirtualMemory_old.o: VirtualMemory_old.cpp.o
+
+.PHONY : VirtualMemory_old.o
+
+# target to build an object file
+VirtualMemory_old.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/VirtualMemory_old.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory_old.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory_old.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/VirtualMemory_old.cpp.o
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/VirtualMemory_old.cpp.o
+.PHONY : VirtualMemory_old.cpp.o
+
+VirtualMemory_old.i: VirtualMemory_old.cpp.i
+
+.PHONY : VirtualMemory_old.i
+
+# target to preprocess a source file
+VirtualMemory_old.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/VirtualMemory_old.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory_old.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory_old.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/VirtualMemory_old.cpp.i
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/VirtualMemory_old.cpp.i
+.PHONY : VirtualMemory_old.cpp.i
+
+VirtualMemory_old.s: VirtualMemory_old.cpp.s
+
+.PHONY : VirtualMemory_old.s
+
+# target to generate assembly for a file
+VirtualMemory_old.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/VirtualMemory_old.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/VirtualMemory_old.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/VirtualMemory_old.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/VirtualMemory_old.cpp.s
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/VirtualMemory_old.cpp.s
+.PHONY : VirtualMemory_old.cpp.s
 
 main.o: main.cpp.o
 
@@ -364,6 +470,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+randomTest.o: randomTest.cpp.o
+
+.PHONY : randomTest.o
+
+# target to build an object file
+randomTest.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/randomTest.cpp.o
+.PHONY : randomTest.cpp.o
+
+randomTest.i: randomTest.cpp.i
+
+.PHONY : randomTest.i
+
+# target to preprocess a source file
+randomTest.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/randomTest.cpp.i
+.PHONY : randomTest.cpp.i
+
+randomTest.s: randomTest.cpp.s
+
+.PHONY : randomTest.s
+
+# target to generate assembly for a file
+randomTest.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/randomTest.cpp.s
+.PHONY : randomTest.cpp.s
+
+tester.o: tester.cpp.o
+
+.PHONY : tester.o
+
+# target to build an object file
+tester.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/tester.cpp.o
+.PHONY : tester.cpp.o
+
+tester.i: tester.cpp.i
+
+.PHONY : tester.i
+
+# target to preprocess a source file
+tester.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/tester.cpp.i
+.PHONY : tester.cpp.i
+
+tester.s: tester.cpp.s
+
+.PHONY : tester.s
+
+# target to generate assembly for a file
+tester.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/tester.cpp.s
+.PHONY : tester.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -372,11 +532,15 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ex4_evyaTest"
+	@echo "... ex4_randomTest"
 	@echo "... ex4_SimpleTest"
-	@echo "... ex4_our_main"
 	@echo "... ex4_SimpleTestDebug"
+	@echo "... ex4_testerTest"
+	@echo "... ex4_our_main"
 	@echo "... ex4_like_example"
+	@echo "... ex4_evyaTest_old"
+	@echo "... ex4_SimpleTest_old"
+	@echo "... ex4_evyaTest"
 	@echo "... FlowExampleSimulation.o"
 	@echo "... FlowExampleSimulation.i"
 	@echo "... FlowExampleSimulation.s"
@@ -392,9 +556,18 @@ help:
 	@echo "... VirtualMemory.o"
 	@echo "... VirtualMemory.i"
 	@echo "... VirtualMemory.s"
+	@echo "... VirtualMemory_old.o"
+	@echo "... VirtualMemory_old.i"
+	@echo "... VirtualMemory_old.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... randomTest.o"
+	@echo "... randomTest.i"
+	@echo "... randomTest.s"
+	@echo "... tester.o"
+	@echo "... tester.i"
+	@echo "... tester.s"
 .PHONY : help
 
 

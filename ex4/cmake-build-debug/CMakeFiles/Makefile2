@@ -50,54 +50,54 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/mohrw/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /usr/local/APP/jetbrains/clion/2018.2.1/bin/cmake/linux/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/mohrw/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4
+CMAKE_SOURCE_DIR = "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug
+CMAKE_BINARY_DIR = "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex4_evyaTest.dir
+# Target rules for target CMakeFiles/ex4_randomTest.dir
 
 # All Build rule for target.
-CMakeFiles/ex4_evyaTest.dir/all:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/depend
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12 "Built target ex4_evyaTest"
-.PHONY : CMakeFiles/ex4_evyaTest.dir/all
+CMakeFiles/ex4_randomTest.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=29,30,31,32 "Built target ex4_randomTest"
+.PHONY : CMakeFiles/ex4_randomTest.dir/all
 
 # Include target in all.
-all: CMakeFiles/ex4_evyaTest.dir/all
+all: CMakeFiles/ex4_randomTest.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ex4_evyaTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_evyaTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex4_evyaTest.dir/rule
+CMakeFiles/ex4_randomTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_randomTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/ex4_randomTest.dir/rule
 
 # Convenience name for target.
-ex4_evyaTest: CMakeFiles/ex4_evyaTest.dir/rule
+ex4_randomTest: CMakeFiles/ex4_randomTest.dir/rule
 
-.PHONY : ex4_evyaTest
-
-# clean rule for target.
-CMakeFiles/ex4_evyaTest.dir/clean:
-	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/clean
-.PHONY : CMakeFiles/ex4_evyaTest.dir/clean
+.PHONY : ex4_randomTest
 
 # clean rule for target.
-clean: CMakeFiles/ex4_evyaTest.dir/clean
+CMakeFiles/ex4_randomTest.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_randomTest.dir/build.make CMakeFiles/ex4_randomTest.dir/clean
+.PHONY : CMakeFiles/ex4_randomTest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_randomTest.dir/clean
 
 .PHONY : clean
 
@@ -108,7 +108,7 @@ clean: CMakeFiles/ex4_evyaTest.dir/clean
 CMakeFiles/ex4_SimpleTest.dir/all:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/depend
 	$(MAKE) -f CMakeFiles/ex4_SimpleTest.dir/build.make CMakeFiles/ex4_SimpleTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target ex4_SimpleTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4 "Built target ex4_SimpleTest"
 .PHONY : CMakeFiles/ex4_SimpleTest.dir/all
 
 # Include target in all.
@@ -118,9 +118,9 @@ all: CMakeFiles/ex4_SimpleTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ex4_SimpleTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_SimpleTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/ex4_SimpleTest.dir/rule
 
 # Convenience name for target.
@@ -139,50 +139,13 @@ clean: CMakeFiles/ex4_SimpleTest.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex4_our_main.dir
-
-# All Build rule for target.
-CMakeFiles/ex4_our_main.dir/all:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/depend
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=17,18,19,20 "Built target ex4_our_main"
-.PHONY : CMakeFiles/ex4_our_main.dir/all
-
-# Include target in all.
-all: CMakeFiles/ex4_our_main.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/ex4_our_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_our_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex4_our_main.dir/rule
-
-# Convenience name for target.
-ex4_our_main: CMakeFiles/ex4_our_main.dir/rule
-
-.PHONY : ex4_our_main
-
-# clean rule for target.
-CMakeFiles/ex4_our_main.dir/clean:
-	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/clean
-.PHONY : CMakeFiles/ex4_our_main.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/ex4_our_main.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/ex4_SimpleTestDebug.dir
 
 # All Build rule for target.
 CMakeFiles/ex4_SimpleTestDebug.dir/all:
 	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/depend
 	$(MAKE) -f CMakeFiles/ex4_SimpleTestDebug.dir/build.make CMakeFiles/ex4_SimpleTestDebug.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8 "Built target ex4_SimpleTestDebug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=5,6,7,8 "Built target ex4_SimpleTestDebug"
 .PHONY : CMakeFiles/ex4_SimpleTestDebug.dir/all
 
 # Include target in all.
@@ -192,9 +155,9 @@ all: CMakeFiles/ex4_SimpleTestDebug.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ex4_SimpleTestDebug.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_SimpleTestDebug.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/ex4_SimpleTestDebug.dir/rule
 
 # Convenience name for target.
@@ -213,13 +176,87 @@ clean: CMakeFiles/ex4_SimpleTestDebug.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/ex4_testerTest.dir
+
+# All Build rule for target.
+CMakeFiles/ex4_testerTest.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=33,34,35,36 "Built target ex4_testerTest"
+.PHONY : CMakeFiles/ex4_testerTest.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex4_testerTest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex4_testerTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_testerTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/ex4_testerTest.dir/rule
+
+# Convenience name for target.
+ex4_testerTest: CMakeFiles/ex4_testerTest.dir/rule
+
+.PHONY : ex4_testerTest
+
+# clean rule for target.
+CMakeFiles/ex4_testerTest.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_testerTest.dir/build.make CMakeFiles/ex4_testerTest.dir/clean
+.PHONY : CMakeFiles/ex4_testerTest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_testerTest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex4_our_main.dir
+
+# All Build rule for target.
+CMakeFiles/ex4_our_main.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=25,26,27,28 "Built target ex4_our_main"
+.PHONY : CMakeFiles/ex4_our_main.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex4_our_main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex4_our_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_our_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/ex4_our_main.dir/rule
+
+# Convenience name for target.
+ex4_our_main: CMakeFiles/ex4_our_main.dir/rule
+
+.PHONY : ex4_our_main
+
+# clean rule for target.
+CMakeFiles/ex4_our_main.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_our_main.dir/build.make CMakeFiles/ex4_our_main.dir/clean
+.PHONY : CMakeFiles/ex4_our_main.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_our_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/ex4_like_example.dir
 
 # All Build rule for target.
 CMakeFiles/ex4_like_example.dir/all:
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/depend
 	$(MAKE) -f CMakeFiles/ex4_like_example.dir/build.make CMakeFiles/ex4_like_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles --progress-num=13,14,15,16 "Built target ex4_like_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=21,22,23,24 "Built target ex4_like_example"
 .PHONY : CMakeFiles/ex4_like_example.dir/all
 
 # Include target in all.
@@ -229,9 +266,9 @@ all: CMakeFiles/ex4_like_example.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ex4_like_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_like_example.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/ex4_like_example.dir/rule
 
 # Convenience name for target.
@@ -246,6 +283,117 @@ CMakeFiles/ex4_like_example.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/ex4_like_example.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex4_evyaTest_old.dir
+
+# All Build rule for target.
+CMakeFiles/ex4_evyaTest_old.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=17,18,19,20 "Built target ex4_evyaTest_old"
+.PHONY : CMakeFiles/ex4_evyaTest_old.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex4_evyaTest_old.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex4_evyaTest_old.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_evyaTest_old.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/ex4_evyaTest_old.dir/rule
+
+# Convenience name for target.
+ex4_evyaTest_old: CMakeFiles/ex4_evyaTest_old.dir/rule
+
+.PHONY : ex4_evyaTest_old
+
+# clean rule for target.
+CMakeFiles/ex4_evyaTest_old.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest_old.dir/build.make CMakeFiles/ex4_evyaTest_old.dir/clean
+.PHONY : CMakeFiles/ex4_evyaTest_old.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_evyaTest_old.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex4_SimpleTest_old.dir
+
+# All Build rule for target.
+CMakeFiles/ex4_SimpleTest_old.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=9,10,11,12 "Built target ex4_SimpleTest_old"
+.PHONY : CMakeFiles/ex4_SimpleTest_old.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex4_SimpleTest_old.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex4_SimpleTest_old.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_SimpleTest_old.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/ex4_SimpleTest_old.dir/rule
+
+# Convenience name for target.
+ex4_SimpleTest_old: CMakeFiles/ex4_SimpleTest_old.dir/rule
+
+.PHONY : ex4_SimpleTest_old
+
+# clean rule for target.
+CMakeFiles/ex4_SimpleTest_old.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_SimpleTest_old.dir/build.make CMakeFiles/ex4_SimpleTest_old.dir/clean
+.PHONY : CMakeFiles/ex4_SimpleTest_old.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_SimpleTest_old.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex4_evyaTest.dir
+
+# All Build rule for target.
+CMakeFiles/ex4_evyaTest.dir/all:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" --progress-num=13,14,15,16 "Built target ex4_evyaTest"
+.PHONY : CMakeFiles/ex4_evyaTest.dir/all
+
+# Include target in all.
+all: CMakeFiles/ex4_evyaTest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex4_evyaTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_evyaTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/ex4_evyaTest.dir/rule
+
+# Convenience name for target.
+ex4_evyaTest: CMakeFiles/ex4_evyaTest.dir/rule
+
+.PHONY : ex4_evyaTest
+
+# clean rule for target.
+CMakeFiles/ex4_evyaTest.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_evyaTest.dir/build.make CMakeFiles/ex4_evyaTest.dir/clean
+.PHONY : CMakeFiles/ex4_evyaTest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_evyaTest.dir/clean
 
 .PHONY : clean
 

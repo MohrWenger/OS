@@ -9,7 +9,7 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include "VirtualMemory.h"
+#include "VirtualMemory_old.h"
 #include "PhysicalMemory.h"
 
 using namespace std;

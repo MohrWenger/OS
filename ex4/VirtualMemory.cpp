@@ -1,7 +1,7 @@
 #include <cmath>
 #include <iostream>
 #include <cmath>
-#include "VirtualMemory.h"
+#include "VirtualMemory_old.h"
 #include "PhysicalMemory.h"
 
 #define ROOT 0
@@ -9,6 +9,7 @@
 using namespace std;
 
 uint64_t PagesToFrames[NUM_PAGES][2] = {0};
+
 
 uint64_t breakVirtualAddress(uint64_t *p, uint64_t addr) {
     uint64_t pageNum = addr >> OFFSET_WIDTH;
@@ -26,94 +27,99 @@ void clearTable(uint64_t frameIndex) {
     }
 }
 
+int calcDist (uint64_t potential, uint64_t pageNum)
+{
+    return static_cast<int>(fmin(abs((int) pageNum - (int) potential),
+                                                  NUM_PAGES - (abs((int) pageNum - (int) potential))));
+}
 
-void get_frame_helper(const uint64_t *prev, const int row, int depth, uint64_t *max_t, int *found, uint64_t *father,
-                      bool firstRun) {
+void get_frame_helper(const uint64_t *prev, int row, int depth, uint64_t *max_t, uint64_t *found,
+                      uint64_t *father, bool firstRun, int* max_dst, uint64_t* pageToEvict,
+                      uint64_t* fatherEvicted, uint64_t curr_page, uint64_t* frame, uint64_t
+                      page_to_inresrt, uint64_t current) {
     uint64_t curr = 0;
     auto curr_to_read = (word_t) curr;
     if (!firstRun) {
+//        cout << "in helper "<< *prev * PAGE_SIZE + row << endl;
         PMread(*prev * PAGE_SIZE + row, &curr_to_read);
         curr = (uint64_t) curr_to_read;
     }
-    if (depth == 0) {
-        return;
-    } else {
-        int zeros = 0;
-        word_t row_val;
-        for (int i = 0; i < PAGE_SIZE; i++) {
-            PMread(curr * (uint64_t) PAGE_SIZE + i, &row_val);
-            if (row_val == 0) {
-                zeros++;
-            } else {
-                if (*max_t < row_val) {
-                    *max_t = (uint64_t) row_val;
+    cout << "depth = " << depth << endl;
+    if (depth == 0) {               //check distance for possible eviction
+        int d = calcDist(curr_page, page_to_inresrt);
+        if (d > *max_dst) {
+            cout << " heree " << endl;
+            *max_dst = d;
+            *pageToEvict = curr_page;
+            *fatherEvicted = *prev*PAGE_SIZE + row;
+            *frame = curr;
+//            cout << " frame = " << curr << endl;
+//            cout << "potential evicting = "<< curr_page <<", and its father is "<< *fatherEvicted << endl;
+            return;
+        }
+    }else {                        // continue recursion
+            int zeros = 0;
+            word_t row_val;
+            for (int i = 0; i < PAGE_SIZE; i++) {
+                PMread(curr * (uint64_t) PAGE_SIZE + i, &row_val);
+                if (row_val == 0) {
+                    zeros++;
+                } else {
+                    if (*max_t < row_val) {
+                        *max_t = (uint64_t) row_val;
+                    }
+//                  cout << "page num = " << (curr_page << OFFSET_WIDTH) + i << endl;
+                    get_frame_helper(&curr, i, depth - 1, max_t, found, father, false, max_dst,
+                                     pageToEvict, fatherEvicted, (curr_page << OFFSET_WIDTH) + i,
+                                     frame, page_to_inresrt, current);
                 }
-                get_frame_helper(&curr, i, depth - 1, max_t, found, father, false);
+            }
+            if (zeros == PAGE_SIZE) {       //then maybe found
+                if(((*prev * PAGE_SIZE + row) > *father)  && (curr != current)) {
+                    *found = (int) curr;
+                    *father = *prev * PAGE_SIZE + row; //TODO - make sure deepest frame is returned
+                    cout << " --> found = " << *found << endl;
+                    cout << " --> curr = "  << current << endl;
+                }
             }
         }
-
-        if ((zeros == PAGE_SIZE) && (*found == -1)) { //TODO check prev != null
-            *found = (int) curr;
-            *father = *prev * PAGE_SIZE + row;
-
-        }
     }
-}
-
-void getFrameToEvict(uint64_t pageNum, uint64_t *frame, uint64_t *page) {
-    uint64_t best_frame = 0;
-    uint64_t best_page = 0;
-    int max = 0;
-    for (uint64_t i = 0; i < NUM_PAGES; ++i) {
-        if (!PagesToFrames[i][0]) {
-            continue;
-        }
-        int dist = static_cast<int>(fmin(abs((int) pageNum - (int) i),
-                                         NUM_PAGES - (abs((int) pageNum - (int) i))));
-
-        if (dist > max) {
-            max = dist;
-            best_frame = PagesToFrames[i][0];
-            best_page = i;
-        }
-    }
-    *frame = best_frame;
-    *page = best_page;
-}
 
 uint64_t getFrame(uint64_t lastFound, uint64_t pageNum, uint64_t *father, const uint64_t *curr) {
     int d = TABLES_DEPTH;
     uint64_t max_t = 0;    //TODO maybe uint64_t ?
     uint64_t prev = 0;
     int row = ROOT;
-    int found = -1;
+    uint64_t found = 0;
     uint64_t current = *curr / PAGE_SIZE;
-    get_frame_helper(&prev, row, d, &max_t, &found, father, true);
-
-    if (found > 0 && found != lastFound && found != current) {
+    int min_dst = 0;
+    uint64_t page_to_evict = 0;
+    uint64_t father_to_evict = 0;
+    uint64_t num_evicted = 0;
+    uint64_t frame = 0;
+    get_frame_helper(&prev, row, d, &max_t, &found, father, true, &min_dst, &page_to_evict,
+            &father_to_evict, num_evicted, &frame, pageNum, current );
+    if (found > 0 && found != current) {
+        cout << "in getFrame, father = " << *father << endl;
         PMwrite(*father, 0);
         clearTable(found);
         return (uint64_t) found;
-
-
         //TODO we think it is ok but habent actually got here yet
         // TODO - also clear table / father?
-    } else if (max_t < NUM_FRAMES - 1) {
+    } else if (max_t < NUM_FRAMES -1) {
+        cout << " in max "<< max_t + 1 << endl;
         return max_t + 1;
-    } else {
-        uint64_t frame_to_evict;
-        uint64_t page_to_swap;
-        getFrameToEvict(pageNum, &frame_to_evict, &page_to_swap);
-        uint64_t page_father = PagesToFrames[page_to_swap][1];
-        PMwrite(page_father, 0);
 
-//        PMrestore(frame_to_evict, page_to_swap);
-        PMevict(frame_to_evict, page_to_swap);
-        clearTable(frame_to_evict);
-        PagesToFrames[page_to_swap][0] = 0;
-        PagesToFrames[page_to_swap][1] = 0;
-        return frame_to_evict;
+    } else if (frame != 0){
+        cout << "in evict, frame = " << frame << endl;
+        cout << "in evict, father = " << father_to_evict << endl;
+        PMevict(frame, page_to_evict);
+        PMwrite(father_to_evict, 0);
+        clearTable(frame);
+        return frame;
     }
+    cout << "frame = " << frame << " and max_t = " << max_t << " found = "<<found <<endl;
+    cout << "got here somehow " << endl;
 }
 
 
@@ -126,32 +132,29 @@ int access(uint64_t virtualAddress, word_t value, uint64_t *curr, uint64_t *fath
     word_t addr_i;
     uint64_t prevFrame = 0;
     uint64_t foundFather = 0;
-    bool wasFound = false;
     for (int i = TABLES_DEPTH; i > 0; --i) {
         PMread(*curr + p_ref[i], &addr_i);
         if (!addr_i) {
             uint64_t frame = getFrame(prevFrame, pageNum, &foundFather, curr);
 
             if (i == 1) {
-                PMrestore(frame, pageNum);
-
+                cout << "in access, frame = " << frame << endl;
+                PMrestore(frame, virtualAddress >> OFFSET_WIDTH);
             }
 
             if (frame != -1) {
                 *father = (uint64_t) prevFrame;
                 prevFrame = frame;
-                PMwrite(*curr + p_ref[i], frame);
+                cout << "in access2, *curr + p_ref[i] = " << *curr + p_ref[i] << endl;
+                PMwrite(*curr + p_ref[i], (word_t)frame);
                 *curr = (uint64_t) (frame) * PAGE_SIZE;
             } else {
                 return -1;
             }
-
-
         } else {
             *curr = ((uint64_t) addr_i * PAGE_SIZE);
         }
     }
-
     return -1;
 }
 
@@ -167,6 +170,7 @@ int VMread(uint64_t virtualAddress, word_t *value) {
 
     uint64_t offset = p_ref[0];
 //    PMrestore((curr +offset) / PAGE_SIZE , pageNum);
+    cout << "in VMwread, curr = " << curr << endl;
     PMread(curr + offset, value);
     if (father < NUM_FRAMES) {
         PagesToFrames[pageNum][0] = curr / PAGE_SIZE;
@@ -183,9 +187,9 @@ int VMwrite(uint64_t virtualAddress, word_t value) {
     uint64_t father = NUM_FRAMES + 1;
 
     access(virtualAddress, value, &curr, &father, p_ref);
-
     uint64_t offset = p_ref[0];
 //    PMrestore(curr / PAGE_SIZE, pageNum);
+    cout << "in VMwrite, curr = " << curr << endl;
     PMwrite(curr + offset, value);
     if (father < NUM_FRAMES) {
         PagesToFrames[pageNum][0] = curr / PAGE_SIZE;

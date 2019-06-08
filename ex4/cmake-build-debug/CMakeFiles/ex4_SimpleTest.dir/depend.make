@@ -7,10 +7,10 @@ CMakeFiles/ex4_SimpleTest.dir/PhysicalMemory.cpp.o: ../PhysicalMemory.h
 
 CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.o: ../SimpleTest.cpp
-CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.o: ../VirtualMemory.h
+CMakeFiles/ex4_SimpleTest.dir/SimpleTest.cpp.o: ../VirtualMemory_old.h
 
 CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o: ../PhysicalMemory.h
 CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o: ../VirtualMemory.cpp
-CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o: ../VirtualMemory.h
+CMakeFiles/ex4_SimpleTest.dir/VirtualMemory.cpp.o: ../VirtualMemory_old.h
 

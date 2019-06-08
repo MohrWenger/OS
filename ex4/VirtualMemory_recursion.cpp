@@ -1,6 +1,6 @@
 #include <cmath>
 #include <iostream>
-#include "VirtualMemory.h"
+#include "VirtualMemory_old.h"
 #include "PhysicalMemory.h"
 
 #define ROOT 0

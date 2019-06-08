@@ -1,3 +1,8 @@
+//
+// Created by mohrw on 08/06/2019.
+//
+
+#ifndef EX4_VIRTUALMEMORY_H
 #pragma once
 
 #include "MemoryConstants.h"
@@ -27,3 +32,6 @@ int VMwrite(uint64_t virtualAddress, word_t value);
 
 
 void print_all_frames();
+#define EX4_VIRTUALMEMORY_H
+
+#endif //EX4_VIRTUALMEMORY_H

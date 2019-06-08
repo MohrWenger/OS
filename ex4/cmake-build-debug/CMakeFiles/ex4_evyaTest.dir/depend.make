@@ -4,7 +4,7 @@
 CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o: ../FlowExampleSimulation.cpp
 CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o: ../PhysicalMemory.h
-CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o: ../VirtualMemory.h
+CMakeFiles/ex4_evyaTest.dir/FlowExampleSimulation.cpp.o: ../VirtualMemory_old.h
 
 CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o: ../PhysicalMemory.cpp
@@ -13,5 +13,5 @@ CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o: ../PhysicalMemory.h
 CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o: ../PhysicalMemory.h
 CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o: ../VirtualMemory.cpp
-CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o: ../VirtualMemory.h
+CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o: ../VirtualMemory_old.h
 
