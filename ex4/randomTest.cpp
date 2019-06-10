@@ -54,12 +54,14 @@ void random_test()
     std::shuffle(write_read_order.begin(), write_read_order.end(), g);
 
     int count = 0;
+    int len = write_read_order.size();
     for (uint64_t address : write_read_order)
     {
         VMwrite(address, (word_t) address);
-        std::cout << "Writing to addr: " << address << " value: " << address << "\n";
+//        std::cout << "Writing to addr: " << address << " value: " << address << "\n";
         count ++;
-        std:: cout << "count = "<< count << std:: endl;
+//        std:: cout << "count = "<< count << std:: endl;
+        assert(len >= count);
     }
 
     word_t value;
