@@ -3,8 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ex4_evyaTest.dir/VirtualMemory.cpp.o"
   "CMakeFiles/ex4_evyaTest.dir/PhysicalMemory.cpp.o"
   "ex4_evyaTest.pdb"
-  "ex4_evyaTest.exe"
-  "libex4_evyaTest.dll.a"
+  "ex4_evyaTest"
 )
 
 # Per-language clean rules from dependency scanning.

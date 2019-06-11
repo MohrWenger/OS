@@ -8,497 +8,533 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_randomTest">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_randomTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_randomTest"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_randomTest/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_randomTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_randomTest/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_SimpleTest">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_SimpleTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_SimpleTest/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_SimpleTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_SimpleTestDebug">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_SimpleTestDebug.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTestDebug"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_SimpleTestDebug/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_SimpleTestDebug.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTestDebug/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_testerTest">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_testerTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_testerTest"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ex4_testerTest/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_testerTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_testerTest/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_our_main">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_our_main.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_our_main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_our_main/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_our_main.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_our_main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_our_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_SimpleTestDebug">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTestDebug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTestDebug"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_SimpleTestDebug/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTestDebug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTestDebug/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_like_example">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_like_example.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_like_example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_like_example/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_like_example.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_like_example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_like_example/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="ex4_evyaTest_old">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_evyaTest_old.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+			<Target title="ex4_randomTest">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_randomTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest_old"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_randomTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="ex4_evyaTest_old/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_evyaTest_old.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+			<Target title="ex4_randomTest/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_randomTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest_old/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_randomTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_SimpleTest_old">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_SimpleTest_old.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTest_old" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest_old"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest_old"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_SimpleTest_old/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_SimpleTest_old.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTest_old" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest_old/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest_old/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_evyaTest_old">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_evyaTest_old" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest_old"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_evyaTest_old/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_evyaTest_old" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest_old/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_evyaTest">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_evyaTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_evyaTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex4_evyaTest/fast">
-				<Option output="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/ex4_evyaTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug"/>
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_evyaTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New\ folder/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_evyaTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_testerTest">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_testerTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_testerTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_testerTest/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_testerTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_testerTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_SimpleTest">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex4_SimpleTest/fast">
+				<Option output="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/ex4_SimpleTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex4_SimpleTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/ConstantsTest.h">
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/ConstantsTest.h">
 			<Option target="ex4_like_example"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/FlowExampleSimulation.cpp">
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/FlowExampleSimulation.cpp">
 			<Option target="ex4_evyaTest_old"/>
 			<Option target="ex4_evyaTest"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/MemoryConstants.h">
-			<Option target="ex4_randomTest"/>
-			<Option target="ex4_SimpleTest"/>
-			<Option target="ex4_SimpleTestDebug"/>
-			<Option target="ex4_testerTest"/>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h">
 			<Option target="ex4_our_main"/>
-			<Option target="ex4_evyaTest_old"/>
-			<Option target="ex4_SimpleTest_old"/>
-			<Option target="ex4_evyaTest"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/PhysicalMemory.cpp">
-			<Option target="ex4_randomTest"/>
-			<Option target="ex4_SimpleTest"/>
 			<Option target="ex4_SimpleTestDebug"/>
+			<Option target="ex4_randomTest"/>
+			<Option target="ex4_SimpleTest_old"/>
+			<Option target="ex4_evyaTest_old"/>
+			<Option target="ex4_evyaTest"/>
 			<Option target="ex4_testerTest"/>
+			<Option target="ex4_SimpleTest"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp">
+			<Option target="ex4_our_main"/>
+			<Option target="ex4_SimpleTestDebug"/>
+			<Option target="ex4_like_example"/>
+			<Option target="ex4_randomTest"/>
+			<Option target="ex4_SimpleTest_old"/>
+			<Option target="ex4_evyaTest_old"/>
+			<Option target="ex4_evyaTest"/>
+			<Option target="ex4_testerTest"/>
+			<Option target="ex4_SimpleTest"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h">
+			<Option target="ex4_our_main"/>
+			<Option target="ex4_SimpleTestDebug"/>
+			<Option target="ex4_like_example"/>
+			<Option target="ex4_randomTest"/>
+			<Option target="ex4_SimpleTest_old"/>
+			<Option target="ex4_evyaTest_old"/>
+			<Option target="ex4_evyaTest"/>
+			<Option target="ex4_testerTest"/>
+			<Option target="ex4_SimpleTest"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/SimpleTest.cpp">
+			<Option target="ex4_SimpleTest_old"/>
+			<Option target="ex4_SimpleTest"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/SimpleTestDebugging.cpp">
+			<Option target="ex4_SimpleTestDebug"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp">
+			<Option target="ex4_randomTest"/>
+			<Option target="ex4_evyaTest"/>
+			<Option target="ex4_testerTest"/>
+			<Option target="ex4_SimpleTest"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h">
+			<Option target="ex4_randomTest"/>
+			<Option target="ex4_evyaTest"/>
+			<Option target="ex4_testerTest"/>
+			<Option target="ex4_SimpleTest"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory_old.cpp">
+			<Option target="ex4_our_main"/>
+			<Option target="ex4_SimpleTestDebug"/>
+			<Option target="ex4_like_example"/>
+			<Option target="ex4_SimpleTest_old"/>
+			<Option target="ex4_evyaTest_old"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory_old.h">
+			<Option target="ex4_our_main"/>
+			<Option target="ex4_SimpleTestDebug"/>
+			<Option target="ex4_like_example"/>
+			<Option target="ex4_SimpleTest_old"/>
+			<Option target="ex4_evyaTest_old"/>
+		</Unit>
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp">
 			<Option target="ex4_our_main"/>
 			<Option target="ex4_like_example"/>
-			<Option target="ex4_evyaTest_old"/>
-			<Option target="ex4_SimpleTest_old"/>
-			<Option target="ex4_evyaTest"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/PhysicalMemory.h">
-			<Option target="ex4_randomTest"/>
-			<Option target="ex4_SimpleTest"/>
-			<Option target="ex4_SimpleTestDebug"/>
-			<Option target="ex4_testerTest"/>
-			<Option target="ex4_our_main"/>
-			<Option target="ex4_like_example"/>
-			<Option target="ex4_evyaTest_old"/>
-			<Option target="ex4_SimpleTest_old"/>
-			<Option target="ex4_evyaTest"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/SimpleTest.cpp">
-			<Option target="ex4_SimpleTest"/>
-			<Option target="ex4_SimpleTest_old"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/SimpleTestDebugging.cpp">
-			<Option target="ex4_SimpleTestDebug"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/VirtualMemory.cpp">
-			<Option target="ex4_randomTest"/>
-			<Option target="ex4_SimpleTest"/>
-			<Option target="ex4_testerTest"/>
-			<Option target="ex4_evyaTest"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/VirtualMemory.h">
-			<Option target="ex4_randomTest"/>
-			<Option target="ex4_SimpleTest"/>
-			<Option target="ex4_testerTest"/>
-			<Option target="ex4_evyaTest"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/VirtualMemory_old.cpp">
-			<Option target="ex4_SimpleTestDebug"/>
-			<Option target="ex4_our_main"/>
-			<Option target="ex4_like_example"/>
-			<Option target="ex4_evyaTest_old"/>
-			<Option target="ex4_SimpleTest_old"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/VirtualMemory_old.h">
-			<Option target="ex4_SimpleTestDebug"/>
-			<Option target="ex4_our_main"/>
-			<Option target="ex4_like_example"/>
-			<Option target="ex4_evyaTest_old"/>
-			<Option target="ex4_SimpleTest_old"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/main.cpp">
-			<Option target="ex4_our_main"/>
-			<Option target="ex4_like_example"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/randomTest.cpp">
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/randomTest.cpp">
 			<Option target="ex4_randomTest"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/tester.cpp">
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/tester.cpp">
 			<Option target="ex4_testerTest"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/CMakeLists.txt">
+		<Unit filename="/cs/usr/ellonet/SCHOOL/OS/ex4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

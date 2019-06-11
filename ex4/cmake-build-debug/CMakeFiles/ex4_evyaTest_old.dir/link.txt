@@ -1,1 +1,1 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/ex4_evyaTest_old.dir/FlowExampleSimulation.cpp.o CMakeFiles/ex4_evyaTest_old.dir/VirtualMemory_old.cpp.o CMakeFiles/ex4_evyaTest_old.dir/PhysicalMemory.cpp.o  -o ex4_evyaTest_old.exe -Wl,--out-implib,libex4_evyaTest_old.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/bin/c++  -g   CMakeFiles/ex4_evyaTest_old.dir/FlowExampleSimulation.cpp.o CMakeFiles/ex4_evyaTest_old.dir/VirtualMemory_old.cpp.o CMakeFiles/ex4_evyaTest_old.dir/PhysicalMemory.cpp.o  -o ex4_evyaTest_old 

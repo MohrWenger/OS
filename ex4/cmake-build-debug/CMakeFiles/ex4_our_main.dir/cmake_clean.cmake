@@ -3,8 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ex4_our_main.dir/VirtualMemory_old.cpp.o"
   "CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o"
   "ex4_our_main.pdb"
-  "ex4_our_main.exe"
-  "libex4_our_main.dll.a"
+  "ex4_our_main"
 )
 
 # Per-language clean rules from dependency scanning.

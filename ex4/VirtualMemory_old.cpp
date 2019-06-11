@@ -123,7 +123,7 @@ void VMinitialize() {
 }
 
 int
-access(uint64_t virtualAddress, word_t value, uint64_t *curr, uint64_t *father, uint64_t *p_ref) {
+treeTraversing(uint64_t virtualAddress, word_t value, uint64_t *curr, uint64_t *father, uint64_t *p_ref) {
     uint64_t pageNum = breakVirtualAddress(p_ref, virtualAddress);
     word_t addr_i;
     uint64_t prevFrame = 0;
@@ -165,7 +165,7 @@ int VMread(uint64_t virtualAddress, word_t *value) {
     uint64_t pageNum = breakVirtualAddress(p_ref, virtualAddress);
     uint64_t father = NUM_FRAMES + 1;
 
-    access(virtualAddress, *value, &curr, &father, p_ref);
+    treeTraversing(virtualAddress, *value, &curr, &father, p_ref);
 
     uint64_t offset = p_ref[0];
 //    PMrestore((curr +offset) / PAGE_SIZE , pageNum);
@@ -184,7 +184,7 @@ int VMwrite(uint64_t virtualAddress, word_t value) {
     uint64_t pageNum = breakVirtualAddress(p_ref, virtualAddress);
     uint64_t father = NUM_FRAMES + 1;
 
-    access(virtualAddress, value, &curr, &father, p_ref);
+    treeTraversing(virtualAddress, value, &curr, &father, p_ref);
     uint64_t offset = p_ref[0];
 //    PMrestore(curr / PAGE_SIZE, pageNum);
     PMwrite(curr + offset, value);

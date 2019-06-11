@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/PhysicalMemory.cpp" "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o"
-  "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/VirtualMemory_old.cpp" "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/VirtualMemory_old.cpp.o"
-  "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/main.cpp" "/cygdrive/c/Users/mohrw/Desktop/secondYear/semester2/OS/New folder/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/main.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/PhysicalMemory.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory_old.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/VirtualMemory_old.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex4/main.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex4/cmake-build-debug/CMakeFiles/ex4_our_main.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

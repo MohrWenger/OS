@@ -1,0 +1,12 @@
+mohr, ellonet
+Student Mohr Wenger (204802748), Student Ella Duvdevan (305564866)
+
+EX: 4
+
+FILES:
+VirtualMemory.cpp - This class is a memory-management model that allows processes to use more memory than
+is actually available on the host by mapping virtual (a.k.a. logical) addresses into physical addresses (RAM).
+
+
+REMARKS:
+None
