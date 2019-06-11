@@ -101,26 +101,26 @@ uint64_t getFrame(uint64_t lastFound, uint64_t pageNum, uint64_t *father, const 
     get_frame_helper(&prev, row, d, &max_t, &found, father, true, &min_dst, &page_to_evict,
             &father_to_evict, num_evicted, &frame, pageNum, current );
     if (found > 0) {
-        cerr << "in getFrame, father = " << *father << endl;
+//        cerr << "in getFrame, father = " << *father << endl;
         PMwrite(*father, 0);
         clearTable(found);
         return (uint64_t) found;
-        //TODO we think it is ok but habent actually got here yet
-        // TODO - also clear table / father?
     } else if (max_t < NUM_FRAMES -1) {
 //        cout << " in max "<< max_t + 1 << endl;
+        clearTable(max_t + 1);
         return max_t + 1;
 
     } else if (frame != 0){
-        cerr << "in evict, frame = " << frame << endl;
-        cerr << "in evict, father = " << father_to_evict << endl;
+//        cerr << "in evict, frame = " << frame << endl;
+//        cerr << "in evict, father = " << father_to_evict << endl;
+//        cerr << "RAM Size = " << RAM_SIZE << endl;
         PMevict(frame, page_to_evict);
         PMwrite(father_to_evict, 0);
         clearTable(frame);
         return frame;
     }
-    cout << "frame = " << frame << " and max_t = " << max_t << " found = "<<found <<endl;
-    cout << "got here somehow " << endl;
+//    cout << "frame = " << frame << " and max_t = " << max_t << " found = "<<found <<endl;
+//    cout << "got here somehow " << endl;
 }
 
 
