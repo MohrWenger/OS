@@ -1,5 +1,5 @@
 #include <cmath>
-#include "VirtualMemory_old.h"
+#include "VirtualMemory.h"
 #include "PhysicalMemory.h"
 
 using namespace std;
@@ -94,7 +94,7 @@ void get_frame_helper(const uint64_t *prev, int row, int depth, uint64_t *max_t,
             if (row_val == 0) {
                 zeros++;
             } else {
-                if (*max_t < row_val) {
+                if (*max_t < (uint64_t)row_val) {
                     *max_t = (uint64_t) row_val;
                 }
                 get_frame_helper(&curr, i, depth - 1, max_t, found, father, false, max_dst,
@@ -178,7 +178,7 @@ int treeTraversing(uint64_t virtualAddress, word_t value, uint64_t *curr, uint64
                 PMrestore(frame, virtualAddress >> OFFSET_WIDTH);
             }
 
-            if (frame != -1) {
+            if ((int)frame != -1) {
                 *father = (uint64_t) prevFrame;
                 prevFrame = frame;
                 PMwrite(*curr + p_ref[i], (word_t) frame);

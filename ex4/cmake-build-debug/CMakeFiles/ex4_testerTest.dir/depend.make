@@ -8,7 +8,7 @@ CMakeFiles/ex4_testerTest.dir/PhysicalMemory.cpp.o: ../PhysicalMemory.h
 CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.o: ../PhysicalMemory.h
 CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.o: ../VirtualMemory.cpp
-CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.o: ../VirtualMemory_old.h
+CMakeFiles/ex4_testerTest.dir/VirtualMemory.cpp.o: ../VirtualMemory.h
 
 CMakeFiles/ex4_testerTest.dir/tester.cpp.o: ../MemoryConstants.h
 CMakeFiles/ex4_testerTest.dir/tester.cpp.o: ../VirtualMemory.h

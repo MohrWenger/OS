@@ -19,16 +19,12 @@ MemoryConstants.h
 /cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.cpp
 cmath
 -
-iostream
--
-cmath
--
-VirtualMemory_old.h
-/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory_old.h
+VirtualMemory.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
 PhysicalMemory.h
 /cs/usr/ellonet/SCHOOL/OS/ex4/PhysicalMemory.h
 
-/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory_old.h
+/cs/usr/ellonet/SCHOOL/OS/ex4/VirtualMemory.h
 MemoryConstants.h
 /cs/usr/ellonet/SCHOOL/OS/ex4/MemoryConstants.h
 
