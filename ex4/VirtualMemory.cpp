@@ -8,9 +8,6 @@ using namespace std;
 /** Constants */
 #define ROOT 0
 
-/** A non-dynamic array for holding the frames assigned to pages */
-uint64_t PagesToFrames[NUM_PAGES][2] = {0};
-
 
 /**
  * Breaks the virtual address to the offset and the addresses for each table in the representing tree.
@@ -201,17 +198,13 @@ int treeTraversing(uint64_t virtualAddress, word_t value, uint64_t *curr, uint64
 int VMread(uint64_t virtualAddress, word_t *value) {
     uint64_t curr = ROOT * PAGE_SIZE;
     uint64_t p_ref[TABLES_DEPTH + 1] = {0};
-    uint64_t pageNum = breakVirtualAddress(p_ref, virtualAddress);
+    breakVirtualAddress(p_ref, virtualAddress);
     uint64_t father = NUM_FRAMES + 1;
 
     treeTraversing(virtualAddress, *value, &curr, &father, p_ref);
 
     uint64_t offset = p_ref[0];
     PMread(curr + offset, value);
-    if (father < NUM_FRAMES) {
-        PagesToFrames[pageNum][0] = curr / PAGE_SIZE;
-        PagesToFrames[pageNum][1] = father * PAGE_SIZE + p_ref[1];
-    }
     return 1;
 }
 
@@ -223,15 +216,11 @@ int VMread(uint64_t virtualAddress, word_t *value) {
 int VMwrite(uint64_t virtualAddress, word_t value) {
     uint64_t curr = ROOT * PAGE_SIZE;
     uint64_t p_ref[TABLES_DEPTH + 1] = {0};
-    uint64_t pageNum = breakVirtualAddress(p_ref, virtualAddress);
+    breakVirtualAddress(p_ref, virtualAddress);
     uint64_t father = NUM_FRAMES + 1;
 
     treeTraversing(virtualAddress, value, &curr, &father, p_ref);
     uint64_t offset = p_ref[0];
     PMwrite(curr + offset, value);
-    if (father < NUM_FRAMES) {
-        PagesToFrames[pageNum][0] = curr / PAGE_SIZE;
-        PagesToFrames[pageNum][1] = father * PAGE_SIZE + p_ref[1];
-    }
     return 1;
 }

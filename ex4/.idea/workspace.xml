@@ -22,6 +22,7 @@
     <list default="true" id="e3c30aa6-4aaa-47ef-8a27-0ddec6aea8a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMemory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMemory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex4.tar" beforeDir="false" afterPath="$PROJECT_DIR$/ex4.tar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,7 +71,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="README" value="122" />
-          <entry key="cpp" value="9453" />
+          <entry key="cpp" value="9460" />
           <entry key="h" value="44" />
           <entry key="mm" value="151" />
           <entry key="new file" value="2" />
@@ -81,7 +82,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="82" />
           <entry key="Doxygen file" value="11" />
-          <entry key="ObjectiveC" value="9637" />
+          <entry key="ObjectiveC" value="9644" />
           <entry key="PLAIN_TEXT" value="139" />
         </counts>
       </usages-collector>
@@ -171,8 +172,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VirtualMemory.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="176" column="25" lean-forward="true" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
+            <state relative-caret-position="462">
+              <caret line="206" column="33" lean-forward="true" selection-start-line="206" selection-start-column="33" selection-end-line="206" selection-end-column="33" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -214,9 +215,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ello</find>
-      <find>prev</find>
-      <find>father</find>
       <find>print</find>
       <find>prin</find>
       <find>cout</find>
@@ -244,6 +242,9 @@
       <find>curr_page</find>
       <find>frame</find>
       <find>page_to_inresrt</find>
+      <find>*max</find>
+      <find>frame != -1</find>
+      <find>PagesToFrames</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -279,7 +280,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-105" />
     <option name="y" value="123" />
     <option name="width" value="1080" />
@@ -417,7 +418,7 @@
       <workItem from="1560099081819" duration="7733000" />
       <workItem from="1560253830798" duration="2991000" />
       <workItem from="1560326801459" duration="2000" />
-      <workItem from="1560351732633" duration="827000" />
+      <workItem from="1560351732633" duration="1659000" />
     </task>
     <task id="LOCAL-00001" summary="starting ex 4">
       <created>1558777429380</created>
@@ -430,23 +431,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99588000" />
+    <option name="totallyTimeSpent" value="100420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="27" width="1928" height="1152" extended-state="7" />
+    <frame x="-4" y="27" width="1928" height="1152" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49717513" visible="true" weight="0.26976496" />
       <window_info id="Structure" order="1" sideWeight="0.50282484" side_tool="true" weight="0.25668016" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946582" visible="true" weight="0.37007874" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946582" weight="0.37007874" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43594307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49946582" weight="0.32677165" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.49946582" visible="true" weight="0.32677165" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005342" side_tool="true" weight="0.3297244" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -827,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VirtualMemory.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="176" column="25" lean-forward="true" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
+        <state relative-caret-position="462">
+          <caret line="206" column="33" lean-forward="true" selection-start-line="206" selection-start-column="33" selection-end-line="206" selection-end-column="33" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
