@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ex5.dir/main.cpp.obj"
+  "CMakeFiles/ex5.dir/FileAppClient.cpp.obj"
+  "CMakeFiles/ex5.dir/FileAppServer.cpp.obj"
   "ex5.pdb"
   "ex5.exe"
   "ex5.exe.manifest"

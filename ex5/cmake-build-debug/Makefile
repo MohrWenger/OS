@@ -110,44 +110,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ex5
+# Target rules for targets named ex5_server
 
 # Build rule for target.
-ex5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 ex5
-.PHONY : ex5
+ex5_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 ex5_server
+.PHONY : ex5_server
 
 # fast build rule for target.
-ex5/fast:
-	$(MAKE) -f CMakeFiles\ex5.dir\build.make CMakeFiles/ex5.dir/build
-.PHONY : ex5/fast
+ex5_server/fast:
+	$(MAKE) -f CMakeFiles\ex5_server.dir\build.make CMakeFiles/ex5_server.dir/build
+.PHONY : ex5_server/fast
 
-main.obj: main.cpp.obj
+FileAppServer.obj: FileAppServer.cpp.obj
 
-.PHONY : main.obj
+.PHONY : FileAppServer.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\ex5.dir\build.make CMakeFiles/ex5.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+FileAppServer.cpp.obj:
+	$(MAKE) -f CMakeFiles\ex5_server.dir\build.make CMakeFiles/ex5_server.dir/FileAppServer.cpp.obj
+.PHONY : FileAppServer.cpp.obj
 
-main.i: main.cpp.i
+FileAppServer.i: FileAppServer.cpp.i
 
-.PHONY : main.i
+.PHONY : FileAppServer.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\ex5.dir\build.make CMakeFiles/ex5.dir/main.cpp.i
-.PHONY : main.cpp.i
+FileAppServer.cpp.i:
+	$(MAKE) -f CMakeFiles\ex5_server.dir\build.make CMakeFiles/ex5_server.dir/FileAppServer.cpp.i
+.PHONY : FileAppServer.cpp.i
 
-main.s: main.cpp.s
+FileAppServer.s: FileAppServer.cpp.s
 
-.PHONY : main.s
+.PHONY : FileAppServer.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\ex5.dir\build.make CMakeFiles/ex5.dir/main.cpp.s
-.PHONY : main.cpp.s
+FileAppServer.cpp.s:
+	$(MAKE) -f CMakeFiles\ex5_server.dir\build.make CMakeFiles/ex5_server.dir/FileAppServer.cpp.s
+.PHONY : FileAppServer.cpp.s
 
 # Help Target
 help:
@@ -155,12 +155,12 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... ex5
+	@echo ... ex5_server
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... FileAppServer.obj
+	@echo ... FileAppServer.i
+	@echo ... FileAppServer.s
 .PHONY : help
 
 

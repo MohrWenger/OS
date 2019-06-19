@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/ClionProjects/OS/ex5/FileAppClient.cpp
+winsock2.h
+-
+time.h
+-
+netinet/in.h
+-
+netdb.h
+-
+sys/uio.h
+-
+sys/socket.h
+-
+iostream
+-
+sys/types.h
+-
+unistd.h
+-
+fcntl.h
+-
+stdio.h
+-
+string.h
+-
+
