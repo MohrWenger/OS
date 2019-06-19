@@ -1,3 +1,1 @@
-"D:\ClionProjects\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\ex5.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\ex5.dir/objects.a @CMakeFiles\ex5.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\ex5.dir/objects.a -Wl,--no-whole-archive  -o ex5.exe -Wl,--out-implib,libex5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ex5.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/ex5.dir/FileAppServer.cpp.o CMakeFiles/ex5.dir/FileAppClient.cpp.o CMakeFiles/ex5.dir/main.cpp.o  -o ex5 

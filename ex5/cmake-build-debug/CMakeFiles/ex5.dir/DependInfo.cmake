@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/ClionProjects/OS/ex5/FileAppClient.cpp" "D:/ClionProjects/OS/ex5/cmake-build-debug/CMakeFiles/ex5.dir/FileAppClient.cpp.obj"
-  "D:/ClionProjects/OS/ex5/FileAppServer.cpp" "D:/ClionProjects/OS/ex5/cmake-build-debug/CMakeFiles/ex5.dir/FileAppServer.cpp.obj"
+  "/cs/usr/ellonet/SCHOOL/OS/ex5/FileAppClient.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex5/cmake-build-debug/CMakeFiles/ex5.dir/FileAppClient.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex5/FileAppServer.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex5/cmake-build-debug/CMakeFiles/ex5.dir/FileAppServer.cpp.o"
+  "/cs/usr/ellonet/SCHOOL/OS/ex5/main.cpp" "/cs/usr/ellonet/SCHOOL/OS/ex5/cmake-build-debug/CMakeFiles/ex5.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
