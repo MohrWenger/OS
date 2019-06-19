@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include <string.h>
+#include <string>
 
 #ifndef EX5_FILEAPPSERVER_H
 #define EX5_FILEAPPSERVER_H

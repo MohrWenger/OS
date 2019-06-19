@@ -9,7 +9,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
-#include <string.h>
+#include <string>
+#include <cstring>
 #include "prints.h"
 
 using namespace std;
@@ -20,14 +21,14 @@ using namespace std;
 int start_server_bla(string path, unsigned short portnum) {
     // client call = FileApp -s <local_dir_path> <port_no>
     char myname[MAXHOSTNAME + 1];
-    struct sockaddr_in server_addr;
+    struct sockaddr_in server_addr{};
     int fd_server, fd_connect;
     struct hostent *hp;
 
     // get host name
     gethostname(myname, MAXHOSTNAME);
     hp = gethostbyname(myname);
-    if (hp == NULL)
+    if (hp == nullptr)
         return (-1);
 
     //sockaddrr_in initlization

@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
-#include <string.h>
+#include <string>
 #include "prints.h"
 
 using namespace std;
