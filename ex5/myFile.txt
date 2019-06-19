@@ -1,1 +1,55 @@
 https://github.com/KrishnaChaurasia/client-server-file-transfer/blob/master/file_client_.cpp
+
+struct sockaddr {
+	unsigned short 	sa_family;		// AF_INET
+	char 			sa_data[14];	// binary ip
+};
+
+
+struct sockaddr_in {
+	short 				sin_family;			// AF_INET
+	unsigned short 		int sin_port;		// use Network Byte Order - htons()
+	struct in_addr 		sin_addr;			// use Network Byte Order - inet_aton()
+	unsigned char 		sin_zero[8];		// all 0 - memset()
+}; 
+
+struct in_addr {
+	uint32_t 	s_addr;
+};
+
+
+
+inet_aton() - Ip V4 to binary
+inet_ntoa() - binary to Ip V4
+
+////// sockaddr <=> sockaddr_in
+----------------------------------------------------------------------------------------------------------
+
+struct sockaddr_in my_addr;
+my_addr.sin_family = AF_INET;
+my_addr.sin_port = htons(3490);
+inet_aton("10.12.110.57",&(my_addr.sin_addr));
+memset(&(my_addr.sin_zero), '\0', 8);
+
+------------
+
+int getpeername(int sockfd, struct sockaddr *addr, int *addrlen);
+
+------------
+
+struct hostent *h;
+h = gethostbyname(const char *name);			return hostent struct!
+if (h != nullptr) {
+	printf("Host name : %s\n", h->h_name);
+	printf("IP Address : %s\n", inet_ntoa(*((struct in_addr *)h->h_addr))); 
+}
+
+
+struct hostent {
+	char *h_name; 		// Official name of the host
+	char **h_aliases;	// Alternate names
+	int h_addrtype;		// usually AF_INET
+	int h_length;		// length of each address
+	char **h_addr_list;	// network addresses for the host in N.B.O
+};
+#define h_addr h_addr_list[0]
