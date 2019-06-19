@@ -61,8 +61,10 @@
     <session id="1669525496">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -143,7 +145,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1818">
+            <state relative-caret-position="2222">
               <caret line="101" selection-start-line="101" selection-end-line="101" />
               <folding>
                 <element signature="e#213#244#0" expanded="true" />
@@ -166,11 +168,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -178,35 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="264">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/8/ext/new_allocator.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2232">
-              <caret line="124" selection-start-line="124" selection-end-line="124" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/8/bits/alloc_traits.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8298">
-              <caret line="461" selection-start-line="461" selection-end-line="461" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/8/iostream">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1314">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -214,7 +186,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WordFrequencies.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1278">
+            <state relative-caret-position="1562">
               <caret line="71" selection-start-line="71" selection-end-line="71" />
             </state>
           </provider>
@@ -223,7 +195,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleClient.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1458">
+            <state relative-caret-position="1782">
               <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -425,17 +397,18 @@
       <workItem from="1557663465077" duration="2938000" />
       <workItem from="1557670256209" duration="383000" />
       <workItem from="1558776981580" duration="405000" />
+      <workItem from="1560679781447" duration="105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89339000" />
+    <option name="totallyTimeSpent" value="89444000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="27" width="1928" height="1152" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17254274" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17516778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -588,13 +561,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/8/bits/stl_iterator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14094">
-          <caret line="783" selection-start-line="783" selection-end-line="783" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/8/bits/stl_iterator.h" />
     <entry file="file://$PROJECT_DIR$/demos/atomicdemo/atomicdemo.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -637,13 +604,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/8/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="998" selection-start-line="998" selection-end-line="998" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/8/bits/stl_vector.h" />
     <entry file="file://$PROJECT_DIR$/Count.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
@@ -663,9 +624,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/8/ext/new_allocator.h" />
+    <entry file="file:///usr/include/c++/8/bits/alloc_traits.h" />
+    <entry file="file:///usr/include/c++/8/iostream" />
     <entry file="file://$PROJECT_DIR$/SampleClient_for_testing.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1818">
+        <state relative-caret-position="2222">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
           <folding>
             <element signature="e#213#244#0" expanded="true" />
@@ -684,42 +648,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="264">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/8/ext/new_allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2232">
-          <caret line="124" selection-start-line="124" selection-end-line="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/8/bits/alloc_traits.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8298">
-          <caret line="461" selection-start-line="461" selection-end-line="461" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/8/iostream">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WordFrequencies.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
+        <state relative-caret-position="1562">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SampleClient.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
+        <state relative-caret-position="1782">
           <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -729,11 +672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MapReduceFramework.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="228">
+          <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
         </state>
       </provider>
     </entry>
